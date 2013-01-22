@@ -1,0 +1,280 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E378528A16AF42C800BDEDAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E378528916AF42C800BDEDAF /* UIKit.framework */; };
+		E378528C16AF42C800BDEDAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E378528B16AF42C800BDEDAF /* Foundation.framework */; };
+		E378528E16AF42C800BDEDAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E378528D16AF42C800BDEDAF /* CoreGraphics.framework */; };
+		E378529416AF42C800BDEDAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E378529216AF42C800BDEDAF /* InfoPlist.strings */; };
+		E378529616AF42C800BDEDAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E378529516AF42C800BDEDAF /* main.m */; };
+		E378529A16AF42C800BDEDAF /* CXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E378529916AF42C800BDEDAF /* CXAppDelegate.m */; };
+		E378529C16AF42C800BDEDAF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E378529B16AF42C800BDEDAF /* Default.png */; };
+		E378529E16AF42C800BDEDAF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E378529D16AF42C800BDEDAF /* Default@2x.png */; };
+		E37852A016AF42C800BDEDAF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E378529F16AF42C800BDEDAF /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E378528516AF42C800BDEDAF /* FBAlbumPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBAlbumPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E378528916AF42C800BDEDAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E378528B16AF42C800BDEDAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E378528D16AF42C800BDEDAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E378529116AF42C800BDEDAF /* FBAlbumPicker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FBAlbumPicker-Info.plist"; sourceTree = "<group>"; };
+		E378529316AF42C800BDEDAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E378529516AF42C800BDEDAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E378529716AF42C800BDEDAF /* FBAlbumPicker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBAlbumPicker-Prefix.pch"; sourceTree = "<group>"; };
+		E378529816AF42C800BDEDAF /* CXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXAppDelegate.h; sourceTree = "<group>"; };
+		E378529916AF42C800BDEDAF /* CXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXAppDelegate.m; sourceTree = "<group>"; };
+		E378529B16AF42C800BDEDAF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E378529D16AF42C800BDEDAF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E378529F16AF42C800BDEDAF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E378528216AF42C800BDEDAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E378528A16AF42C800BDEDAF /* UIKit.framework in Frameworks */,
+				E378528C16AF42C800BDEDAF /* Foundation.framework in Frameworks */,
+				E378528E16AF42C800BDEDAF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E378527A16AF42C800BDEDAF = {
+			isa = PBXGroup;
+			children = (
+				E378528F16AF42C800BDEDAF /* FBAlbumPicker */,
+				E378528816AF42C800BDEDAF /* Frameworks */,
+				E378528616AF42C800BDEDAF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E378528616AF42C800BDEDAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E378528516AF42C800BDEDAF /* FBAlbumPicker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E378528816AF42C800BDEDAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E378528916AF42C800BDEDAF /* UIKit.framework */,
+				E378528B16AF42C800BDEDAF /* Foundation.framework */,
+				E378528D16AF42C800BDEDAF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E378528F16AF42C800BDEDAF /* FBAlbumPicker */ = {
+			isa = PBXGroup;
+			children = (
+				E378529816AF42C800BDEDAF /* CXAppDelegate.h */,
+				E378529916AF42C800BDEDAF /* CXAppDelegate.m */,
+				E378529016AF42C800BDEDAF /* Supporting Files */,
+			);
+			path = FBAlbumPicker;
+			sourceTree = "<group>";
+		};
+		E378529016AF42C800BDEDAF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E378529116AF42C800BDEDAF /* FBAlbumPicker-Info.plist */,
+				E378529216AF42C800BDEDAF /* InfoPlist.strings */,
+				E378529516AF42C800BDEDAF /* main.m */,
+				E378529716AF42C800BDEDAF /* FBAlbumPicker-Prefix.pch */,
+				E378529B16AF42C800BDEDAF /* Default.png */,
+				E378529D16AF42C800BDEDAF /* Default@2x.png */,
+				E378529F16AF42C800BDEDAF /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E378528416AF42C800BDEDAF /* FBAlbumPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E37852A316AF42C800BDEDAF /* Build configuration list for PBXNativeTarget "FBAlbumPicker" */;
+			buildPhases = (
+				E378528116AF42C800BDEDAF /* Sources */,
+				E378528216AF42C800BDEDAF /* Frameworks */,
+				E378528316AF42C800BDEDAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FBAlbumPicker;
+			productName = FBAlbumPicker;
+			productReference = E378528516AF42C800BDEDAF /* FBAlbumPicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E378527C16AF42C800BDEDAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CX;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Brad Smith";
+			};
+			buildConfigurationList = E378527F16AF42C800BDEDAF /* Build configuration list for PBXProject "FBAlbumPicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E378527A16AF42C800BDEDAF;
+			productRefGroup = E378528616AF42C800BDEDAF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E378528416AF42C800BDEDAF /* FBAlbumPicker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E378528316AF42C800BDEDAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E378529416AF42C800BDEDAF /* InfoPlist.strings in Resources */,
+				E378529C16AF42C800BDEDAF /* Default.png in Resources */,
+				E378529E16AF42C800BDEDAF /* Default@2x.png in Resources */,
+				E37852A016AF42C800BDEDAF /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E378528116AF42C800BDEDAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E378529616AF42C800BDEDAF /* main.m in Sources */,
+				E378529A16AF42C800BDEDAF /* CXAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E378529216AF42C800BDEDAF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E378529316AF42C800BDEDAF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E37852A116AF42C800BDEDAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E37852A216AF42C800BDEDAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E37852A416AF42C800BDEDAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FBAlbumPicker/FBAlbumPicker-Prefix.pch";
+				INFOPLIST_FILE = "FBAlbumPicker/FBAlbumPicker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E37852A516AF42C800BDEDAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FBAlbumPicker/FBAlbumPicker-Prefix.pch";
+				INFOPLIST_FILE = "FBAlbumPicker/FBAlbumPicker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E378527F16AF42C800BDEDAF /* Build configuration list for PBXProject "FBAlbumPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E37852A116AF42C800BDEDAF /* Debug */,
+				E37852A216AF42C800BDEDAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E37852A316AF42C800BDEDAF /* Build configuration list for PBXNativeTarget "FBAlbumPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E37852A416AF42C800BDEDAF /* Debug */,
+				E37852A516AF42C800BDEDAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E378527C16AF42C800BDEDAF /* Project object */;
+}
