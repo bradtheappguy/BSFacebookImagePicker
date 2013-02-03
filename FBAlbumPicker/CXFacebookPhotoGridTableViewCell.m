@@ -57,7 +57,7 @@ static CGFloat kThumbnailMargin = 4;
 - (void) imageViewPressed:(UITapGestureRecognizer *)recoginizer {
   
   NSDictionary *photo = [_images objectAtIndex:recoginizer.view.tag];
-  [self.delegate facebookPhotoGridTableViewCell:self didSelectPhoto:photo];
+  [self.delegate facebookPhotoGridTableViewCell:self didSelectPhoto:photo withPreviewImage:[(UIImageView *)recoginizer.view image]];
   
   
   

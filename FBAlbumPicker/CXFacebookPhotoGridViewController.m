@@ -130,18 +130,19 @@
 
 #pragma mark -
 #pragma mark CXFacebookPhotoGridTableViewCellDelegate
--(void) facebookPhotoGridTableViewCell:(CXFacebookPhotoGridTableViewCell *)cell didSelectPhoto:(NSDictionary *)photo {
-  NSString *pictureURL = [photo objectForKey:@"source"];
+-(void) facebookPhotoGridTableViewCell:(CXFacebookPhotoGridTableViewCell *)cell didSelectPhoto:(NSDictionary *)photo withPreviewImage:(UIImage *)previewImage {
+  NSString *sourceURL = [photo objectForKey:@"source"];
+  NSString *previewURL = [photo objectForKey:@"picture"];
   
   CGFloat height = [[photo objectForKey:@"height"] floatValue];
-  
   CGFloat width = [[photo objectForKey:@"width"] floatValue];
   
   
   GKImageCropViewController *cropController = [[GKImageCropViewController alloc] init];
   cropController.contentSizeForViewInPopover = self.navigationController.contentSizeForViewInPopover;
   cropController.sourceImageSize = CGSizeMake(width, height);
-  cropController.sourceImageURL = [NSURL URLWithString:pictureURL];
+  cropController.previewImage = previewImage;
+  cropController.sourceImageURL = [NSURL URLWithString:sourceURL];
   cropController.delegate = self.delegate;
   [self.navigationController pushViewController:cropController animated:YES];
 }
