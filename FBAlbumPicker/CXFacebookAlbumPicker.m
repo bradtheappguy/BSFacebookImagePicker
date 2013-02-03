@@ -14,16 +14,40 @@
 #define kFacebookAppID @"471843082842813"
 #define kFacebookAppSecret @"eea58faf22d13ee032e674979474342a"
 
+
+@interface CXFacebookAlbumPicker (private)
+- (void)setupCancelButton;
+@end
+
 @implementation CXFacebookAlbumPicker
 
+#pragma mark -
+#pragma mark View Lifecycle
 - (id)init {
   if ([super initWithStyle:UITableViewStylePlain]) {
-    self.title = @"Choose Album";
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
+   
   }
   return self;
 }
+
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  self.title = @"Choose Album";
+  self.tableView.dataSource = self;
+  self.tableView.delegate = self;
+  [self setupCancelButton];
+}
+
+
+- (void)setupCancelButton {
+  UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
+  self.navigationItem.leftBarButtonItem = cancel;
+}
+
+
+
+#pragma mark -
 
 
 -(void)showLoadingView {
@@ -53,7 +77,8 @@
   }
 }
 
-
+#pragma mark -
+#pragma mark Buttons
 - (void)loginButtonPressed:(id)sender {
   [[JSFacebook sharedInstance] setFacebookAppID:kFacebookAppID];
 	[[JSFacebook sharedInstance] setFacebookAppSecret:kFacebookAppSecret];
@@ -70,6 +95,11 @@
    }];
 }
 
+-(void) cancelButtonPressed:(id)sender {
+  [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark -
 
 -(void) loadAlbumsFromNetwork {
   [self showLoadingView];
