@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Brad Smith. All rights reserved.
 //
 
-#import "CXFacebookAlbumPicker.h"
+#import "CXFacebookImagePickerController.h"
 #import "JSFacebook.h"
 #import "AFNetworking.h"
 #import "CXFacebookPhotoGridViewController.h"
@@ -15,11 +15,13 @@
 #define kFacebookAppSecret @"eea58faf22d13ee032e674979474342a"
 
 
-@interface CXFacebookAlbumPicker (private)
+@interface CXFacebookImagePickerController (private)
 - (void)setupCancelButton;
 @end
 
-@implementation CXFacebookAlbumPicker
+@implementation CXFacebookImagePickerController
+
+@synthesize delegate;
 
 #pragma mark -
 #pragma mark View Lifecycle
@@ -160,7 +162,7 @@
   CXFacebookPhotoGridViewController *vc = [[CXFacebookPhotoGridViewController alloc] init];
   vc.title =  [[self.albums objectAtIndex:indexPath.row] objectForKey:@"name"];
   vc.albumID =  [[self.albums objectAtIndex:indexPath.row] objectForKey:@"id"];;
-  
+  vc.delegate = self.delegate;
   [self.navigationController pushViewController:vc animated:YES];
 }
 

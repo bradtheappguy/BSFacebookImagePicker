@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "CXFacebookImagePickerController.h"
 
+@interface AppDelegate : UIResponder <UIApplicationDelegate, CXFacebookImagePickerDelegate> {
+  UIImageView *imageView;
+}
 @property (strong, nonatomic) UIWindow *window;
 
 @end

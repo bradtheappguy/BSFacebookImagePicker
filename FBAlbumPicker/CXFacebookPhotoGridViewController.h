@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CXFacebookImagePickerDelegate;
+
 @interface CXFacebookPhotoGridViewController : UITableViewController
 @property (nonatomic) NSString *albumID;
 @property (nonatomic) NSMutableArray *photos;
 @property (nonatomic) NSString *nextURL;
+@property(weak) id <CXFacebookImagePickerDelegate> delegate;
 
 -(void) loadFromNetwork;
 

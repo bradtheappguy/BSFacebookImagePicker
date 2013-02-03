@@ -19,6 +19,8 @@
 
 @implementation CXFacebookPhotoGridViewController
 
+@synthesize delegate;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -121,6 +123,7 @@
   cropController.contentSizeForViewInPopover = self.contentSizeForViewInPopover;
   cropController.sourceImageSize = CGSizeMake(width, height);
   cropController.sourceImageURL = [NSURL URLWithString:pictureURL];
+  cropController.delegate = self.delegate;
   
  // cropController.delegate = self;
   [self.navigationController pushViewController:cropController animated:YES];
