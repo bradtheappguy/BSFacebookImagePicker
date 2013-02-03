@@ -26,13 +26,14 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+      self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return self;
 }
 
 -(void) viewDidLoad {
   self.tableView.rowHeight = 80;
+  
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -42,8 +43,10 @@
 
 
 - (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-  [self loadFromNetwork];
+  [super viewDidAppear:animated];
+  if (self.photos.count < 1) {
+    [self loadFromNetwork];
+  }
 }
 
 - (void)didReceiveMemoryWarning
@@ -104,8 +107,21 @@
   [operation start];
 }
 
+
+-(void)showLoadingView {
+  self.tableView.scrollEnabled = NO;
+  _loadingView = [[UILoadingView alloc] initWithFrame:self.view.bounds];
+  [self.view addSubview:_loadingView];
+}
+
+
+-(void)hideLoadingView {
+  [_loadingView removeFromSuperview];
+  self.tableView.scrollEnabled = YES;
+}
+
 -(void) loadFromNetwork {
-  //[self showLoadingView];
+  [self showLoadingView];
   
   NSString *token = [[JSFacebook sharedInstance] accessToken];
   NSString *fields = @"picture,source,height,width";
@@ -118,13 +134,15 @@
     self.nextURL = [[JSON objectForKey:@"paging"] objectForKey:@"next"];
     
     self.photos = [[NSMutableArray alloc] initWithArray:photos];
-   // [self hideLoadingView];
+    [self hideLoadingView];
     [self.tableView reloadData];
     
     if (self.nextURL) {
       [self loadMoreFromNetWork];
     }
-  } failure:nil];
+  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON){
+    NSLog(@"sss");
+  }];
   [operation start];
 }
 

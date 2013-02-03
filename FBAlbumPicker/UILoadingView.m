@@ -43,8 +43,8 @@
 {
 	self = [super initWithFrame:frame];
 	if (self) {
-		[self setBackgroundColor:[UIColor clearColor]];
-		self.label.text = @"Loading…";
+		[self setBackgroundColor:[UIColor whiteColor]];
+		self.label.text = NSLocalizedString(@"LOADING", @"");
 		self.label.textColor = self.spinner.color;
 		[self.spinner startAnimating];
 		
