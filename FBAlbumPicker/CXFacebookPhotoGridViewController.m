@@ -12,6 +12,7 @@
 #import "AFJSONRequestOperation.h"
 #import "AFNetworking.h"
 #import "GKImageCropViewController.h"
+#import "CXFacebookPhotoGridTableViewCell.h"
 
 @interface CXFacebookPhotoGridViewController ()
 
@@ -30,10 +31,16 @@
     return self;
 }
 
+-(void) viewDidLoad {
+  self.tableView.rowHeight = 80;
+}
+
 -(void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
+
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
   [self loadFromNetwork];
@@ -51,83 +58,33 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return [self.photos count];
+  return [self.photos count] / 4 + (([self.photos count] % 4)?1:0);
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  UITableViewCell *tvc = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
-   NSString *picture = [[self.photos objectAtIndex:indexPath.row] objectForKey:@"picture"];
   
-  tvc.textLabel.text = [NSString stringWithFormat:@"%d",indexPath.row];
-  tvc.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+  NSUInteger start = indexPath.row * 4;
+
+  NSUInteger end = MIN(start + 4, self.photos.count);
+
+  NSArray *images = [self.photos objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(start, (end-start))]];
   
-  tvc.imageView.clipsToBounds = YES;
-  tvc.imageView.contentMode = UIViewContentModeScaleAspectFill;
-  [tvc.imageView setImageWithURL:[NSURL URLWithString:picture] placeholderImage:[UIImage imageNamed:@"fox"]];
+  CXFacebookPhotoGridTableViewCell *tvc = [[CXFacebookPhotoGridTableViewCell alloc] initWithReuseIdentifier:nil];
+  tvc.images = images;
+  tvc.navigationController = self.navigationController;
+  tvc.delegate = self;
+  
   return tvc;
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  NSDictionary *photo = [self.photos objectAtIndex:indexPath.row];
-  NSString *pictureURL = [photo objectForKey:@"source"];
-  
-  CGFloat height = [[photo objectForKey:@"height"] floatValue];
-  
-  CGFloat width = [[photo objectForKey:@"width"] floatValue];
-  
-  
-  GKImageCropViewController *cropController = [[GKImageCropViewController alloc] init];
-  cropController.contentSizeForViewInPopover = self.contentSizeForViewInPopover;
-  cropController.sourceImageSize = CGSizeMake(width, height);
-  cropController.sourceImageURL = [NSURL URLWithString:pictureURL];
-  cropController.delegate = self.delegate;
-  
- // cropController.delegate = self;
-  [self.navigationController pushViewController:cropController animated:YES];
-  
 }
 
 -(void) loadMoreFromNetWork {
@@ -171,4 +128,21 @@
   [operation start];
 }
 
+#pragma mark -
+#pragma mark CXFacebookPhotoGridTableViewCellDelegate
+-(void) facebookPhotoGridTableViewCell:(CXFacebookPhotoGridTableViewCell *)cell didSelectPhoto:(NSDictionary *)photo {
+  NSString *pictureURL = [photo objectForKey:@"source"];
+  
+  CGFloat height = [[photo objectForKey:@"height"] floatValue];
+  
+  CGFloat width = [[photo objectForKey:@"width"] floatValue];
+  
+  
+  GKImageCropViewController *cropController = [[GKImageCropViewController alloc] init];
+  cropController.contentSizeForViewInPopover = self.navigationController.contentSizeForViewInPopover;
+  cropController.sourceImageSize = CGSizeMake(width, height);
+  cropController.sourceImageURL = [NSURL URLWithString:pictureURL];
+  cropController.delegate = self.delegate;
+  [self.navigationController pushViewController:cropController animated:YES];
+}
 @end
