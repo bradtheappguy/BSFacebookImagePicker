@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Brad Smith. All rights reserved.
 //
 
-#import "CXAppDelegate.h"
+#import "AppDelegate.h"
 #import "JSFacebook.h"
 #import "CXFacebookAlbumPicker.h"
 
-@implementation CXAppDelegate
+@implementation AppDelegate
 
 
 
@@ -39,7 +39,7 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-  DLog(@"Open URL: %@", url);
+  NSLog(@"Open URL: %@", url);
   [[JSFacebook sharedInstance] handleCallbackURL:url];
   return YES;
 }
