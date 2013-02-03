@@ -35,7 +35,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.title = @"Choose Album";
+  self.title = NSLocalizedString(@"CHOOSE_ALBUM", @"");
   self.tableView.dataSource = self;
   self.tableView.delegate = self;
   [self setupCancelButton];
@@ -98,7 +98,7 @@
 }
 
 -(void) cancelButtonPressed:(id)sender {
-  [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+  [self.delegate imagePickerControllerDidCancel:self];
 }
 
 #pragma mark -

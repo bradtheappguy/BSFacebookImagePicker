@@ -66,7 +66,7 @@
 }
 
 - (void)imagePickerControllerDidCancel:(CXFacebookImagePickerController *)picker {
-  
+  [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
