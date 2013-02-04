@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E35DD1A116BF720E00D2E4C8 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E35DD19D16BF720E00D2E4C8 /* login-button-small@2x.png */; };
+		E35DD1A216BF720E00D2E4C8 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = E35DD19E16BF720E00D2E4C8 /* login-button-small.png */; };
+		E35DD1A316BF720E00D2E4C8 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E35DD19F16BF720E00D2E4C8 /* login-button-small-pressed@2x.png */; };
+		E35DD1A416BF720E00D2E4C8 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = E35DD1A016BF720E00D2E4C8 /* login-button-small-pressed.png */; };
 		E378528A16AF42C800BDEDAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E378528916AF42C800BDEDAF /* UIKit.framework */; };
 		E378528C16AF42C800BDEDAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E378528B16AF42C800BDEDAF /* Foundation.framework */; };
 		E378528E16AF42C800BDEDAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E378528D16AF42C800BDEDAF /* CoreGraphics.framework */; };
@@ -41,6 +45,7 @@
 		E3CB88D816BF3D47009DEA96 /* CXEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CB88D716BF3D47009DEA96 /* CXEmptyView.m */; };
 		E3CB88DB16BF4D58009DEA96 /* blankslatePhotos.png in Resources */ = {isa = PBXBuildFile; fileRef = E3CB88D916BF4D58009DEA96 /* blankslatePhotos.png */; };
 		E3CB88DC16BF4D58009DEA96 /* blankslatePhotos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3CB88DA16BF4D58009DEA96 /* blankslatePhotos@2x.png */; };
+		E3CB88DF16BF5B5B009DEA96 /* CXLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CB88DE16BF5B5B009DEA96 /* CXLoginView.m */; };
 		E3EDDA6316BF3B66000E615C /* GKImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3EDDA5916BF3B65000E615C /* GKImageCropView.m */; };
 		E3EDDA6516BF3B66000E615C /* GKCropBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3EDDA5E16BF3B65000E615C /* GKCropBorderView.m */; };
 		E3EDDA6616BF3B66000E615C /* GKImageCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3EDDA6016BF3B66000E615C /* GKImageCropOverlayView.m */; };
@@ -52,6 +57,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E35DD19D16BF720E00D2E4C8 /* login-button-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small@2x.png"; sourceTree = "<group>"; };
+		E35DD19E16BF720E00D2E4C8 /* login-button-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small.png"; sourceTree = "<group>"; };
+		E35DD19F16BF720E00D2E4C8 /* login-button-small-pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small-pressed@2x.png"; sourceTree = "<group>"; };
+		E35DD1A016BF720E00D2E4C8 /* login-button-small-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small-pressed.png"; sourceTree = "<group>"; };
 		E378528516AF42C800BDEDAF /* FBAlbumPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBAlbumPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E378528916AF42C800BDEDAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E378528B16AF42C800BDEDAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,6 +117,8 @@
 		E3CB88D716BF3D47009DEA96 /* CXEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXEmptyView.m; sourceTree = "<group>"; };
 		E3CB88D916BF4D58009DEA96 /* blankslatePhotos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blankslatePhotos.png; sourceTree = "<group>"; };
 		E3CB88DA16BF4D58009DEA96 /* blankslatePhotos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blankslatePhotos@2x.png"; sourceTree = "<group>"; };
+		E3CB88DD16BF5B5A009DEA96 /* CXLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXLoginView.h; sourceTree = "<group>"; };
+		E3CB88DE16BF5B5B009DEA96 /* CXLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXLoginView.m; sourceTree = "<group>"; };
 		E3EDDA5916BF3B65000E615C /* GKImageCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropView.m; sourceTree = "<group>"; };
 		E3EDDA5B16BF3B65000E615C /* GKImageCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropViewController.h; sourceTree = "<group>"; };
 		E3EDDA5D16BF3B65000E615C /* GKCropBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCropBorderView.h; sourceTree = "<group>"; };
@@ -248,6 +259,10 @@
 		E3F3D60016BF29A000297A84 /* FBAlbumPicker */ = {
 			isa = PBXGroup;
 			children = (
+				E35DD19D16BF720E00D2E4C8 /* login-button-small@2x.png */,
+				E35DD19E16BF720E00D2E4C8 /* login-button-small.png */,
+				E35DD19F16BF720E00D2E4C8 /* login-button-small-pressed@2x.png */,
+				E35DD1A016BF720E00D2E4C8 /* login-button-small-pressed.png */,
 				E3CB88C616BF3C64009DEA96 /* PLCameraSheetButton.png */,
 				E3CB88C716BF3C64009DEA96 /* PLCameraSheetButton@2x.png */,
 				E3CB88C816BF3C64009DEA96 /* PLCameraSheetButtonPressed.png */,
@@ -286,6 +301,8 @@
 				E3F3FC3616BF29A500297A84 /* UILoadingView.m */,
 				E3CB88D616BF3D47009DEA96 /* CXEmptyView.h */,
 				E3CB88D716BF3D47009DEA96 /* CXEmptyView.m */,
+				E3CB88DD16BF5B5A009DEA96 /* CXLoginView.h */,
+				E3CB88DE16BF5B5B009DEA96 /* CXLoginView.m */,
 			);
 			path = FBAlbumPicker;
 			sourceTree = "<group>";
@@ -355,6 +372,10 @@
 				E3CB88D516BF3C64009DEA96 /* PLCameraSheetDoneButtonPressed@2x.png in Resources */,
 				E3CB88DB16BF4D58009DEA96 /* blankslatePhotos.png in Resources */,
 				E3CB88DC16BF4D58009DEA96 /* blankslatePhotos@2x.png in Resources */,
+				E35DD1A116BF720E00D2E4C8 /* login-button-small@2x.png in Resources */,
+				E35DD1A216BF720E00D2E4C8 /* login-button-small.png in Resources */,
+				E35DD1A316BF720E00D2E4C8 /* login-button-small-pressed@2x.png in Resources */,
+				E35DD1A416BF720E00D2E4C8 /* login-button-small-pressed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +412,7 @@
 				E3EDDA6716BF3B66000E615C /* GKResizeableCropOverlayView.m in Sources */,
 				E3EDDA6A16BF3B7B000E615C /* GKImageCropViewController.m in Sources */,
 				E3CB88D816BF3D47009DEA96 /* CXEmptyView.m in Sources */,
+				E3CB88DF16BF5B5B009DEA96 /* CXLoginView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

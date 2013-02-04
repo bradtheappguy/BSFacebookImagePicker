@@ -48,15 +48,15 @@ static CGFloat kThumbnailMargin = 4;
 - (void)setImages:(NSArray *)images {
   _images = images;
 
-  if (images.count >= 1) [[_imageViews objectAtIndex:0] setImageWithURL:[NSURL URLWithString:[[images objectAtIndex:0] objectForKey:@"picture"]]];
-  if (images.count >= 2) [[_imageViews objectAtIndex:1] setImageWithURL:[NSURL URLWithString:[[images objectAtIndex:1] objectForKey:@"picture"]]];
-  if (images.count >= 3) [[_imageViews objectAtIndex:2] setImageWithURL:[NSURL URLWithString:[[images objectAtIndex:2] objectForKey:@"picture"]]];
-  if (images.count >= 4) [[_imageViews objectAtIndex:3] setImageWithURL:[NSURL URLWithString:[[images objectAtIndex:3] objectForKey:@"picture"]]];
+  if (images.count >= 1) [_imageViews[0] setImageWithURL:[NSURL URLWithString:images[0][@"picture"]]];
+  if (images.count >= 2) [_imageViews[1] setImageWithURL:[NSURL URLWithString:images[1][@"picture"]]];
+  if (images.count >= 3) [_imageViews[2] setImageWithURL:[NSURL URLWithString:images[2][@"picture"]]];
+  if (images.count >= 4) [_imageViews[3] setImageWithURL:[NSURL URLWithString:images[3][@"picture"]]];
 }
 
 - (void) imageViewPressed:(UITapGestureRecognizer *)recoginizer {
   
-  NSDictionary *photo = [_images objectAtIndex:recoginizer.view.tag];
+  NSDictionary *photo = _images[recoginizer.view.tag];
   [self.delegate facebookPhotoGridTableViewCell:self didSelectPhoto:photo withPreviewImage:[(UIImageView *)recoginizer.view image]];
   
   

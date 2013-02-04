@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "UILoadingView.h"
+#import "CXLoginView.h"
 
 @protocol CXFacebookImagePickerDelegate;
 
 @interface CXFacebookImagePickerController : UITableViewController {
   UILoadingView *_loadingView;
+  CXLoginView *_loginView;
 }
 
 @property (nonatomic, strong) NSMutableArray *albums;

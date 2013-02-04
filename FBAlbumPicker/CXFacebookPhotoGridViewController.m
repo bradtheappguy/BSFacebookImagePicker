@@ -96,8 +96,8 @@
   NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-    NSArray *photos = [JSON objectForKey:@"data"];
-    self.nextURL = [[JSON objectForKey:@"paging"] objectForKey:@"next"];
+    NSArray *photos = JSON[@"data"];
+    self.nextURL = JSON[@"paging"][@"next"];
     [self.photos addObjectsFromArray:photos];
     [self.tableView reloadData];
     
@@ -144,8 +144,8 @@
   NSURL *url = [NSURL URLWithString:path];
   NSURLRequest *request = [NSURLRequest requestWithURL:url];
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-    NSArray *photos = [JSON objectForKey:@"data"];
-    self.nextURL = [[JSON objectForKey:@"paging"] objectForKey:@"next"];
+    NSArray *photos = JSON[@"data"];
+    self.nextURL = JSON[@"paging"][@"next"];
     
     self.photos = [[NSMutableArray alloc] initWithArray:photos];
     [self hideLoadingView];
@@ -166,11 +166,11 @@
 #pragma mark -
 #pragma mark CXFacebookPhotoGridTableViewCellDelegate
 -(void) facebookPhotoGridTableViewCell:(CXFacebookPhotoGridTableViewCell *)cell didSelectPhoto:(NSDictionary *)photo withPreviewImage:(UIImage *)previewImage {
-  NSString *sourceURL = [photo objectForKey:@"source"];
-  NSString *previewURL = [photo objectForKey:@"picture"];
+  NSString *sourceURL = photo[@"source"];
+  NSString *previewURL = photo[@"picture"];
   
-  CGFloat height = [[photo objectForKey:@"height"] floatValue];
-  CGFloat width = [[photo objectForKey:@"width"] floatValue];
+  CGFloat height = [photo[@"height"] floatValue];
+  CGFloat width = [photo[@"width"] floatValue];
   
   
   GKImageCropViewController *cropController = [[GKImageCropViewController alloc] init];

@@ -28,6 +28,10 @@
 - (id)init {
   if ([super initWithStyle:UITableViewStylePlain]) {
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    
+    [self.navigationController setToolbarItems:@[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:nil action:nil]]];
+    
+
   }
   return self;
 }
@@ -35,16 +39,29 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  [self setUpToolbar];
   self.title = NSLocalizedString(@"CHOOSE_ALBUM", @"");
   self.tableView.dataSource = self;
   self.tableView.delegate = self;
   [self setupCancelButton];
 }
 
+-(void) setUpToolbar{
+  UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[NSLocalizedString(@"PHOTOS_OF_YOU",@""),
+                                                                                     NSLocalizedString(@"ALBUMS",@""),
+                                                                                     NSLocalizedString(@"FRIENDS",@"")]];
+  segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+  self.toolbarItems = @[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                        [[UIBarButtonItem alloc] initWithCustomView:segmentedControl],
+                        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil]
+                      ];
+  
+}
+
 
 - (void)setupCancelButton {
   UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonPressed:)];
-  self.navigationItem.leftBarButtonItem = cancel;
+  self.navigationItem.rightBarButtonItem = cancel;
 }
 
 
@@ -74,12 +91,20 @@
     }
   }
   else {
-    UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    loginButton.frame = CGRectMake(20, 100, 280, 40);
-    [loginButton setTitle:@"Login to Facebook" forState:UIControlStateNormal];
-    [loginButton addTarget:self action:@selector(loginButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:loginButton];
+    _loginView = [[CXLoginView alloc] initWithFrame:self.view.bounds];
+    [_loginView.loginButton addTarget:self action:@selector(loginButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_loginView];
   }
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [self.navigationController setToolbarHidden:NO animated:animated];
+}
+
+-(void) viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:animated];
+  [self.navigationController setToolbarHidden:YES animated:animated];
 }
 
 #pragma mark -
@@ -90,13 +115,10 @@
 	NSArray *permissions = @[@"user_photos"];
   [[JSFacebook sharedInstance] loginWithPermissions:permissions onSuccess:^(void) {
     NSLog(@"Sucessfully logged in!");
-    // Successfully logged in
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"XXX" object:nil];  
+    [_loginView removeFromSuperview];
     [self loadAlbumsFromNetwork];
    } onError:^(NSError *error) {
      NSLog(@"Error while logging in: %@", [error localizedDescription]);
-     // There was an error
-     [[NSNotificationCenter defaultCenter] postNotificationName:@"YYY" object:nil];
    }];
 }
 
@@ -116,7 +138,7 @@
   NSURL *url = [NSURL URLWithString:path];
   NSURLRequest *request = [NSURLRequest requestWithURL:url];
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-    NSArray *albums = [JSON objectForKey:@"data"];
+    NSArray *albums = JSON[@"data"];
     self.albums = [[NSMutableArray alloc] initWithArray:albums];
     [self hideLoadingView];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -142,8 +164,8 @@
   tvc.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
   tvc.textLabel.numberOfLines = 0;
   
-  NSString *albumName = [[self.albums objectAtIndex:indexPath.row] objectForKey:@"name"];
-  NSNumber *count = [[self.albums objectAtIndex:indexPath.row] objectForKey:@"count"];
+  NSString *albumName = (self.albums)[indexPath.row][@"name"];
+  NSNumber *count = (self.albums)[indexPath.row][@"count"];
   
   NSDictionary *attributes = @{ NSFontAttributeName : [UIFont fontWithName:@"Helvetica" size:15] };
   NSDictionary *boldAttributes = @{ NSFontAttributeName : [UIFont fontWithName:@"Helvetica-Bold" size:15] };
@@ -153,7 +175,7 @@
   
   [tvc.textLabel setAttributedText:text];
   
-  NSString *picture = [[[[[self.albums objectAtIndex:indexPath.row] objectForKey:@"photos"] objectForKey:@"data"] objectAtIndex:0] objectForKey:@"picture"];
+  NSString *picture = (self.albums)[indexPath.row][@"photos"][@"data"][0][@"picture"];
   
   tvc.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
   
@@ -172,8 +194,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   CXFacebookPhotoGridViewController *vc = [[CXFacebookPhotoGridViewController alloc] init];
-  vc.title =  [[self.albums objectAtIndex:indexPath.row] objectForKey:@"name"];
-  vc.albumID =  [[self.albums objectAtIndex:indexPath.row] objectForKey:@"id"];;
+  vc.title =  (self.albums)[indexPath.row][@"name"];
+  vc.albumID =  (self.albums)[indexPath.row][@"id"];;
   vc.delegate = self.delegate;
   [self.navigationController pushViewController:vc animated:YES];
 }

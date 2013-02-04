@@ -54,13 +54,14 @@
   CXFacebookImagePickerController *albumPicker = [[CXFacebookImagePickerController alloc] init];
   albumPicker.delegate = self;
   UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:albumPicker];
+  nav.toolbarHidden = NO;
   [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
 }
 
 #pragma mark
 #pragma mark CXFacebookImagePickerDelegate Methods
 - (void)imagePickerController:(CXFacebookImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-  UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
+  UIImage *image = info[@"UIImagePickerControllerEditedImage"];
   imageView.image = image;
   [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }

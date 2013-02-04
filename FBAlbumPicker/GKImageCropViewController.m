@@ -151,7 +151,7 @@
         UIBarButtonItem *lbl = [[UIBarButtonItem alloc] initWithCustomView:info];
         UIBarButtonItem *use = [[UIBarButtonItem alloc] initWithCustomView:self.useButton];
         
-        [self.toolbar setItems:[NSArray arrayWithObjects:cancel, flex, lbl, flex, use, nil]];
+        [self.toolbar setItems:@[cancel, flex, lbl, flex, use]];
     }
 }
 
