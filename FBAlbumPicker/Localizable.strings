@@ -9,7 +9,8 @@
 "CHOOSE_PHOTO" = "Choose Photo";
 "USE" = "Use";
 "MOVE_AND_SCALE" = "Move and Scale";
-"Cancel" = "Cancel";
+"CANCEL" = "Cancel";
 "USE" = "Choose";
 "CHOOSE_ALBUM" = "Choose Album";
 "LOADING" = "Loading...";
+"NO_PHOTOS_TO_SHOW" = "No photos to show.";

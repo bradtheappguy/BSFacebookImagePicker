@@ -241,14 +241,14 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "FBAlbumPicker/CXFacebookPhotoGridViewController.m"
-         timestampString = "381629187.879783"
+         filePath = "FBAlbumPicker/CXEmptyView.h"
+         timestampString = "381637125.78958"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "144"
-         endingLineNumber = "144"
-         landmarkName = "-loadFromNetwork"
-         landmarkType = "5">
+         startingLineNumber = "16"
+         endingLineNumber = "16"
+         landmarkName = "@interface CXEmptyView"
+         landmarkType = "2">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

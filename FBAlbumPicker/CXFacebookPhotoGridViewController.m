@@ -13,6 +13,7 @@
 #import "AFNetworking.h"
 #import "GKImageCropViewController.h"
 #import "CXFacebookPhotoGridTableViewCell.h"
+#import "CXEmptyView.h"
 
 @interface CXFacebookPhotoGridViewController ()
 
@@ -100,6 +101,7 @@
     [self.photos addObjectsFromArray:photos];
     [self.tableView reloadData];
     
+    
     if (self.nextURL) {
       [self loadMoreFromNetWork];
     }
@@ -117,6 +119,18 @@
 
 -(void)hideLoadingView {
   [_loadingView removeFromSuperview];
+  self.tableView.scrollEnabled = YES;
+}
+
+-(void)showEmptyView {
+  self.tableView.scrollEnabled = NO;
+  _emptyView = [[CXEmptyView alloc] initWithFrame:self.view.bounds];
+  [self.view addSubview:_emptyView];
+}
+
+
+-(void)hideEmptyView {
+  [_emptyView removeFromSuperview];
   self.tableView.scrollEnabled = YES;
 }
 
@@ -139,6 +153,9 @@
     
     if (self.nextURL) {
       [self loadMoreFromNetWork];
+    }
+    if (self.photos.count < 1) {
+      [self showEmptyView];
     }
   } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON){
     NSLog(@"sss");

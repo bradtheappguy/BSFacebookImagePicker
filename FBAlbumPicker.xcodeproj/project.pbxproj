@@ -38,6 +38,9 @@
 		E3CB88D316BF3C64009DEA96 /* PLCameraSheetDoneButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3CB88CB16BF3C64009DEA96 /* PLCameraSheetDoneButton@2x.png */; };
 		E3CB88D416BF3C64009DEA96 /* PLCameraSheetDoneButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = E3CB88CC16BF3C64009DEA96 /* PLCameraSheetDoneButtonPressed.png */; };
 		E3CB88D516BF3C64009DEA96 /* PLCameraSheetDoneButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3CB88CD16BF3C64009DEA96 /* PLCameraSheetDoneButtonPressed@2x.png */; };
+		E3CB88D816BF3D47009DEA96 /* CXEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CB88D716BF3D47009DEA96 /* CXEmptyView.m */; };
+		E3CB88DB16BF4D58009DEA96 /* blankslatePhotos.png in Resources */ = {isa = PBXBuildFile; fileRef = E3CB88D916BF4D58009DEA96 /* blankslatePhotos.png */; };
+		E3CB88DC16BF4D58009DEA96 /* blankslatePhotos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3CB88DA16BF4D58009DEA96 /* blankslatePhotos@2x.png */; };
 		E3EDDA6316BF3B66000E615C /* GKImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3EDDA5916BF3B65000E615C /* GKImageCropView.m */; };
 		E3EDDA6516BF3B66000E615C /* GKCropBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3EDDA5E16BF3B65000E615C /* GKCropBorderView.m */; };
 		E3EDDA6616BF3B66000E615C /* GKImageCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3EDDA6016BF3B66000E615C /* GKImageCropOverlayView.m */; };
@@ -101,6 +104,10 @@
 		E3CB88CB16BF3C64009DEA96 /* PLCameraSheetDoneButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetDoneButton@2x.png"; sourceTree = "<group>"; };
 		E3CB88CC16BF3C64009DEA96 /* PLCameraSheetDoneButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetDoneButtonPressed.png; sourceTree = "<group>"; };
 		E3CB88CD16BF3C64009DEA96 /* PLCameraSheetDoneButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetDoneButtonPressed@2x.png"; sourceTree = "<group>"; };
+		E3CB88D616BF3D47009DEA96 /* CXEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXEmptyView.h; sourceTree = "<group>"; };
+		E3CB88D716BF3D47009DEA96 /* CXEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXEmptyView.m; sourceTree = "<group>"; };
+		E3CB88D916BF4D58009DEA96 /* blankslatePhotos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blankslatePhotos.png; sourceTree = "<group>"; };
+		E3CB88DA16BF4D58009DEA96 /* blankslatePhotos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blankslatePhotos@2x.png"; sourceTree = "<group>"; };
 		E3EDDA5916BF3B65000E615C /* GKImageCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropView.m; sourceTree = "<group>"; };
 		E3EDDA5B16BF3B65000E615C /* GKImageCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropViewController.h; sourceTree = "<group>"; };
 		E3EDDA5D16BF3B65000E615C /* GKCropBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCropBorderView.h; sourceTree = "<group>"; };
@@ -268,6 +275,8 @@
 				E380F73B16BF2CE2004AD057 /* CXFacebookImagePickerController.h */,
 				E380F73C16BF2CE2004AD057 /* AppDelegate.h */,
 				E380F73D16BF2CE2004AD057 /* albumPlaceholder.png */,
+				E3CB88D916BF4D58009DEA96 /* blankslatePhotos.png */,
+				E3CB88DA16BF4D58009DEA96 /* blankslatePhotos@2x.png */,
 				E380F73E16BF2CE2004AD057 /* albumPlaceholder@2x.png */,
 				E3F3FC3116BF29A500297A84 /* FBAlbumPicker-Info.plist */,
 				E3F3FC3216BF29A500297A84 /* FBAlbumPicker-Prefix.pch */,
@@ -275,6 +284,8 @@
 				E3F3FC3416BF29A500297A84 /* main.m */,
 				E3F3FC3516BF29A500297A84 /* UILoadingView.h */,
 				E3F3FC3616BF29A500297A84 /* UILoadingView.m */,
+				E3CB88D616BF3D47009DEA96 /* CXEmptyView.h */,
+				E3CB88D716BF3D47009DEA96 /* CXEmptyView.m */,
 			);
 			path = FBAlbumPicker;
 			sourceTree = "<group>";
@@ -342,6 +353,8 @@
 				E3CB88D316BF3C64009DEA96 /* PLCameraSheetDoneButton@2x.png in Resources */,
 				E3CB88D416BF3C64009DEA96 /* PLCameraSheetDoneButtonPressed.png in Resources */,
 				E3CB88D516BF3C64009DEA96 /* PLCameraSheetDoneButtonPressed@2x.png in Resources */,
+				E3CB88DB16BF4D58009DEA96 /* blankslatePhotos.png in Resources */,
+				E3CB88DC16BF4D58009DEA96 /* blankslatePhotos@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +390,7 @@
 				E3EDDA6616BF3B66000E615C /* GKImageCropOverlayView.m in Sources */,
 				E3EDDA6716BF3B66000E615C /* GKResizeableCropOverlayView.m in Sources */,
 				E3EDDA6A16BF3B7B000E615C /* GKImageCropViewController.m in Sources */,
+				E3CB88D816BF3D47009DEA96 /* CXEmptyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

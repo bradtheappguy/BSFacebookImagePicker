@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "UILoadingView.h"
+#import "CXEmptyView.h"
 
 @protocol CXFacebookImagePickerDelegate;
 
 @interface CXFacebookPhotoGridViewController : UITableViewController {
   UILoadingView *_loadingView;
+  CXEmptyView *_emptyView;
 }
 @property (nonatomic) NSString *albumID;
 @property (nonatomic) NSMutableArray *photos;
