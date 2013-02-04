@@ -40,7 +40,6 @@
     NSString *fields = @"picture,source,height,width";
     NSString *path = [NSString stringWithFormat:@"https://graph.facebook.com/me/photos?access_token=%@&fields=%@",token,fields];
     photosOfYou.url = [NSURL URLWithString:path];
-    photosOfYou.delegate = self.delegate;
     
     CXFacebookFriendsViewController *friendsViewController = [[CXFacebookFriendsViewController alloc] init];
     
@@ -62,6 +61,7 @@
   [self.view addSubview:_currentViewController.view];
   _currentViewController.view.frame = self.view.bounds;
   [(CXFacebookAlbumPickerController *)_currentViewController setNavigationController:self.navigationController];
+  [(CXFacebookAlbumPickerController *)_currentViewController setDelegate:self.delegate];
 }
 
 -(void) setUpToolbar{
@@ -95,6 +95,8 @@
 
 -(void) viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
+  [(CXFacebookAlbumPickerController *)_currentViewController setDelegate:self.delegate];
+  [(CXFacebookAlbumPickerController *)_currentViewController setNavigationController:self.navigationController];
   if ([[JSFacebook sharedInstance] isSessionValid]) {
     
   }
@@ -104,6 +106,8 @@
     [self.view addSubview:_loginView];
   }
   [_currentViewController viewDidAppear:animated];
+  [(CXFacebookAlbumPickerController *)_currentViewController setNavigationController:self.navigationController];
+  [(CXFacebookAlbumPickerController *)_currentViewController setDelegate:self.delegate];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -146,10 +150,12 @@
   [nextViewController viewWillAppear:YES];
   [self.view addSubview:nextViewController.view];
   [nextViewController viewDidAppear:YES];
+  [(CXFacebookAlbumPickerController *)nextViewController setNavigationController:self.navigationController];
+  [(CXFacebookAlbumPickerController *)nextViewController setDelegate:self.delegate];
+  
   _currentViewController = nextViewController;
   _currentViewController.view.frame = self.view.bounds;
   [self.navigationController setToolbarHidden:NO animated:NO];
-  [(CXFacebookAlbumPickerController *)_currentViewController setNavigationController:self.navigationController];
 
 }
 @end

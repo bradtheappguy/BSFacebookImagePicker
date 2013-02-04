@@ -160,6 +160,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E35DD1AF16BF905800D2E4C8 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				E35DD1AC16BF8B7C00D2E4C8 /* CXFacebookNetworkViewController.h */,
+				E35DD1AD16BF8B7C00D2E4C8 /* CXFacebookNetworkViewController.m */,
+				E35DD1A516BF749800D2E4C8 /* CXFacebookAlbumPickerController.h */,
+				E35DD1A616BF749800D2E4C8 /* CXFacebookAlbumPickerController.m */,
+				E35DD1A916BF877000D2E4C8 /* CXFacebookFriendsViewController.h */,
+				E35DD1AA16BF877000D2E4C8 /* CXFacebookFriendsViewController.m */,
+				E380F73616BF2CE2004AD057 /* CXFacebookPhotoGridViewController.h */,
+				E380F73716BF2CE2004AD057 /* CXFacebookPhotoGridViewController.m */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		E35DD1B016BF906400D2E4C8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E380F73D16BF2CE2004AD057 /* albumPlaceholder.png */,
+				E3CB88D916BF4D58009DEA96 /* blankslatePhotos.png */,
+				E3CB88DA16BF4D58009DEA96 /* blankslatePhotos@2x.png */,
+				E380F73E16BF2CE2004AD057 /* albumPlaceholder@2x.png */,
+				E35DD19D16BF720E00D2E4C8 /* login-button-small@2x.png */,
+				E35DD19E16BF720E00D2E4C8 /* login-button-small.png */,
+				E35DD19F16BF720E00D2E4C8 /* login-button-small-pressed@2x.png */,
+				E35DD1A016BF720E00D2E4C8 /* login-button-small-pressed.png */,
+				E3CB88C616BF3C64009DEA96 /* PLCameraSheetButton.png */,
+				E3CB88C716BF3C64009DEA96 /* PLCameraSheetButton@2x.png */,
+				E3CB88C816BF3C64009DEA96 /* PLCameraSheetButtonPressed.png */,
+				E3CB88C916BF3C64009DEA96 /* PLCameraSheetButtonPressed@2x.png */,
+				E3CB88CA16BF3C64009DEA96 /* PLCameraSheetDoneButton.png */,
+				E3CB88CB16BF3C64009DEA96 /* PLCameraSheetDoneButton@2x.png */,
+				E3CB88CC16BF3C64009DEA96 /* PLCameraSheetDoneButtonPressed.png */,
+				E3CB88CD16BF3C64009DEA96 /* PLCameraSheetDoneButtonPressed@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		E378527A16AF42C800BDEDAF = {
 			isa = PBXGroup;
 			children = (
@@ -268,20 +306,8 @@
 		E3F3D60016BF29A000297A84 /* FBAlbumPicker */ = {
 			isa = PBXGroup;
 			children = (
-				E35DD1A516BF749800D2E4C8 /* CXFacebookAlbumPickerController.h */,
-				E35DD1A616BF749800D2E4C8 /* CXFacebookAlbumPickerController.m */,
-				E35DD19D16BF720E00D2E4C8 /* login-button-small@2x.png */,
-				E35DD19E16BF720E00D2E4C8 /* login-button-small.png */,
-				E35DD19F16BF720E00D2E4C8 /* login-button-small-pressed@2x.png */,
-				E35DD1A016BF720E00D2E4C8 /* login-button-small-pressed.png */,
-				E3CB88C616BF3C64009DEA96 /* PLCameraSheetButton.png */,
-				E3CB88C716BF3C64009DEA96 /* PLCameraSheetButton@2x.png */,
-				E3CB88C816BF3C64009DEA96 /* PLCameraSheetButtonPressed.png */,
-				E3CB88C916BF3C64009DEA96 /* PLCameraSheetButtonPressed@2x.png */,
-				E3CB88CA16BF3C64009DEA96 /* PLCameraSheetDoneButton.png */,
-				E3CB88CB16BF3C64009DEA96 /* PLCameraSheetDoneButton@2x.png */,
-				E3CB88CC16BF3C64009DEA96 /* PLCameraSheetDoneButtonPressed.png */,
-				E3CB88CD16BF3C64009DEA96 /* PLCameraSheetDoneButtonPressed@2x.png */,
+				E35DD1B016BF906400D2E4C8 /* Images */,
+				E35DD1AF16BF905800D2E4C8 /* New Group */,
 				E3EDDA6816BF3B7B000E615C /* GKImageCropViewController.m */,
 				E3EDDA6916BF3B7B000E615C /* GKImageCropView.h */,
 				E3EDDA5916BF3B65000E615C /* GKImageCropView.m */,
@@ -293,17 +319,11 @@
 				E3EDDA6116BF3B66000E615C /* GKResizeableCropOverlayView.h */,
 				E3EDDA6216BF3B66000E615C /* GKResizeableCropOverlayView.m */,
 				E380F73516BF2CE2004AD057 /* CXFacebookPhotoGridTableViewCell.m */,
-				E380F73616BF2CE2004AD057 /* CXFacebookPhotoGridViewController.h */,
-				E380F73716BF2CE2004AD057 /* CXFacebookPhotoGridViewController.m */,
 				E380F73816BF2CE2004AD057 /* CXFacebookImagePickerController.m */,
 				E380F73916BF2CE2004AD057 /* CXFacebookPhotoGridTableViewCell.h */,
 				E380F73A16BF2CE2004AD057 /* AppDelegate.m */,
 				E380F73B16BF2CE2004AD057 /* CXFacebookImagePickerController.h */,
 				E380F73C16BF2CE2004AD057 /* AppDelegate.h */,
-				E380F73D16BF2CE2004AD057 /* albumPlaceholder.png */,
-				E3CB88D916BF4D58009DEA96 /* blankslatePhotos.png */,
-				E3CB88DA16BF4D58009DEA96 /* blankslatePhotos@2x.png */,
-				E380F73E16BF2CE2004AD057 /* albumPlaceholder@2x.png */,
 				E3F3FC3116BF29A500297A84 /* FBAlbumPicker-Info.plist */,
 				E3F3FC3216BF29A500297A84 /* FBAlbumPicker-Prefix.pch */,
 				E3F3FC3316BF29A500297A84 /* Localizable.strings */,
@@ -314,10 +334,6 @@
 				E3CB88D716BF3D47009DEA96 /* CXEmptyView.m */,
 				E3CB88DD16BF5B5A009DEA96 /* CXLoginView.h */,
 				E3CB88DE16BF5B5B009DEA96 /* CXLoginView.m */,
-				E35DD1A916BF877000D2E4C8 /* CXFacebookFriendsViewController.h */,
-				E35DD1AA16BF877000D2E4C8 /* CXFacebookFriendsViewController.m */,
-				E35DD1AC16BF8B7C00D2E4C8 /* CXFacebookNetworkViewController.h */,
-				E35DD1AD16BF8B7C00D2E4C8 /* CXFacebookNetworkViewController.m */,
 			);
 			path = FBAlbumPicker;
 			sourceTree = "<group>";

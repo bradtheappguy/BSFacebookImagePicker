@@ -21,7 +21,6 @@
 
 @implementation CXFacebookAlbumPickerController
 
-@synthesize delegate;
 
 #pragma mark -
 #pragma mark View Lifecycle
@@ -140,7 +139,7 @@
   NSString *fields = @"picture,source,height,width";
   NSString *path = [NSString stringWithFormat:@"https://graph.facebook.com/%@/photos?fields=%@&access_token=%@",albumID,fields,token];
   vc.url = [NSURL URLWithString:path];
-  
+  vc.navigationController = self.navigationController;
   [self.navigationController pushViewController:vc animated:YES];
 }
 

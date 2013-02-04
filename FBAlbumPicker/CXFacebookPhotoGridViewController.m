@@ -20,7 +20,6 @@
 
 @implementation CXFacebookPhotoGridViewController
 
-@synthesize delegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

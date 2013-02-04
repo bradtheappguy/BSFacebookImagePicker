@@ -14,6 +14,8 @@
 
 @implementation CXFacebookNetworkViewController
 
+@synthesize delegate, navigationController;
+
 -(void)showLoadingView {
   if (!_loadingView) {
       _loadingView = [[UILoadingView alloc] initWithFrame:self.view.bounds];

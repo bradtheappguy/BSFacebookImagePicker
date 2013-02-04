@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CXFacebookNetworkViewController.h"
 
-@interface CXFacebookFriendsViewController : UITableViewController
-
-@property UINavigationController *navigationController;
+@interface CXFacebookFriendsViewController : CXFacebookNetworkViewController
 
 @end

@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "UILoadingView.h"
+#import "CXFacebookImagePickerController.h"
 
 @interface CXFacebookNetworkViewController : UITableViewController {
   UIView *_loadingView;
 }
+
+@property (weak) id <CXFacebookImagePickerDelegate> delegate;
+@property (weak) UINavigationController *navigationController;
+
 
 -(void)showLoadingView;
 -(void)hideLoadingView;

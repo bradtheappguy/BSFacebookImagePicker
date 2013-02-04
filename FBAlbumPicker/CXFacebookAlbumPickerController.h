@@ -10,14 +10,12 @@
 #import "CXLoginView.h"
 #import "CXFacebookNetworkViewController.h"
 
-@protocol CXFacebookImagePickerDelegate;
+
 
 @interface CXFacebookAlbumPickerController : CXFacebookNetworkViewController
 
 @property (nonatomic, strong) NSMutableArray *albums;
-@property (weak) id <CXFacebookImagePickerDelegate> delegate;
 
-@property (weak) UINavigationController *navigationController;
 
 -(void) loadAlbumsFromNetwork;
 
