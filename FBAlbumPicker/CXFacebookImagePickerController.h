@@ -12,15 +12,15 @@
 
 @protocol CXFacebookImagePickerDelegate;
 
-@interface CXFacebookImagePickerController : UITableViewController {
-  UILoadingView *_loadingView;
+@interface CXFacebookImagePickerController : UIViewController {
   CXLoginView *_loginView;
+  
+  UIViewController *_currentViewController;
 }
 
-@property (nonatomic, strong) NSMutableArray *albums;
 @property (weak) id <CXFacebookImagePickerDelegate> delegate;
 
--(void) loadAlbumsFromNetwork;
+@property (nonatomic) NSArray *viewControllers;
 
 @end
 

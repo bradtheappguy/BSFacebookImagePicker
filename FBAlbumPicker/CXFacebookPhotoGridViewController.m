@@ -8,7 +8,6 @@
 
 #import "CXFacebookPhotoGridViewController.h"
 #import "JSFacebook.h"
-#import "UILoadingView.h"
 #import "AFJSONRequestOperation.h"
 #import "AFNetworking.h"
 #import "GKImageCropViewController.h"
@@ -110,18 +109,6 @@
 }
 
 
--(void)showLoadingView {
-  self.tableView.scrollEnabled = NO;
-  _loadingView = [[UILoadingView alloc] initWithFrame:self.view.bounds];
-  [self.view addSubview:_loadingView];
-}
-
-
--(void)hideLoadingView {
-  [_loadingView removeFromSuperview];
-  self.tableView.scrollEnabled = YES;
-}
-
 -(void)showEmptyView {
   self.tableView.scrollEnabled = NO;
   _emptyView = [[CXEmptyView alloc] initWithFrame:self.view.bounds];
@@ -136,12 +123,8 @@
 
 -(void) loadFromNetwork {
   [self showLoadingView];
-  
-  NSString *token = [[JSFacebook sharedInstance] accessToken];
-  NSString *fields = @"picture,source,height,width";
-  NSString *path = [NSString stringWithFormat:@"https://graph.facebook.com/%@/photos?fields=%@&access_token=%@",self.albumID,fields,token];
-  
-  NSURL *url = [NSURL URLWithString:path];
+
+  NSURL *url = self.url;
   NSURLRequest *request = [NSURLRequest requestWithURL:url];
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
     NSArray *photos = JSON[@"data"];
@@ -166,9 +149,7 @@
 #pragma mark -
 #pragma mark CXFacebookPhotoGridTableViewCellDelegate
 -(void) facebookPhotoGridTableViewCell:(CXFacebookPhotoGridTableViewCell *)cell didSelectPhoto:(NSDictionary *)photo withPreviewImage:(UIImage *)previewImage {
-  NSString *sourceURL = photo[@"source"];
-  NSString *previewURL = photo[@"picture"];
-  
+  NSString *sourceURL = photo[@"source"];  
   CGFloat height = [photo[@"height"] floatValue];
   CGFloat width = [photo[@"width"] floatValue];
   

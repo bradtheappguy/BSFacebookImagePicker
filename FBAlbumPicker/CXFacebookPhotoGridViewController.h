@@ -7,19 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UILoadingView.h"
 #import "CXEmptyView.h"
+#import "CXFacebookNetworkViewController.h"
 
 @protocol CXFacebookImagePickerDelegate;
 
-@interface CXFacebookPhotoGridViewController : UITableViewController {
-  UILoadingView *_loadingView;
+@interface CXFacebookPhotoGridViewController : CXFacebookNetworkViewController {
   CXEmptyView *_emptyView;
 }
-@property (nonatomic) NSString *albumID;
+
+@property (nonatomic) NSURL *url;
 @property (nonatomic) NSMutableArray *photos;
 @property (nonatomic) NSString *nextURL;
 @property (weak, nonatomic) id <CXFacebookImagePickerDelegate> delegate;
+
+@property UINavigationController *navigationController;
 
 -(void) loadFromNetwork;
 
