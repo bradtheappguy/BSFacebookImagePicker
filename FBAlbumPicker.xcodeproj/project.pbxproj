@@ -167,10 +167,10 @@
 				E35DD1AD16BF8B7C00D2E4C8 /* CXFacebookNetworkViewController.m */,
 				E35DD1A516BF749800D2E4C8 /* CXFacebookAlbumPickerController.h */,
 				E35DD1A616BF749800D2E4C8 /* CXFacebookAlbumPickerController.m */,
-				E35DD1A916BF877000D2E4C8 /* CXFacebookFriendsViewController.h */,
-				E35DD1AA16BF877000D2E4C8 /* CXFacebookFriendsViewController.m */,
 				E380F73616BF2CE2004AD057 /* CXFacebookPhotoGridViewController.h */,
 				E380F73716BF2CE2004AD057 /* CXFacebookPhotoGridViewController.m */,
+				E35DD1A916BF877000D2E4C8 /* CXFacebookFriendsViewController.h */,
+				E35DD1AA16BF877000D2E4C8 /* CXFacebookFriendsViewController.m */,
 			);
 			name = "New Group";
 			sourceTree = "<group>";
@@ -196,11 +196,13 @@
 				E3CB88CD16BF3C64009DEA96 /* PLCameraSheetDoneButtonPressed@2x.png */,
 			);
 			name = Images;
+			path = FBAlbumPicker;
 			sourceTree = "<group>";
 		};
 		E378527A16AF42C800BDEDAF = {
 			isa = PBXGroup;
 			children = (
+				E35DD1B016BF906400D2E4C8 /* Images */,
 				E380F74E16BF2D64004AD057 /* External */,
 				E3F3D60016BF29A000297A84 /* FBAlbumPicker */,
 				E378528816AF42C800BDEDAF /* Frameworks */,
@@ -306,7 +308,8 @@
 		E3F3D60016BF29A000297A84 /* FBAlbumPicker */ = {
 			isa = PBXGroup;
 			children = (
-				E35DD1B016BF906400D2E4C8 /* Images */,
+				E380F73B16BF2CE2004AD057 /* CXFacebookImagePickerController.h */,
+				E380F73816BF2CE2004AD057 /* CXFacebookImagePickerController.m */,
 				E35DD1AF16BF905800D2E4C8 /* New Group */,
 				E3EDDA6816BF3B7B000E615C /* GKImageCropViewController.m */,
 				E3EDDA6916BF3B7B000E615C /* GKImageCropView.h */,
@@ -319,10 +322,8 @@
 				E3EDDA6116BF3B66000E615C /* GKResizeableCropOverlayView.h */,
 				E3EDDA6216BF3B66000E615C /* GKResizeableCropOverlayView.m */,
 				E380F73516BF2CE2004AD057 /* CXFacebookPhotoGridTableViewCell.m */,
-				E380F73816BF2CE2004AD057 /* CXFacebookImagePickerController.m */,
 				E380F73916BF2CE2004AD057 /* CXFacebookPhotoGridTableViewCell.h */,
 				E380F73A16BF2CE2004AD057 /* AppDelegate.m */,
-				E380F73B16BF2CE2004AD057 /* CXFacebookImagePickerController.h */,
 				E380F73C16BF2CE2004AD057 /* AppDelegate.h */,
 				E3F3FC3116BF29A500297A84 /* FBAlbumPicker-Info.plist */,
 				E3F3FC3216BF29A500297A84 /* FBAlbumPicker-Prefix.pch */,

@@ -14,10 +14,6 @@
 
 @interface CXFacebookAlbumPickerController : CXFacebookNetworkViewController
 
-@property (nonatomic, strong) NSMutableArray *albums;
-
-
--(void) loadAlbumsFromNetwork;
 
 @end
 

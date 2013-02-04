@@ -177,7 +177,7 @@
     [self _setupToolbar];
 
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        [self.navigationController setNavigationBarHidden:YES];
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
     }
 }
 

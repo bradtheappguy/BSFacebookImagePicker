@@ -7,17 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CXEmptyView.h"
+
 #import "CXFacebookNetworkViewController.h"
 
 
-@interface CXFacebookPhotoGridViewController : CXFacebookNetworkViewController {
-  CXEmptyView *_emptyView;
-}
+@interface CXFacebookPhotoGridViewController : CXFacebookNetworkViewController
 
-@property (nonatomic) NSURL *url;
-@property (nonatomic) NSMutableArray *photos;
-@property (nonatomic) NSString *nextURL;
+
+
 
 
 -(void) loadFromNetwork;

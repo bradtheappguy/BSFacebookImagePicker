@@ -7,46 +7,23 @@
 //
 
 #import "CXFacebookPhotoGridViewController.h"
-#import "JSFacebook.h"
-#import "AFJSONRequestOperation.h"
-#import "AFNetworking.h"
 #import "GKImageCropViewController.h"
 #import "CXFacebookPhotoGridTableViewCell.h"
-#import "CXEmptyView.h"
 
-@interface CXFacebookPhotoGridViewController ()
 
-@end
 
 @implementation CXFacebookPhotoGridViewController
 
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-      self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    }
-    return self;
-}
+
 
 -(void) viewDidLoad {
+  [super viewDidLoad];
   self.tableView.rowHeight = 80;
-  
-}
-
--(void)viewWillAppear:(BOOL)animated {
-  [super viewWillAppear:animated];
-  [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 
-- (void)viewDidAppear:(BOOL)animated {
-  [super viewDidAppear:animated];
-  if (self.photos.count < 1) {
-    [self loadFromNetwork];
-  }
-}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -60,7 +37,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return [self.photos count] / 4 + (([self.photos count] % 4)?1:0);
+  return [self.items count] / 4 + (([self.items count] % 4)?1:0);
 }
 
 
@@ -68,9 +45,9 @@
   
   NSUInteger start = indexPath.row * 4;
 
-  NSUInteger end = MIN(start + 4, self.photos.count);
+  NSUInteger end = MIN(start + 4, self.items.count);
 
-  NSArray *images = [self.photos objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(start, (end-start))]];
+  NSArray *images = [self.items objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(start, (end-start))]];
   
   CXFacebookPhotoGridTableViewCell *tvc = [[CXFacebookPhotoGridTableViewCell alloc] initWithReuseIdentifier:nil];
   tvc.images = images;
@@ -96,7 +73,7 @@
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
     NSArray *photos = JSON[@"data"];
     self.nextURL = JSON[@"paging"][@"next"];
-    [self.photos addObjectsFromArray:photos];
+    [self.items addObjectsFromArray:photos];
     [self.tableView reloadData];
     
     
@@ -107,43 +84,6 @@
   [operation start];
 }
 
-
--(void)showEmptyView {
-  self.tableView.scrollEnabled = NO;
-  _emptyView = [[CXEmptyView alloc] initWithFrame:self.view.bounds];
-  [self.view addSubview:_emptyView];
-}
-
-
--(void)hideEmptyView {
-  [_emptyView removeFromSuperview];
-  self.tableView.scrollEnabled = YES;
-}
-
--(void) loadFromNetwork {
-  [self showLoadingView];
-
-  NSURL *url = self.url;
-  NSURLRequest *request = [NSURLRequest requestWithURL:url];
-  AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-    NSArray *photos = JSON[@"data"];
-    self.nextURL = JSON[@"paging"][@"next"];
-    
-    self.photos = [[NSMutableArray alloc] initWithArray:photos];
-    [self hideLoadingView];
-    [self.tableView reloadData];
-    
-    if (self.nextURL) {
-      [self loadMoreFromNetWork];
-    }
-    if (self.photos.count < 1) {
-      [self showEmptyView];
-    }
-  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON){
-    NSLog(@"sss");
-  }];
-  [operation start];
-}
 
 #pragma mark -
 #pragma mark CXFacebookPhotoGridTableViewCellDelegate

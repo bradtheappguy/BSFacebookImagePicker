@@ -32,13 +32,20 @@
     
     [self.navigationController setToolbarItems:@[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:nil action:nil]]];
     
+    
+    
+    NSString *token = [[JSFacebook sharedInstance] accessToken];
+    NSString *fields = @"id,photos.limit(1).fields(picture),count,name";
+    NSString *path = [NSString stringWithFormat:@"https://graph.facebook.com/me/albums?fields=%@&access_token=%@",fields,token];
+    
     CXFacebookAlbumPickerController *albumPicker = [[CXFacebookAlbumPickerController alloc] init];
+    albumPicker.url = [NSURL URLWithString:path];
     
     CXFacebookPhotoGridViewController *photosOfYou = [[CXFacebookPhotoGridViewController alloc] init];
     photosOfYou.title = @"Your Photos";
-    NSString *token = [[JSFacebook sharedInstance] accessToken];
-    NSString *fields = @"picture,source,height,width";
-    NSString *path = [NSString stringWithFormat:@"https://graph.facebook.com/me/photos?access_token=%@&fields=%@",token,fields];
+
+    fields = @"picture,source,height,width";
+    path = [NSString stringWithFormat:@"https://graph.facebook.com/me/photos?access_token=%@&fields=%@",token,fields];
     photosOfYou.url = [NSURL URLWithString:path];
     
     CXFacebookFriendsViewController *friendsViewController = [[CXFacebookFriendsViewController alloc] init];
@@ -127,7 +134,7 @@
 - (void)loginButtonPressed:(id)sender {
   [[JSFacebook sharedInstance] setFacebookAppID:kFacebookAppID];
 	[[JSFacebook sharedInstance] setFacebookAppSecret:kFacebookAppSecret];
-	NSArray *permissions = @[@"user_photos"];
+	NSArray *permissions = @[@"user_photos,friends_photos"];
   [[JSFacebook sharedInstance] loginWithPermissions:permissions onSuccess:^(void) {
     NSLog(@"Sucessfully logged in!");
     [_loginView removeFromSuperview];
