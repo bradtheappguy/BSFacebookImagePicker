@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic, strong) NSMutableArray *albums;
-@property(weak) id <CXFacebookImagePickerDelegate> delegate;
+@property (weak) id <CXFacebookImagePickerDelegate> delegate;
 
 -(void) loadAlbumsFromNetwork;
 

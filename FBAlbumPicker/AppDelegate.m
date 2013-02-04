@@ -60,7 +60,7 @@
 #pragma mark
 #pragma mark CXFacebookImagePickerDelegate Methods
 - (void)imagePickerController:(CXFacebookImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-  UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+  UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
   imageView.image = image;
   [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }

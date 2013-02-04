@@ -17,7 +17,7 @@
 @property (nonatomic) NSString *albumID;
 @property (nonatomic) NSMutableArray *photos;
 @property (nonatomic) NSString *nextURL;
-@property(weak) id <CXFacebookImagePickerDelegate> delegate;
+@property (weak, nonatomic) id <CXFacebookImagePickerDelegate> delegate;
 
 -(void) loadFromNetwork;
 

@@ -15,8 +15,8 @@
   NSMutableArray *_imageViews;
 }
 
-@property (nonatomic) UINavigationController *navigationController;
-@property  id <CXFacebookPhotoGridTableViewCell> delegate;
+@property (weak, nonatomic) UINavigationController *navigationController;
+@property  (weak) id <CXFacebookPhotoGridTableViewCell> delegate;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 - (void)setImages:(NSArray *)images;
