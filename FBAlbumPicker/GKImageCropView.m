@@ -8,7 +8,6 @@
 
 #import "GKImageCropView.h"
 #import "GKImageCropOverlayView.h"
-#import "GKResizeableCropOverlayView.h"
 #import "AFNetworking.h"
 
 #import <QuartzCore/QuartzCore.h>
@@ -56,7 +55,7 @@
 #pragma mark -
 #pragma Getter/Setter
 
-@synthesize scrollView, imageView, cropOverlayView, resizableCropArea, xOffset, yOffset, imageSize;
+@synthesize scrollView, imageView, cropOverlayView, xOffset, yOffset, imageSize;
 
 - (void)setImageURLToCrop:(NSURL *)imageURLToCrop withPlaceholderImage:(UIImage *)placeholder{
   [self.imageView setImageWithURL:imageURLToCrop placeholderImage:placeholder];
@@ -69,11 +68,7 @@
 - (void)setCropSize:(CGSize)cropSize{
     
     if (self.cropOverlayView == nil){
-        if(self.resizableCropArea)
-            self.cropOverlayView = [[GKResizeableCropOverlayView alloc] initWithFrame:self.bounds andInitialContentSize:CGSizeMake(cropSize.width, cropSize.height)];
-        else
-            self.cropOverlayView = [[GKImageCropOverlayView alloc] initWithFrame:self.bounds];
-        
+        self.cropOverlayView = [[GKImageCropOverlayView alloc] initWithFrame:self.bounds];
         [self addSubview:self.cropOverlayView];
     }
     self.cropOverlayView.cropSize = cropSize;
@@ -87,22 +82,9 @@
 #pragma Public Methods
 
 - (UIImage *)croppedImage{
-    
-    //renders the the zoomed area into the cropped image
-    if (self.resizableCropArea){
-        GKResizeableCropOverlayView* resizeableView = (GKResizeableCropOverlayView*)self.cropOverlayView;
-        UIGraphicsBeginImageContextWithOptions(CGSizeMake(resizeableView.contentView.frame.size.width, resizeableView.contentView.frame.size.height), self.scrollView.opaque, 0.0);
-        CGContextRef ctx = UIGraphicsGetCurrentContext();
-        
-        CGFloat xPositionInScrollView = resizeableView.contentView.frame.origin.x + self.scrollView.contentOffset.x - self.xOffset;
-        CGFloat yPositionInScrollView = resizeableView.contentView.frame.origin.y + self.scrollView.contentOffset.y - self.yOffset;
-        CGContextTranslateCTM(ctx, -(xPositionInScrollView), -(yPositionInScrollView));
-    }
-    else {
         UIGraphicsBeginImageContextWithOptions(self.scrollView.frame.size, self.scrollView.opaque, 0.0);
         CGContextRef ctx = UIGraphicsGetCurrentContext();
         CGContextTranslateCTM(ctx, -self.scrollView.contentOffset.x, -self.scrollView.contentOffset.y);
-    }
     [self.scrollView.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -143,27 +125,6 @@
 
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
-    if (!self.resizableCropArea)
-        return self.scrollView;
-
-    GKResizeableCropOverlayView* resizeableCropView = (GKResizeableCropOverlayView*)self.cropOverlayView;
-    
-    CGRect outerFrame = CGRectInset(resizeableCropView.cropBorderView.frame, -10 , -10);
-    if (CGRectContainsPoint(outerFrame, point)){
-        
-        if (resizeableCropView.cropBorderView.frame.size.width < 60 || resizeableCropView.cropBorderView.frame.size.height < 60 )
-            return [super hitTest:point withEvent:event];
-        
-        CGRect innerTouchFrame = CGRectInset(resizeableCropView.cropBorderView.frame, 30, 30);
-        if (CGRectContainsPoint(innerTouchFrame, point))
-            return self.scrollView;
-        
-        CGRect outBorderTouchFrame = CGRectInset(resizeableCropView.cropBorderView.frame, -10, -10);
-        if (CGRectContainsPoint(outBorderTouchFrame, point))
-            return [super hitTest:point withEvent:event];
-        
-        return [super hitTest:point withEvent:event];
-    }
     return self.scrollView;
 }
 

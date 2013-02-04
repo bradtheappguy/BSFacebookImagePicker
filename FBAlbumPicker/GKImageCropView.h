@@ -13,7 +13,6 @@
 @property (nonatomic, strong) NSURL *imageURLToCrop;
 @property (nonatomic, assign) CGSize imageSize;
 @property (nonatomic, assign) CGSize cropSize;
-@property (nonatomic, assign) BOOL resizableCropArea;
 
 - (UIImage *)croppedImage;
 
