@@ -32,8 +32,6 @@
     
     [self.navigationController setToolbarItems:@[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:nil action:nil]]];
     
-    
-    
     NSString *token = [[JSFacebook sharedInstance] accessToken];
     NSString *fields = @"id,photos.limit(1).fields(picture),count,name";
     NSString *path = [NSString stringWithFormat:@"https://graph.facebook.com/me/albums?fields=%@&access_token=%@",fields,token];
@@ -61,7 +59,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self setUpToolbar];
+  [self setupToolbar];
   self.title = NSLocalizedString(@"CHOOSE_ALBUM", @"");
   self.view.backgroundColor = [UIColor greenColor];
   [self setupCancelButton];
@@ -71,7 +69,7 @@
   [(CXFacebookAlbumPickerController *)_currentViewController setDelegate:self.delegate];
 }
 
--(void) setUpToolbar{
+-(void) setupToolbar {
   UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[NSLocalizedString(@"PHOTOS_OF_YOU",@""),
                                                                                      NSLocalizedString(@"ALBUMS",@""),
                                                                                      NSLocalizedString(@"FRIENDS",@"")]];
@@ -119,7 +117,12 @@
 
 -(void) viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  [self.navigationController setToolbarHidden:NO animated:animated];
+  if ([[JSFacebook sharedInstance] isSessionValid]) {
+    [self.navigationController setToolbarHidden:NO animated:animated];
+  }
+  else {
+    [self.navigationController setToolbarHidden:YES animated:animated];
+  }
   [_currentViewController viewWillAppear:animated];
 }
 
@@ -137,6 +140,7 @@
 	NSArray *permissions = @[@"user_photos,friends_photos"];
   [[JSFacebook sharedInstance] loginWithPermissions:permissions onSuccess:^(void) {
     NSLog(@"Sucessfully logged in!");
+    [self.navigationController setToolbarHidden:NO];
     [_loginView removeFromSuperview];
    } onError:^(NSError *error) {
      NSLog(@"Error while logging in: %@", [error localizedDescription]);

@@ -208,7 +208,7 @@
 			name = Croping;
 			sourceTree = "<group>";
 		};
-		E35DD1B916BFB09C00D2E4C8 /* Example */ = {
+		E35DD1B916BFB09C00D2E4C8 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
 				E3F3FC3116BF29A500297A84 /* FBAlbumPicker-Info.plist */,
@@ -217,7 +217,7 @@
 				E380F73A16BF2CE2004AD057 /* AppDelegate.m */,
 				E380F73C16BF2CE2004AD057 /* AppDelegate.h */,
 			);
-			name = Example;
+			name = Demo;
 			sourceTree = "<group>";
 		};
 		E35DD1BA16BFB0DA00D2E4C8 /* Custom Views and Cells */ = {
@@ -239,9 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				E35DD1BB16BFB1CA00D2E4C8 /* README.markdown */,
-				E35DD1B916BFB09C00D2E4C8 /* Example */,
-				E380F74E16BF2D64004AD057 /* External */,
 				E3F3D60016BF29A000297A84 /* FBAlbumPicker */,
+				E35DD1B916BFB09C00D2E4C8 /* Demo */,
 				E378528816AF42C800BDEDAF /* Frameworks */,
 				E378528616AF42C800BDEDAF /* Products */,
 			);
@@ -271,7 +270,8 @@
 				E380F74F16BF2D64004AD057 /* AFNetworking */,
 				E380F7BE16BF2D64004AD057 /* JSFacebook */,
 			);
-			path = External;
+			name = External;
+			path = ../External;
 			sourceTree = "<group>";
 		};
 		E380F74F16BF2D64004AD057 /* AFNetworking */ = {
@@ -351,6 +351,7 @@
 				E35DD1AF16BF905800D2E4C8 /* Internal View Controllers */,
 				E35DD1B816BFAFFA00D2E4C8 /* Croping */,
 				E35DD1B016BF906400D2E4C8 /* Resources */,
+				E380F74E16BF2D64004AD057 /* External */,
 			);
 			path = FBAlbumPicker;
 			sourceTree = "<group>";

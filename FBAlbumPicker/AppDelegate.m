@@ -26,7 +26,7 @@
   
   
   imageView = [[UIImageView alloc] initWithFrame:vc.view.bounds];
-  imageView.backgroundColor = [UIColor blackColor];
+  imageView.backgroundColor = [UIColor viewFlipsideBackgroundColor];
   imageView.contentMode = UIViewContentModeScaleAspectFit;
   [vc.view addSubview:imageView];
   
@@ -36,7 +36,7 @@
   [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
   [vc.view addSubview:button];
   
-  self.window.rootViewController = vc;
+  self.window.rootViewController = vc;  
   
   
  
