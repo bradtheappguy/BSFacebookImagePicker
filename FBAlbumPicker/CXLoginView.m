@@ -16,21 +16,22 @@
 
 #import "CXLoginView.h"
 
+static int kButtonLabelX = 46;
+static CGRect kLoginButtonFrame = {20, 0, 280, 43};
+
+static NSString *emptyStateImageName = @"FBAlbumPicker.bundle/blankslatePhotos";
+static NSString *loginButtonImageName = @"FBAlbumPicker.bundle/login-button-small";
+static NSString *loginButtonSelectedImageName = @"FBAlbumPicker.bundle/login-button-small-pressed";
+
+static NSUInteger kImageViewHorizontalOffset = -60;
+static NSUInteger kLoginButtonHorizontalOffset = 75;
 
 
 @implementation CXLoginView
 
-static int kButtonLabelX = 46;
-static NSString *emptyStateImageName = @"FBAlbumPicker.bundle/blankslatePhotos";
-static NSString *loginButtonImageName = @"FBAlbumPicker.bundle/login-button-small";
-static NSString *loginButtonSelectedImageName = @"FBAlbumPicker.bundle/login-button-small-pressed";
-static CGRect kLoginButtonFrame = {20, 0, 280, 43};
-
-
 @synthesize loginButton;
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
       self.backgroundColor = [UIColor colorWithRed:236/255.0 green:238/255.0 blue:248/255.0 alpha:1.0];
@@ -40,6 +41,7 @@ static CGRect kLoginButtonFrame = {20, 0, 280, 43};
     return self;
 }
 
+
 -(void) setupImageView {
   imageView = [[UIImageView alloc] init];
   imageView.contentMode = UIViewContentModeCenter;
@@ -48,28 +50,22 @@ static CGRect kLoginButtonFrame = {20, 0, 280, 43};
   [self addSubview:imageView];
 }
 
+
 -(void) setupLoginButton {
   self.loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
   self.loginButton.frame = kLoginButtonFrame;
- 
-  UIImage *image = [[UIImage imageNamed:loginButtonImageName]
-                    stretchableImageWithLeftCapWidth:kButtonLabelX topCapHeight:0];
-  [self.loginButton setBackgroundImage:image forState:UIControlStateNormal];
+  [self.loginButton setBackgroundImage:[[UIImage imageNamed:loginButtonImageName] stretchableImageWithLeftCapWidth:kButtonLabelX topCapHeight:0] forState:UIControlStateNormal];
+  [self.loginButton setBackgroundImage:[[UIImage imageNamed:loginButtonSelectedImageName] stretchableImageWithLeftCapWidth:kButtonLabelX topCapHeight:0] forState:UIControlStateHighlighted];
 
-
-  image = [[UIImage imageNamed:loginButtonSelectedImageName]
-           stretchableImageWithLeftCapWidth:kButtonLabelX topCapHeight:0];
-  [self.loginButton setBackgroundImage:image forState:UIControlStateHighlighted];
-
-  [self.loginButton setTitle:NSLocalizedString(@"LOGIN_WITH_FACEBOOK", @"") forState:UIControlStateNormal];
   
+  [self.loginButton setTitle:Localized(@"LOGIN_WITH_FACEBOOK") forState:UIControlStateNormal];
   [self addSubview:loginButton];
 }
 
--(void) layoutSubviews {
-  imageView.center = CGPointMake(self.center.x, self.center.y-60);
-  self.loginButton.center = CGPointMake(self.center.x, self.center.y+75);
-}
 
+-(void) layoutSubviews {
+  imageView.center = CGPointMake(self.center.x, self.center.y + kImageViewHorizontalOffset);
+  self.loginButton.center = CGPointMake(self.center.x, self.center.y + kLoginButtonHorizontalOffset);
+}
 
 @end

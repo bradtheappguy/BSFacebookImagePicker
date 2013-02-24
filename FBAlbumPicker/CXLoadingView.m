@@ -36,7 +36,7 @@ static NSUInteger kSpinnerPadding = 5;
     _label = [[UILabel alloc] initWithFrame:self.bounds];
 		_label.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
 		_label.textColor = _spinner.color;
-    _label.text = NSLocalizedString(@"LOADING", @"");;
+    _label.text = Localized(@"LOADING");;
 		[_label sizeToFit];
     
     [self setBackgroundColor:[UIColor whiteColor]];

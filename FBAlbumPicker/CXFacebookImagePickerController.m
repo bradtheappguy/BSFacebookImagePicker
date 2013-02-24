@@ -68,7 +68,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self setupToolbar];
-  self.title = NSLocalizedString(@"CHOOSE_ALBUM", @"");
+  self.title = Localized(@"CHOOSE_ALBUM");
   self.view.backgroundColor = [UIColor greenColor];
   [self setupCancelButton];
   [self.view addSubview:_currentViewController.view];
@@ -78,9 +78,9 @@
 }
 
 -(void) setupToolbar {
-  UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[NSLocalizedString(@"PHOTOS_OF_YOU",@""),
-                                                                                     NSLocalizedString(@"ALBUMS",@""),
-                                                                                     NSLocalizedString(@"FRIENDS",@"")]];
+  UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[Localized(@"PHOTOS_OF_YOU"),
+                                                                                     Localized(@"ALBUMS"),
+                                                                                     Localized(@"FRIENDS")]];
   segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
   segmentedControl.selectedSegmentIndex = 1;
   [segmentedControl addTarget:self action:@selector(segmentedControlValueDidChange:) forControlEvents:UIControlEventValueChanged];

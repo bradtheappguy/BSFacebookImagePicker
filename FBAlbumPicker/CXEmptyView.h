@@ -16,9 +16,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CXEmptyView : UIView {
-  UIImageView *imageView;
-  UILabel *label;
-}
+@interface CXEmptyView : UIView
 
 @end

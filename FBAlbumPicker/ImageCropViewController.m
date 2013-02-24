@@ -63,7 +63,7 @@ static CGSize kCropSize = {300, 300};
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                         target:self
                                                                                         action:@selector(cancelButtonPressed:)];
-  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"USE", @"")
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:Localized(@"USE")
                                                                             style:UIBarButtonItemStyleBordered
                                                                            target:self
                                                                            action:@selector(useButtonPressed:)];
@@ -87,7 +87,7 @@ static CGSize kCropSize = {300, 300};
   [[self.cancelButton titleLabel] setFont:[UIFont boldSystemFontOfSize:11]];
   [[self.cancelButton titleLabel] setShadowOffset:CGSizeMake(0, 1)];
   [self.cancelButton setFrame:CGRectMake(0, 0, 50, 30)];
-  [self.cancelButton setTitle:NSLocalizedString(@"CANCEL",@"") forState:UIControlStateNormal];
+  [self.cancelButton setTitle:Localized(@"CANCEL") forState:UIControlStateNormal];
   [self.cancelButton setTitleColor:[UIColor colorWithRed:0.173 green:0.176 blue:0.176 alpha:1] forState:UIControlStateNormal];
   [self.cancelButton setTitleShadowColor:[UIColor colorWithRed:0.827 green:0.831 blue:0.839 alpha:1] forState:UIControlStateNormal];
   [self.cancelButton  addTarget:self action:@selector(cancelButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -101,7 +101,7 @@ static CGSize kCropSize = {300, 300};
   [[self.useButton titleLabel] setFont:[UIFont boldSystemFontOfSize:11]];
   [[self.useButton titleLabel] setShadowOffset:CGSizeMake(0, -1)];
   [self.useButton setFrame:CGRectMake(0, 0, 50, 30)];
-  [self.useButton setTitle:NSLocalizedString(@"USE",@"") forState:UIControlStateNormal];
+  [self.useButton setTitle:Localized(@"USE") forState:UIControlStateNormal];
   [self.useButton setTitleShadowColor:[UIColor colorWithRed:0.118 green:0.247 blue:0.455 alpha:1] forState:UIControlStateNormal];
   [self.useButton  addTarget:self action:@selector(useButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
   
@@ -140,7 +140,7 @@ static CGSize kCropSize = {300, 300};
   [self setupUseButton];
   
   UILabel *info = [[UILabel alloc] initWithFrame:CGRectZero];
-  info.text = NSLocalizedString(@"MOVE_AND_SCALE", @"");
+  info.text = Localized(@"MOVE_AND_SCALE");
   info.textColor = [UIColor colorWithRed:0.173 green:0.173 blue:0.173 alpha:1];
   info.backgroundColor = [UIColor clearColor];
   info.shadowColor = [UIColor colorWithRed:0.827 green:0.831 blue:0.839 alpha:1];
@@ -170,7 +170,7 @@ static CGSize kCropSize = {300, 300};
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.title = NSLocalizedString(@"CHOOSE_PHOTO", @"");
+  self.title = Localized(@"CHOOSE_PHOTO");
   [self setupNavigationBar];
   [self setupCropView];
   [self setupToolbar];
