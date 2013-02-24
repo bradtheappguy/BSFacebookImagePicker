@@ -67,8 +67,11 @@ static NSUInteger kNumberOfImages = 4;
 }
 
 - (void) imageViewPressed:(UITapGestureRecognizer *)recoginizer {
-  NSDictionary *photo = _images[recoginizer.view.tag];
-  [self.delegate facebookPhotoGridTableViewCell:self didSelectPhoto:photo withPreviewImage:[(UIImageView *)recoginizer.view image]];
+  NSUInteger index = recoginizer.view.tag;
+  if (index < _images.count) {
+    NSDictionary *photo = _images[index];
+    [self.delegate facebookPhotoGridTableViewCell:self didSelectPhoto:photo withPreviewImage:[(UIImageView *)recoginizer.view image]];
+  }
 }
 
 
