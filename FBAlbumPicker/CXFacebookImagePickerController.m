@@ -28,7 +28,7 @@
 #pragma mark -
 #pragma mark View Lifecycle
 - (id)init {
-  if ([super init]) {
+  if (self = [super init]) {
     
     [self.navigationController setToolbarItems:@[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:nil action:nil]]];
     

@@ -64,7 +64,6 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  NSString *token = [[JSFacebook sharedInstance] accessToken];
   NSString *fields = @"id,photos.limit(1).fields(picture),count,name";
   NSString *userID = self.items[indexPath.row][@"id"];
   NSString *path = [NSString stringWithFormat:@"https://graph.facebook.com/%@/albums?fields=%@",userID,fields];

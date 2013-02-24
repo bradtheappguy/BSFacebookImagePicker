@@ -63,7 +63,7 @@
 {
 	//Set label's size to correct one
 	CGSize labelSize = [self.label.text sizeWithFont:self.label.font];
-	CGRect labelFrame;
+	CGRect labelFrame = CGRectZero;
 	labelFrame.size = labelSize;
 	self.label.frame = labelFrame;
 	//Center label and spinner (we need it to ommit vertical origin calculation)

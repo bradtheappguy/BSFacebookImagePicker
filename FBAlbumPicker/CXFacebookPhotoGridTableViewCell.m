@@ -25,7 +25,7 @@ static CGFloat kThumbnailMargin = 4;
       
       _imageViews = [[NSMutableArray alloc] initWithCapacity:4];
       for (int c = 0; c < 4;c++) {
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((kThumbnailMargin*(c+1)) + (75*c), 2, 75, 75)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((kThumbnailMargin*(c+1)) + (kThumbnailLength*c), 2, kThumbnailLength, kThumbnailLength)];
         imageView.backgroundColor = [UIColor lightGrayColor];
         [self.contentView addSubview:imageView];
         imageView.tag = c;

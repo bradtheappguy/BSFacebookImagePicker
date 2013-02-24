@@ -8,7 +8,7 @@
 
 #import "CXFacebookPhotoGridViewController.h"
 #import "GKImageCropViewController.h"
-#import "CXFacebookPhotoGridTableViewCell.h"
+
 
 
 
@@ -66,7 +66,7 @@
 {
 }
 
--(void) loadMoreFromNetWork {
+-(void) loadMoreFromNetwork {
   NSURL *url = [NSURL URLWithString:self.nextURL];
   NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
@@ -78,7 +78,7 @@
     
     
     if (self.nextURL) {
-      [self loadMoreFromNetWork];
+      [self loadMoreFromNetwork];
     }
   } failure:nil];
   [operation start];

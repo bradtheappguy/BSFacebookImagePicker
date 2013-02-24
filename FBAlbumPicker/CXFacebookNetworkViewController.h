@@ -30,6 +30,6 @@
 -(void) loadFromNetwork;
 -(void) showLoadingView;
 -(void) hideLoadingView;
--(void) loadMoreFromNetWork;
+-(void) loadMoreFromNetwork;
 
 @end

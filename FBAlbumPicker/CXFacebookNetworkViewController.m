@@ -13,7 +13,7 @@
 @synthesize delegate, navigationController, items;
 
 - (id)init {
-  if ([super initWithStyle:UITableViewStylePlain]) {
+  if (self = [super initWithStyle:UITableViewStylePlain]) {
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
   }
   return self;
@@ -80,7 +80,7 @@
                                                                                         [self.tableView reloadData];
                                                                                         
                                                                                         if (self.nextURL) {
-                                                                                          [self loadMoreFromNetWork];
+                                                                                          [self loadMoreFromNetwork];
                                                                                         }
                                                                                         if (self.items.count < 1) {
                                                                                           [self showEmptyView];
@@ -91,7 +91,7 @@
   [operation start];
 }
 
--(void) loadMoreFromNetWork {
+-(void) loadMoreFromNetwork {
   
 }
 

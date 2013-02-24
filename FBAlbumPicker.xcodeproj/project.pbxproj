@@ -39,6 +39,8 @@
 		E380F83116BF2D64004AD057 /* JSFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E380F7CE16BF2D64004AD057 /* JSFacebook.m */; };
 		E380F83216BF2D64004AD057 /* JSFacebookLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = E380F7D016BF2D64004AD057 /* JSFacebookLoginController.m */; };
 		E380F83316BF2D64004AD057 /* JSFacebookRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E380F7D216BF2D64004AD057 /* JSFacebookRequest.m */; };
+		E39990B916D993FE0041ACAC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39990B816D993FE0041ACAC /* SystemConfiguration.framework */; };
+		E39990BB16D994020041ACAC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39990BA16D994020041ACAC /* MobileCoreServices.framework */; };
 		E3CB88CE16BF3C64009DEA96 /* PLCameraSheetButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E3CB88C616BF3C64009DEA96 /* PLCameraSheetButton.png */; };
 		E3CB88CF16BF3C64009DEA96 /* PLCameraSheetButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3CB88C716BF3C64009DEA96 /* PLCameraSheetButton@2x.png */; };
 		E3CB88D016BF3C64009DEA96 /* PLCameraSheetButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = E3CB88C816BF3C64009DEA96 /* PLCameraSheetButtonPressed.png */; };
@@ -116,6 +118,8 @@
 		E380F7D016BF2D64004AD057 /* JSFacebookLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSFacebookLoginController.m; sourceTree = "<group>"; };
 		E380F7D116BF2D64004AD057 /* JSFacebookRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSFacebookRequest.h; sourceTree = "<group>"; };
 		E380F7D216BF2D64004AD057 /* JSFacebookRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSFacebookRequest.m; sourceTree = "<group>"; };
+		E39990B816D993FE0041ACAC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E39990BA16D994020041ACAC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E3CB88C616BF3C64009DEA96 /* PLCameraSheetButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetButton.png; sourceTree = "<group>"; };
 		E3CB88C716BF3C64009DEA96 /* PLCameraSheetButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetButton@2x.png"; sourceTree = "<group>"; };
 		E3CB88C816BF3C64009DEA96 /* PLCameraSheetButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetButtonPressed.png; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E39990BB16D994020041ACAC /* MobileCoreServices.framework in Frameworks */,
+				E39990B916D993FE0041ACAC /* SystemConfiguration.framework in Frameworks */,
 				E378528A16AF42C800BDEDAF /* UIKit.framework in Frameworks */,
 				E378528C16AF42C800BDEDAF /* Foundation.framework in Frameworks */,
 				E378528E16AF42C800BDEDAF /* CoreGraphics.framework in Frameworks */,
@@ -238,6 +244,8 @@
 		E378527A16AF42C800BDEDAF = {
 			isa = PBXGroup;
 			children = (
+				E39990BA16D994020041ACAC /* MobileCoreServices.framework */,
+				E39990B816D993FE0041ACAC /* SystemConfiguration.framework */,
 				E35DD1BB16BFB1CA00D2E4C8 /* README.markdown */,
 				E3F3D60016BF29A000297A84 /* FBAlbumPicker */,
 				E35DD1B916BFB09C00D2E4C8 /* Demo */,

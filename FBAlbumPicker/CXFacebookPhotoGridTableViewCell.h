@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol CXFacebookPhotoGridTableViewCell;
+@protocol CXFacebookPhotoGridTableViewCellDelegate;
 
 @interface CXFacebookPhotoGridTableViewCell : UITableViewCell {
   NSArray *_images;
@@ -16,7 +16,7 @@
 }
 
 @property (weak, nonatomic) UINavigationController *navigationController;
-@property  (weak) id <CXFacebookPhotoGridTableViewCell> delegate;
+@property  (weak) id <CXFacebookPhotoGridTableViewCellDelegate> delegate;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 - (void)setImages:(NSArray *)images;
@@ -24,6 +24,6 @@
 @end
 
 
-@protocol CXFacebookPhotoGridTableViewCell
+@protocol CXFacebookPhotoGridTableViewCellDelegate
 -(void) facebookPhotoGridTableViewCell:(CXFacebookPhotoGridTableViewCell *)cell didSelectPhoto:(NSDictionary *)photo withPreviewImage:(UIImage *)image;
 @end

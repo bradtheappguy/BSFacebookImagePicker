@@ -9,14 +9,8 @@
 #import <UIKit/UIKit.h>
 
 #import "CXFacebookNetworkViewController.h"
+#import "CXFacebookPhotoGridTableViewCell.h"
 
-
-@interface CXFacebookPhotoGridViewController : CXFacebookNetworkViewController
-
-
-
-
-
--(void) loadFromNetwork;
+@interface CXFacebookPhotoGridViewController : CXFacebookNetworkViewController <CXFacebookPhotoGridTableViewCellDelegate>
 
 @end
