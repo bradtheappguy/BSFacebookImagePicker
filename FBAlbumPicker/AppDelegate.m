@@ -22,17 +22,17 @@
   
   
   UIViewController *vc = [[UIViewController alloc] init];
-  vc.view.backgroundColor = [UIColor whiteColor];
+  vc.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
   
-  
-  imageView = [[UIImageView alloc] initWithFrame:vc.view.bounds];
-  imageView.backgroundColor = [UIColor viewFlipsideBackgroundColor];
+  imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 300, 300)];
+  imageView.backgroundColor = [UIColor lightGrayColor];
   imageView.contentMode = UIViewContentModeScaleAspectFit;
   [vc.view addSubview:imageView];
   
   
   UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-  button.frame = CGRectMake(0, 0, self.window.bounds.size.width-40, 40);
+  [button setTitle:@"Chose Image From Facebook" forState:UIControlStateNormal];
+  button.frame = CGRectMake(20, 360, self.window.bounds.size.width-40, 40);
   [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
   [vc.view addSubview:button];
   

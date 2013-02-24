@@ -21,7 +21,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FBAlbumPicker/AppDelegate.m"
-         timestampString = "381640784.868095"
+         timestampString = "383359904.517858"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "70"
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FBAlbumPicker/CXEmptyView.h"
-         timestampString = "381637125.78958"
+         timestampString = "383359321.504716"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "16"
-         endingLineNumber = "16"
+         startingLineNumber = "23"
+         endingLineNumber = "23"
          landmarkName = "@interface CXEmptyView"
          landmarkType = "2">
       </FileBreakpoint>
