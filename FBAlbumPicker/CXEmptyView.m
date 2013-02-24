@@ -18,6 +18,8 @@
 
 @implementation CXEmptyView
 
+static NSString *emptyStateImageName = @"FBAlbumPicker.bundle/blankslatePhotos";
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -32,7 +34,7 @@
 - (void) setupImageView {
   imageView = [[UIImageView alloc] init];
   imageView.contentMode = UIViewContentModeCenter;
-  imageView.image = [UIImage imageNamed:@"blankslatePhotos"];
+  imageView.image = [UIImage imageNamed:emptyStateImageName];
   [imageView sizeToFit];
   [self addSubview:imageView];
 }
@@ -43,7 +45,7 @@
   label.backgroundColor = self.backgroundColor;
   label.font = [UIFont boldSystemFontOfSize:22];
   label.textColor = [UIColor colorWithRed:173/255.0 green:174/255.0 blue:189/255.0 alpha:1.0];
-  label.text = NSLocalizedString(@"NO_PHOTOS_TO_SHOW", @"");
+  label.text = NSLocalizedString(@"NO_PHOTOS_TO_SHOW", @"No Photos (empty view)");
   [label sizeToFit];
   [self addSubview:label];
 }

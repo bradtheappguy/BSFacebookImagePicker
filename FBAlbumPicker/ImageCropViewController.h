@@ -14,30 +14,18 @@
  * limitations under the License.
  */
 
+
 #import <UIKit/UIKit.h>
-#import "CXLoadingView.h"
-#import "JSFacebook.h"
 #import "CXFacebookImagePickerController.h"
-#import "AFNetworking.h"
-#import "CXEmptyView.h"
 
-@interface CXFacebookNetworkViewController : UITableViewController {
-  UIView *_loadingView;
-  CXEmptyView *_emptyView;
-}
+@interface ImageCropViewController : UIViewController
 
-@property (nonatomic, strong) NSMutableArray *items;
-@property (nonatomic) NSURL *url;
-@property (nonatomic) NSString *nextURL;
+@property (nonatomic, strong) NSURL *sourceImageURL;
+@property (nonatomic, strong) UIImage *previewImage;
+@property (nonatomic, assign) CGSize sourceImageSize;
 
-
-
-@property (weak) id <CXFacebookImagePickerDelegate> delegate;
-@property (weak) UINavigationController *navigationController;
-
--(void) loadFromNetwork;
--(void) showLoadingView;
--(void) hideLoadingView;
--(void) loadMoreFromNetwork;
+@property (nonatomic, strong) id<CXFacebookImagePickerDelegate> delegate;
 
 @end
+
+

@@ -15,25 +15,15 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "CXLoadingView.h"
-#import "CXLoginView.h"
 
-@protocol CXFacebookImagePickerDelegate;
+@interface ImageCropView : UIView
 
-@interface CXFacebookImagePickerController : UIViewController {
-  CXLoginView *_loginView;
-  
-  UIViewController *_currentViewController;
-}
+@property (nonatomic, strong) NSURL *imageURLToCrop;
+@property (nonatomic, assign) CGSize imageSize;
+@property (nonatomic, assign) CGSize cropSize;
 
-@property (weak) id <CXFacebookImagePickerDelegate> delegate;
+- (UIImage *)croppedImage;
 
-@property (nonatomic) NSArray *viewControllers;
+- (void)setImageURLToCrop:(NSURL *)imageURLToCrop withPlaceholderImage:(UIImage *)placeholder;
 
-@end
-
-
-@protocol CXFacebookImagePickerDelegate <UIImagePickerControllerDelegate>
-- (void)imagePickerController:(CXFacebookImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
-- (void)imagePickerControllerDidCancel:(CXFacebookImagePickerController *)picker;
 @end

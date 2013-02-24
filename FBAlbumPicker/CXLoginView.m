@@ -16,9 +16,16 @@
 
 #import "CXLoginView.h"
 
-const int kButtonLabelX = 46;
+
 
 @implementation CXLoginView
+
+static int kButtonLabelX = 46;
+static NSString *emptyStateImageName = @"FBAlbumPicker.bundle/blankslatePhotos";
+static NSString *loginButtonImageName = @"FBAlbumPicker.bundle/login-button-small";
+static NSString *loginButtonSelectedImageName = @"FBAlbumPicker.bundle/login-button-small-pressed";
+static CGRect kLoginButtonFrame = {20, 0, 280, 43};
+
 
 @synthesize loginButton;
 
@@ -36,21 +43,21 @@ const int kButtonLabelX = 46;
 -(void) setupImageView {
   imageView = [[UIImageView alloc] init];
   imageView.contentMode = UIViewContentModeCenter;
-  imageView.image = [UIImage imageNamed:@"blankslatePhotos"];
+  imageView.image = [UIImage imageNamed:emptyStateImageName];
   [imageView sizeToFit];
   [self addSubview:imageView];
 }
 
 -(void) setupLoginButton {
   self.loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
-  self.loginButton.frame = CGRectMake(20, 0, 280, 43);
+  self.loginButton.frame = kLoginButtonFrame;
  
-  UIImage *image = [[UIImage imageNamed:@"login-button-small.png"]
+  UIImage *image = [[UIImage imageNamed:loginButtonImageName]
                     stretchableImageWithLeftCapWidth:kButtonLabelX topCapHeight:0];
   [self.loginButton setBackgroundImage:image forState:UIControlStateNormal];
 
 
-  image = [[UIImage imageNamed:@"login-button-small-pressed.png"]
+  image = [[UIImage imageNamed:loginButtonSelectedImageName]
            stretchableImageWithLeftCapWidth:kButtonLabelX topCapHeight:0];
   [self.loginButton setBackgroundImage:image forState:UIControlStateHighlighted];
 

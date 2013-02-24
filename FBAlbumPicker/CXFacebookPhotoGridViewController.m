@@ -15,7 +15,7 @@
  */
 
 #import "CXFacebookPhotoGridViewController.h"
-#import "GKImageCropViewController.h"
+#import "ImageCropViewController.h"
 
 
 
@@ -101,7 +101,7 @@
   CGFloat width = [photo[@"width"] floatValue];
   
   
-  GKImageCropViewController *cropController = [[GKImageCropViewController alloc] init];
+  ImageCropViewController *cropController = [[ImageCropViewController alloc] init];
   cropController.contentSizeForViewInPopover = self.navigationController.contentSizeForViewInPopover;
   cropController.sourceImageSize = CGSizeMake(width, height);
   cropController.previewImage = previewImage;

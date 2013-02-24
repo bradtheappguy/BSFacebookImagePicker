@@ -16,7 +16,7 @@
 
 #import "CXFacebookPhotoGridTableViewCell.h"
 #import "AFNetworking.h"
-#import "GKImageCropViewController.h"
+#import "ImageCropViewController.h"
 
 @implementation CXFacebookPhotoGridTableViewCell
 @synthesize navigationController;

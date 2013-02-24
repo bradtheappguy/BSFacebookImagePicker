@@ -1,13 +1,21 @@
-//
-//  GKImageCropView.m
-//  GKImagePicker
-//
-//  Created by Georg Kitz on 6/1/12.
-//  Copyright (c) 2012 Aurora Apps. All rights reserved.
-//
+/*
+ * Copyright 2013 Brad Smith
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-#import "GKImageCropView.h"
-#import "GKImageCropOverlayView.h"
+#import "ImageCropView.h"
+#import "CropOverlayView.h"
 #import "AFNetworking.h"
 
 #import <QuartzCore/QuartzCore.h>
@@ -42,15 +50,15 @@
 
 @end
 
-@interface GKImageCropView ()<UIScrollViewDelegate>
+@interface ImageCropView ()<UIScrollViewDelegate>
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) GKImageCropOverlayView *cropOverlayView;
+@property (nonatomic, strong) CropOverlayView *cropOverlayView;
 @property (nonatomic, assign) CGFloat xOffset;
 @property (nonatomic, assign) CGFloat yOffset;
 @end
 
-@implementation GKImageCropView
+@implementation ImageCropView
 
 #pragma mark -
 #pragma Getter/Setter
@@ -66,9 +74,8 @@
 }
 
 - (void)setCropSize:(CGSize)cropSize{
-    
-    if (self.cropOverlayView == nil){
-        self.cropOverlayView = [[GKImageCropOverlayView alloc] initWithFrame:self.bounds];
+    if (self.cropOverlayView == nil) {
+        self.cropOverlayView = [[CropOverlayView alloc] initWithFrame:self.bounds];
         [self addSubview:self.cropOverlayView];
     }
     self.cropOverlayView.cropSize = cropSize;
@@ -132,7 +139,7 @@
     [super layoutSubviews];
     
     CGSize size = self.cropSize;
-    CGFloat toolbarSize = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0 : 54;
+    CGFloat toolbarSize = 54;
     self.xOffset = floor((CGRectGetWidth(self.bounds) - size.width) * 0.5);
     self.yOffset = floor((CGRectGetHeight(self.bounds) - toolbarSize - size.height) * 0.5); //fixed
 

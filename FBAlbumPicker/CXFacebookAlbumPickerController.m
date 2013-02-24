@@ -20,6 +20,7 @@
 
 @implementation CXFacebookAlbumPickerController
 
+static NSString *albumPlaceholderImageName = @"FBAlbumPicker.bundle/albumPlaceholder";
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -54,11 +55,10 @@
   
   tvc.imageView.clipsToBounds = YES;
   tvc.imageView.contentMode = UIViewContentModeScaleAspectFill;
-  //[tvc.imageView setImageWithURL:[NSURL URLWithString:picture] placeholderImage:[UIImage imageNamed:@"albumPlaceholder"]];
-  [tvc.imageView setImage:[UIImage imageNamed:@"albumPlaceholder"]];
+  [tvc.imageView setImage:[UIImage imageNamed:albumPlaceholderImageName]];
   
   UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
-  [iv setImageWithURL:[NSURL URLWithString:picture] placeholderImage:[UIImage imageNamed:@"albumPlaceholder"]];
+  [iv setImageWithURL:[NSURL URLWithString:picture] placeholderImage:[UIImage imageNamed:albumPlaceholderImageName]];
   [tvc.contentView addSubview:iv];
   
   return tvc;

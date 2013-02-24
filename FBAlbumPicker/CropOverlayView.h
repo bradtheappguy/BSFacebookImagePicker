@@ -14,15 +14,8 @@
  * limitations under the License.
  */
 
-"CHOOSE_PHOTO" = "Choose Photo";
-"USE" = "Use";
-"MOVE_AND_SCALE" = "Move and Scale";
-"CANCEL" = "Cancel";
-"USE" = "Choose";
-"CHOOSE_ALBUM" = "Choose Album";
-"LOADING" = "Loading...";
-"NO_PHOTOS_TO_SHOW" = "No photos to show.";
-"PHOTOS_OF_YOU" = "Photo of You";
-"ALBUMS" = "Albums";
-"FRIENDS" = "Friends";
-"LOGIN_WITH_FACEBOOK" = "Login With Facebook";
+#import <UIKit/UIKit.h>
+
+@interface CropOverlayView : UIView
+@property (nonatomic, assign) CGSize cropSize; //size of the cropped image
+@end

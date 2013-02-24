@@ -20,6 +20,7 @@
 
 @implementation CXFacebookFriendsViewController
 
+static NSString *albumPlaceholderImageName = @"FBAlbumPicker.bundle/albumPlaceholder";
 
 
 - (void)viewDidLoad {
@@ -62,7 +63,7 @@
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
   }
   cell.textLabel.text = self.items[indexPath.row][@"name"];
-  [cell.imageView setImageWithURL:[NSURL URLWithString:self.items[indexPath.row][@"picture"][@"data"][@"url"]] placeholderImage:[UIImage imageNamed:@"albumPlaceholder"]];
+  [cell.imageView setImageWithURL:[NSURL URLWithString:self.items[indexPath.row][@"picture"][@"data"][@"url"]] placeholderImage:[UIImage imageNamed:albumPlaceholderImageName]];
   
   cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;

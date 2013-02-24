@@ -39,7 +39,7 @@
 
 -(void)showLoadingView {
   if (!_loadingView) {
-      _loadingView = [[UILoadingView alloc] initWithFrame:self.view.bounds];
+      _loadingView = [[CXLoadingView alloc] initWithFrame:self.view.bounds];
   }
   self.tableView.scrollEnabled = NO;
   [self.view addSubview:_loadingView];
