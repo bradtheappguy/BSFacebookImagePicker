@@ -25,6 +25,7 @@
   self.tableView.dataSource = self;
   self.tableView.delegate = self;
   self.tableView.backgroundColor = [UIColor whiteColor];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFromNetwork) name:@"USER_DID_LOGIN" object:nil];
 }
 
 
@@ -85,13 +86,22 @@
                                                                                           [self showEmptyView];
                                                                                         }
                                                                                       } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON){
-                                                                                        NSLog(@"sss");
+                                                                                        NSLog(@"Error Loading From Network: %@",[error localizedDescription]);
                                                                                       }];
   [operation start];
 }
 
 -(void) loadMoreFromNetWork {
   
+}
+
+-(void) dealloc {
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+-(NSURL *) url {
+  NSString *token = [[JSFacebook sharedInstance] accessToken];
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@&access_token=%@", [_url absoluteString],token] ];
 }
 
 @end

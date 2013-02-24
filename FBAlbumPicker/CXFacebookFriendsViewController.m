@@ -27,9 +27,8 @@
 
 
 -(void) loadFromNetwork {
-  NSString *token = [[JSFacebook sharedInstance] accessToken];
   NSString *fields = @"id,name,picture";
-  NSString *path = [NSString stringWithFormat:@"https://graph.facebook.com/me/friends?fields=%@&access_token=%@",fields,token];
+  NSString *path = [NSString stringWithFormat:@"https://graph.facebook.com/me/friends?fields=%@",fields];
   
   self.url = [NSURL URLWithString:path];
   
@@ -68,7 +67,7 @@
   NSString *token = [[JSFacebook sharedInstance] accessToken];
   NSString *fields = @"id,photos.limit(1).fields(picture),count,name";
   NSString *userID = self.items[indexPath.row][@"id"];
-  NSString *path = [NSString stringWithFormat:@"https://graph.facebook.com/%@/albums?fields=%@&access_token=%@",userID,fields,token];
+  NSString *path = [NSString stringWithFormat:@"https://graph.facebook.com/%@/albums?fields=%@",userID,fields];
   
   CXFacebookAlbumPickerController *albumPicker = [[CXFacebookAlbumPickerController alloc] init];
   albumPicker.url = [NSURL URLWithString:path];

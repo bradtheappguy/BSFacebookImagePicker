@@ -28,8 +28,8 @@
 @property (weak) UINavigationController *navigationController;
 
 -(void) loadFromNetwork;
--(void)showLoadingView;
--(void)hideLoadingView;
+-(void) showLoadingView;
+-(void) hideLoadingView;
 -(void) loadMoreFromNetWork;
 
 @end

@@ -50,19 +50,6 @@
          timestampString = "381629094.193412"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "182"
-         endingLineNumber = "182"
-         landmarkName = "-validateAccessTokenWithCompletionHandler:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "External/JSFacebook/JSFacebook/FBAPI/JSFacebook.m"
-         timestampString = "381629094.193412"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
          startingLineNumber = "288"
          endingLineNumber = "288"
          landmarkName = "-fetchRequest:onSuccess:onError:"

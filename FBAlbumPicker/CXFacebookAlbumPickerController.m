@@ -63,9 +63,8 @@
   NSString *albumID =  (self.items)[indexPath.row][@"id"];;
   vc.delegate = self.delegate;
   
-  NSString *token = [[JSFacebook sharedInstance] accessToken];
   NSString *fields = @"picture,source,height,width";
-  NSString *path = [NSString stringWithFormat:@"https://graph.facebook.com/%@/photos?fields=%@&access_token=%@",albumID,fields,token];
+  NSString *path = [NSString stringWithFormat:@"https://graph.facebook.com/%@/photos?fields=%@",albumID,fields];
   vc.url = [NSURL URLWithString:path];
   vc.navigationController = self.navigationController;
   [self.navigationController pushViewController:vc animated:YES];

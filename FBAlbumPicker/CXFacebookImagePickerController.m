@@ -139,6 +139,7 @@
 	[[JSFacebook sharedInstance] setFacebookAppSecret:kFacebookAppSecret];
 	NSArray *permissions = @[@"user_photos,friends_photos"];
   [[JSFacebook sharedInstance] loginWithPermissions:permissions onSuccess:^(void) {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"USER_DID_LOGIN" object:nil];
     NSLog(@"Sucessfully logged in!");
     [self.navigationController setToolbarHidden:NO];
     [_loginView removeFromSuperview];
