@@ -14,15 +14,30 @@
  * limitations under the License.
  */
 
-
 #import <UIKit/UIKit.h>
-
+#import "BSFBLoadingView.h"
+#import "BSFacebook.h"
 #import "BSFacebookImagePickerController.h"
+#import "AFNetworking.h"
+#import "BSFBEmptyView.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, CXFacebookImagePickerDelegate> {
-  UIImageView *imageView;
+@interface BSFBNetworkViewController : UITableViewController {
+  UIView *_loadingView;
+  BSFBEmptyView *_emptyView;
 }
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic) NSURL *url;
+@property (nonatomic) NSString *nextURL;
+
+
+
+@property (weak) id <CXFacebookImagePickerDelegate> delegate;
+@property (weak) UINavigationController *navigationController;
+
+-(void) loadFromNetwork;
+-(void) showLoadingView;
+-(void) hideLoadingView;
+-(void) loadMoreFromNetwork;
 
 @end

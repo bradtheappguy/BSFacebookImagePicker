@@ -14,15 +14,24 @@
  * limitations under the License.
  */
 
-
 #import <UIKit/UIKit.h>
 
-#import "BSFacebookImagePickerController.h"
+@protocol CXFacebookPhotoGridTableViewCellDelegate;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, CXFacebookImagePickerDelegate> {
-  UIImageView *imageView;
+@interface BSFBPhotoGridTableViewCell : UITableViewCell {
+  NSArray *_images;
+  NSMutableArray *_imageViews;
 }
 
-@property (strong, nonatomic) UIWindow *window;
+@property (weak, nonatomic) UINavigationController *navigationController;
+@property  (weak) id <CXFacebookPhotoGridTableViewCellDelegate> delegate;
 
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
+- (void)setImages:(NSArray *)images;
+
+@end
+
+
+@protocol CXFacebookPhotoGridTableViewCellDelegate
+-(void) facebookPhotoGridTableViewCell:(BSFBPhotoGridTableViewCell *)cell didSelectPhoto:(NSDictionary *)photo withPreviewImage:(UIImage *)image;
 @end

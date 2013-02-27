@@ -14,15 +14,8 @@
  * limitations under the License.
  */
 
-
 #import <UIKit/UIKit.h>
 
-#import "BSFacebookImagePickerController.h"
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate, CXFacebookImagePickerDelegate> {
-  UIImageView *imageView;
-}
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface BSFBCropOverlayView : UIView
+@property (nonatomic, assign) CGSize cropSize; //size of the cropped image
 @end

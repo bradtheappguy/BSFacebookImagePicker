@@ -16,7 +16,7 @@
 
 
 #import "AppDelegate.h"
-#import "JSFacebook.h"
+#import "BSFacebook.h"
 
 @implementation AppDelegate
 
@@ -52,13 +52,13 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
   NSLog(@"Open URL: %@", url);
-  [[JSFacebook sharedInstance] handleCallbackURL:url];
+  [[BSFacebook sharedInstance] handleCallbackURL:url];
   return YES;
 }
 
 
 -(void) buttonPressed:(id) sender {
-  CXFacebookImagePickerController *albumPicker = [[CXFacebookImagePickerController alloc] init];
+  BSFacebookImagePickerController *albumPicker = [[BSFacebookImagePickerController alloc] init];
   albumPicker.delegate = self;
   UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:albumPicker];
   nav.toolbarHidden = NO;
@@ -67,13 +67,13 @@
 
 #pragma mark
 #pragma mark CXFacebookImagePickerDelegate Methods
-- (void)imagePickerController:(CXFacebookImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+- (void)imagePickerController:(BSFacebookImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
   UIImage *image = info[@"UIImagePickerControllerEditedImage"];
   imageView.image = image;
   [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)imagePickerControllerDidCancel:(CXFacebookImagePickerController *)picker {
+- (void)imagePickerControllerDidCancel:(BSFacebookImagePickerController *)picker {
   [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
-
 #import <UIKit/UIKit.h>
 
-#import "BSFacebookImagePickerController.h"
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate, CXFacebookImagePickerDelegate> {
+@interface BSFBLoginView: UIView {
   UIImageView *imageView;
 }
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) UIButton *loginButton;
 
 @end

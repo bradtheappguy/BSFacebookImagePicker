@@ -14,15 +14,11 @@
  * limitations under the License.
  */
 
-
 #import <UIKit/UIKit.h>
 
-#import "BSFacebookImagePickerController.h"
+#import "BSFBNetworkViewController.h"
+#import "BSFBPhotoGridTableViewCell.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, CXFacebookImagePickerDelegate> {
-  UIImageView *imageView;
-}
-
-@property (strong, nonatomic) UIWindow *window;
+@interface BSFBPhotoGridViewController : BSFBNetworkViewController <CXFacebookPhotoGridTableViewCellDelegate>
 
 @end

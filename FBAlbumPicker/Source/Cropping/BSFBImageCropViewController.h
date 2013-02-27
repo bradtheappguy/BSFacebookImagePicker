@@ -16,13 +16,16 @@
 
 
 #import <UIKit/UIKit.h>
-
 #import "BSFacebookImagePickerController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, CXFacebookImagePickerDelegate> {
-  UIImageView *imageView;
-}
+@interface BSFBImageCropViewController : UIViewController
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) NSURL *sourceImageURL;
+@property (nonatomic, strong) UIImage *previewImage;
+@property (nonatomic, assign) CGSize sourceImageSize;
+
+@property (nonatomic, strong) id<CXFacebookImagePickerDelegate> delegate;
 
 @end
+
+
