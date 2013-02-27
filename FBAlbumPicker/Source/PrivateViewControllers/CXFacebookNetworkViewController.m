@@ -69,7 +69,9 @@
 
 -(void) showEmptyView {
   self.tableView.scrollEnabled = NO;
-  _emptyView = [[CXEmptyView alloc] initWithFrame:self.view.bounds];
+  if (!_emptyView) {
+    _emptyView = [[CXEmptyView alloc] initWithFrame:self.view.bounds];
+  }
   [self.view addSubview:_emptyView];
 }
 
@@ -94,6 +96,12 @@
                                                                                           [self showEmptyView];
                                                                                         }
                                                                                       } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON){
+                                                                                        if ([response statusCode] == 400 && JSON[@"error"] != nil) {
+                                                                                          [self hideLoadingView];
+                                                                                          [self.navigationController popToRootViewControllerAnimated:YES];
+                                                                                          [[JSFacebook sharedInstance] logout];
+                                                                                          [[NSNotificationCenter defaultCenter] postNotificationName:@"USER_DID_LOGOUT" object:nil];
+                                                                                        }
                                                                                         NSLog(@"Error Loading From Network: %@",[error localizedDescription]);
                                                                                       }];
   [operation start];

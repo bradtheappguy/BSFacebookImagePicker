@@ -6,7 +6,7 @@ FBAlbumPicker is lightweight and can be used with or without using the Facebook-
 
 ## Features
 
-  Authentication using iOS single signup (iOS 5+), or Fast App Switching to the Facebook App
+  Authentication using iOS single signon (iOS 5+), or Fast App Switching to the Facebook App
   Fallback Web-Based Authentication
   Authentication can be bypassed if you allready have a Facebook Access token 
   Allows the user to choose photos from:

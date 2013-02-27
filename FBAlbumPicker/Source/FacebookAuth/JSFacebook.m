@@ -7,6 +7,7 @@
 //
 
 #import "JSFacebook.h"
+#import "AFNetworking.h"
 
 NSString * const kJSFacebookGraphAPIEndpoint			= @"https://graph.facebook.com/";
 NSString * const kJSFacebookAccessTokenKey				= @"JSFacebookAccessToken";
@@ -28,8 +29,7 @@ NSString * const kJSFacebookSSOAuthURL                  = @"fbauth://authorize/"
 
 #pragma mark - Singleton
 
-+ (JSFacebook *)sharedInstance
-{
++ (JSFacebook *)sharedInstance {
     static JSFacebook *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -137,7 +137,8 @@ NSString * const kJSFacebookSSOAuthURL                  = @"fbauth://authorize/"
 - (BOOL)isSessionValid
 {
 	if ([self.accessToken length] > 0 && [self.accessTokenExpiryDate timeIntervalSinceNow] > 0) {
-		return YES;
+		//NSLog(@"Session is valid. Expires: %@",self.accessTokenExpiryDate);
+    return YES;
 	}
 	return NO;
 }
@@ -164,28 +165,35 @@ NSString * const kJSFacebookSSOAuthURL                  = @"fbauth://authorize/"
 
 - (void)extendAccessTokenExpirationWithCompletionHandler:(void (^)(NSError *))completionHandler
 {
-	/*if (![self isSessionValid]) {
-		ALog(@"ERROR: Session invalid");
-		NSError *error = [NSError errorWithDomain:kJSFacebookErrorDomain code:JSFacebookErrorCodeAuthentication userInfo:nil];
+	if (![self isSessionValid]) {
+		NSLog(@"ERROR: Session invalid");
+		NSError *error = [NSError errorWithDomain:@"MY_ERROR_DOMAIN" code:JSFacebookErrorCodeAuthentication userInfo:nil];
 		if (completionHandler) completionHandler(error);
 		return;
 	}
 	
 	// We need the app secret for this
 	if (![self.facebookAppSecret length]) {
-		ALog(@"ERROR: Missing facebook app secret");
-		NSError *error = [NSError errorWithDomain:kJSFacebookErrorDomain code:JSFacebookErrorCodeOther userInfo:nil];
+		NSLog(@"ERROR: Missing facebook app secret");
+		NSError *error = [NSError errorWithDomain:@"MY_ERROR_DOMAIN" code:JSFacebookErrorCodeOther userInfo:nil];
 		if (completionHandler) completionHandler(error);
 		return;
 	}
 	
-	JSFacebookRequest *request = [JSFacebookRequest requestWithGraphPath:@"/oauth/access_token"];
-	[request setAuthenticate:NO];
-	[request addParameter:@"fb_exchange_token" withValue:self.accessToken];
-	[request addParameter:@"grant_type" withValue:@"fb_exchange_token"];
-	[request addParameter:@"client_id" withValue:self.facebookAppID];
-	[request addParameter:@"client_secret" withValue:self.facebookAppSecret];
-	[[JSFacebook sharedInstance] fetchRequest:request onSuccess:^(id responseObject) {
+  //NSURLRequest *request = [NSURLRequest requestWithURL:url];
+  //AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+                                       
+	//AF *request = [JSFacebookRequest requestWithGraphPath:@"/oauth/access_token"];
+                                       
+  NSMutableDictionary *params = [NSMutableDictionary new];
+  [params setObject:self.accessToken forKey:@"fb_exchange_token"];
+  [params setObject:@"fb_exchange_token" forKey:@"grant_type"];
+  [params setObject:self.facebookAppID forKey:@"client_id"];
+  [params setObject:self.facebookAppSecret forKey:@"client_secret"];
+  
+  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://graph.facebook.com/oauth/access_token?%@",[params HTTPQueryString]]];
+   
+	/*[[JSFacebook sharedInstance] fetchRequest:request onSuccess:^(id responseObject) {
 		// Get the data (it is URL encoded)
 		NSString *accessToken = [responseObject getQueryValueWithKey:@"access_token"];
 		NSString *expiry = [responseObject getQueryValueWithKey:@"expires"];

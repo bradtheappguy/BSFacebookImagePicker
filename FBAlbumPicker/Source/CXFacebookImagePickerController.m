@@ -59,6 +59,8 @@
     self.viewControllers = @[photosOfYou,albumPicker,friendsViewController];
     
     _currentViewController = albumPicker;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showLoginView) name:@"USER_DID_LOGOUT" object:nil];
 
   }
   return self;
@@ -104,19 +106,23 @@
 
 
 
-
+-(void) showLoginView {
+  if (!_loginView) {
+    _loginView = [[CXLoginView alloc] initWithFrame:self.view.bounds];
+    [_loginView.loginButton addTarget:self action:@selector(loginButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+  }
+  [self.view addSubview:_loginView];
+}
 
 -(void) viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
   [(CXFacebookAlbumPickerController *)_currentViewController setDelegate:self.delegate];
   [(CXFacebookAlbumPickerController *)_currentViewController setNavigationController:self.navigationController];
   if ([[JSFacebook sharedInstance] isSessionValid]) {
-    
+    [[JSFacebook sharedInstance] extendAccessTokenExpirationWithCompletionHandler:nil];
   }
   else {
-    _loginView = [[CXLoginView alloc] initWithFrame:self.view.bounds];
-    [_loginView.loginButton addTarget:self action:@selector(loginButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_loginView];
+    [self showLoginView];
   }
   [_currentViewController viewDidAppear:animated];
   [(CXFacebookAlbumPickerController *)_currentViewController setNavigationController:self.navigationController];
