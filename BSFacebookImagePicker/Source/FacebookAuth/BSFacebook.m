@@ -27,8 +27,8 @@ NSString * const kJSFacebookSSOAuthURL                  = @"fbauth://authorize/"
 	dispatch_queue_t network_queue;
 }
 
-@property (nonatomic, copy) JSFBLoginSuccessBlock authSuccessBlock;
-@property (nonatomic, copy) JSFBLoginErrorBlock authErrorBlock;
+@property (nonatomic, copy) BSFBLoginSuccessBlock authSuccessBlock;
+@property (nonatomic, copy) BSFBLoginErrorBlock authErrorBlock;
 @property (nonatomic, strong) NSDate *accessTokenExpiryDate;
 
 @end
@@ -95,8 +95,8 @@ NSString * const kJSFacebookSSOAuthURL                  = @"fbauth://authorize/"
 #pragma mark - Authentication
 
 - (void)loginWithPermissions:(NSArray *)permissions
-				   onSuccess:(JSFBLoginSuccessBlock)succBlock
-					 onError:(JSFBLoginErrorBlock)errBlock
+				   onSuccess:(BSFBLoginSuccessBlock)succBlock
+					 onError:(BSFBLoginErrorBlock)errBlock
 {
     if (![self isFacebookAppIDValid]) {
         NSLog(@"ERROR: You have to set a valid Facebook app ID before you try to authenticate!");
@@ -175,7 +175,7 @@ NSString * const kJSFacebookSSOAuthURL                  = @"fbauth://authorize/"
 {
 	if (![self isSessionValid]) {
 		NSLog(@"ERROR: Session invalid");
-		NSError *error = [NSError errorWithDomain:@"MY_ERROR_DOMAIN" code:JSFacebookErrorCodeAuthentication userInfo:nil];
+		NSError *error = [NSError errorWithDomain:@"MY_ERROR_DOMAIN" code:BSFacebookErrorCodeAuthentication userInfo:nil];
 		if (completionHandler) completionHandler(error);
 		return;
 	}
@@ -183,7 +183,7 @@ NSString * const kJSFacebookSSOAuthURL                  = @"fbauth://authorize/"
 	// We need the app secret for this
 	if (![self.facebookAppSecret length]) {
 		NSLog(@"ERROR: Missing facebook app secret");
-		NSError *error = [NSError errorWithDomain:@"MY_ERROR_DOMAIN" code:JSFacebookErrorCodeOther userInfo:nil];
+		NSError *error = [NSError errorWithDomain:@"MY_ERROR_DOMAIN" code:BSFacebookErrorCodeOther userInfo:nil];
 		if (completionHandler) completionHandler(error);
 		return;
 	}

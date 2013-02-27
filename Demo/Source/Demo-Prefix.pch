@@ -19,7 +19,7 @@
 #import <SystemConfiguration/SystemConfiguration.h>
 
 #define Localized(string) \
-  NSLocalizedStringFromTableInBundle(string, @"FBAlbumPicker", [NSBundle bundleWithPath: [[NSBundle mainBundle] pathForResource:@"FBAlbumPicker" ofType:@"bundle"]], @"")
+  NSLocalizedStringFromTableInBundle(string, @"FBAlbumPicker", [NSBundle bundleWithPath: [[NSBundle mainBundle] pathForResource:@"BSFBAlbumPicker" ofType:@"bundle"]], @"")
 
 #ifdef __OBJC__
 #	import <UIKit/UIKit.h>

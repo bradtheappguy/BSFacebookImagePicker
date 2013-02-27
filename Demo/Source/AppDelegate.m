@@ -24,8 +24,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   
-  [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
-  [[UIToolbar appearance] setTintColor:[UIColor redColor]];
+
   
 	 self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
@@ -43,9 +42,16 @@
   
   UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
   [button setTitle:@"Chose Image From Facebook" forState:UIControlStateNormal];
-  button.frame = CGRectMake(20, 360, self.window.bounds.size.width-40, 40);
+  button.frame = CGRectMake(20, 330, self.window.bounds.size.width-40, 40);
   [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
   [vc.view addSubview:button];
+  
+  UIButton *logoutButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+  [logoutButton setTitle:@"Logout" forState:UIControlStateNormal];
+  logoutButton.frame = CGRectMake(20, 390, self.window.bounds.size.width/2-50, 40);
+  [logoutButton addTarget:self action:@selector(logoutButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+  [vc.view addSubview:logoutButton];
+  
   
   self.window.rootViewController = vc;  
   
@@ -67,6 +73,10 @@
   UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:albumPicker];
   nav.toolbarHidden = NO;
   [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
+}
+
+-(void) logoutButtonPressed:(id) sender {
+  [[BSFacebook sharedInstance] logout];
 }
 
 #pragma mark
