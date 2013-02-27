@@ -23,6 +23,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  
+  [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
+  [[UIToolbar appearance] setTintColor:[UIColor redColor]];
+  
 	 self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
   [self.window makeKeyAndVisible];

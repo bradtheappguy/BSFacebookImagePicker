@@ -1,0 +1,15 @@
+//
+// Prefix header for all source files of the 'libBSFacebookImagePickerController' target in the 'libBSFacebookImagePickerController' project
+//
+
+#import <Availability.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+
+
+#ifdef __OBJC__
+  #import <Foundation/Foundation.h>
+#endif
+
+#define Localized(string) \
+NSLocalizedStringFromTableInBundle(string, @"FBAlbumPicker", [NSBundle bundleWithPath: [[NSBundle mainBundle] pathForResource:@"FBAlbumPicker" ofType:@"bundle"]], @"")
