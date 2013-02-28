@@ -35,6 +35,7 @@ static NSUInteger kLoginButtonHorizontalOffset = 75;
     self = [super initWithFrame:frame];
     if (self) {
       self.backgroundColor = [UIColor colorWithRed:236/255.0 green:238/255.0 blue:248/255.0 alpha:1.0];
+      self.autoresizingMask = UIViewAutoresizingFlexibleHeight;
       [self setupImageView];
       [self setupLoginButton];
     }

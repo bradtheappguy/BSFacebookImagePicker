@@ -112,22 +112,20 @@
     [_loginView.loginButton addTarget:self action:@selector(loginButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
   }
   [self.view addSubview:_loginView];
+  self.title = Localized(@"LOGIN");
 }
+
 
 -(void) viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
   [(BSFBAlbumPickerController *)_currentViewController setDelegate:self.delegate];
   [(BSFBAlbumPickerController *)_currentViewController setNavigationController:self.navigationController];
-  if ([[BSFacebook sharedInstance] isSessionValid]) {
-    [[BSFacebook sharedInstance] extendAccessTokenExpirationWithCompletionHandler:nil];
-  }
-  else {
-    [self showLoginView];
-  }
+  
   [_currentViewController viewDidAppear:animated];
   [(BSFBAlbumPickerController *)_currentViewController setNavigationController:self.navigationController];
   [(BSFBAlbumPickerController *)_currentViewController setDelegate:self.delegate];
 }
+
 
 -(void) viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
@@ -137,6 +135,12 @@
   else {
     [self.navigationController setToolbarHidden:YES animated:animated];
   }
+  if ([[BSFacebook sharedInstance] isSessionValid]) {
+    [[BSFacebook sharedInstance] extendAccessTokenExpirationWithCompletionHandler:nil];
+  }
+  else {
+    [self showLoginView];
+  }
   [_currentViewController viewWillAppear:animated];
 }
 
@@ -145,6 +149,7 @@
   [self.navigationController setToolbarHidden:YES animated:animated];
   [_currentViewController viewWillDisappear:animated];
 }
+
 
 #pragma mark -
 #pragma mark Buttons
@@ -157,6 +162,7 @@
     NSLog(@"Sucessfully logged in!");
     [self.navigationController setToolbarHidden:NO];
     [_loginView removeFromSuperview];
+    self.title = @"XXX";
    } onError:^(NSError *error) {
      NSLog(@"Error while logging in: %@", [error localizedDescription]);
    }];
@@ -174,6 +180,8 @@
   [_currentViewController.view removeFromSuperview];
   [_currentViewController viewDidDisappear:YES];
   [nextViewController viewWillAppear:YES];
+  NSArray *titles = @[Localized(@"PHOTOS_OF_YOU"),Localized(@"ALBUMS"),Localized(@"FRIENDS")];
+  self.title = [titles objectAtIndex:control.selectedSegmentIndex];
   [self.view addSubview:nextViewController.view];
   [nextViewController viewDidAppear:YES];
   [(BSFBAlbumPickerController *)nextViewController setNavigationController:self.navigationController];

@@ -22,7 +22,8 @@
 "CHOOSE_ALBUM" = "Choose Album";
 "LOADING" = "Loading...";
 "NO_PHOTOS_TO_SHOW" = "No photos to show.";
-"PHOTOS_OF_YOU" = "Photo of You";
+"PHOTOS_OF_YOU" = "Photos of You";
 "ALBUMS" = "Albums";
 "FRIENDS" = "Friends";
-"LOGIN_WITH_FACEBOOK" = "Login With Facebook";  
+"LOGIN_WITH_FACEBOOK" = "Login With Facebook";
+"LOGIN" = "Login";
