@@ -21,11 +21,12 @@
 @implementation BSFBFriendsViewController
 
 static NSString *albumPlaceholderImageName = @"BSFBAlbumPicker.bundle/albumPlaceholder";
+static CGFloat kRowHeight = 50;
 
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.tableView.rowHeight = 50;
+  self.tableView.rowHeight = kRowHeight;
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,11 +37,9 @@ static NSString *albumPlaceholderImageName = @"BSFBAlbumPicker.bundle/albumPlace
 
 
 -(void) loadFromNetwork {
-  NSString *fields = @"id,name,picture";
+  NSString *fields = @"id,name,picture,first_name";
   NSString *path = [NSString stringWithFormat:@"https://graph.facebook.com/me/friends?fields=%@",fields];
-  
   self.url = [NSURL URLWithString:path];
-  
   [super loadFromNetwork];
 }
 
@@ -75,9 +74,11 @@ static NSString *albumPlaceholderImageName = @"BSFBAlbumPicker.bundle/albumPlace
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   NSString *fields = @"id,photos.limit(1).fields(picture),count,name";
   NSString *userID = self.items[indexPath.row][@"id"];
+  NSString *name = self.items[indexPath.row][@"first_name"];
   NSString *path = [NSString stringWithFormat:@"https://graph.facebook.com/%@/albums?fields=%@",userID,fields];
   
   BSFBAlbumPickerController *albumPicker = [[BSFBAlbumPickerController alloc] init];
+  albumPicker.title = name;
   albumPicker.url = [NSURL URLWithString:path];
   albumPicker.navigationController = self.navigationController;
   albumPicker.delegate  = self.delegate;

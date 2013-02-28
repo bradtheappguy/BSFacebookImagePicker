@@ -48,7 +48,7 @@
     albumPicker.url = [NSURL URLWithString:path];
     
     BSFBPhotoGridViewController *photosOfYou = [[BSFBPhotoGridViewController alloc] init];
-    photosOfYou.title = @"Your Photos";
+
 
     fields = @"picture,source,height,width";
     path = [NSString stringWithFormat:@"https://graph.facebook.com/me/photos?access_token=%@&fields=%@",token,fields];
