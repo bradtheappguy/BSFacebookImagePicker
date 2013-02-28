@@ -19,7 +19,7 @@
 
 #import "BSFacebookImagePickerController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, CXFacebookImagePickerDelegate> {
+@interface AppDelegate : UIResponder <UIApplicationDelegate, BSFacebookImagePickerControllerDelegate, UINavigationControllerDelegate> {
   UIImageView *imageView;
 }
 

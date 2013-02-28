@@ -16,28 +16,17 @@
 
 #import <UIKit/UIKit.h>
 #import "BSFBLoadingView.h"
-#import "BSFacebook.h"
-#import "BSFBRootViewController.h"
-#import "AFNetworking.h"
-#import "BSFBEmptyView.h"
+#import "BSFBLoginView.h"
+#import "BSFacebookImagePickerController.h"
 
-@interface BSFBNetworkViewController : UITableViewController {
-  UIView *_loadingView;
-  BSFBEmptyView *_emptyView;
+@interface BSFBRootViewController : UIViewController {
+  BSFBLoginView *_loginView;
+  
+  UIViewController *_currentViewController;
 }
 
-@property (nonatomic, strong) NSMutableArray *items;
-@property (nonatomic) NSURL *url;
-@property (nonatomic) NSString *nextURL;
-
-
-
 @property (weak) id <BSFacebookImagePickerControllerDelegate> delegate;
-@property (weak) UINavigationController *navigationController;
 
--(void) loadFromNetwork;
--(void) showLoadingView;
--(void) hideLoadingView;
--(void) loadMoreFromNetwork;
+@property (nonatomic) NSArray *viewControllers;
 
 @end

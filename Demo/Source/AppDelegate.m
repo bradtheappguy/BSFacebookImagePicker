@@ -23,13 +23,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  
-
-  
-	 self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   [self.window makeKeyAndVisible];
-  
   
   UIViewController *vc = [[UIViewController alloc] init];
   vc.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
@@ -38,7 +33,6 @@
   imageView.backgroundColor = [UIColor lightGrayColor];
   imageView.contentMode = UIViewContentModeScaleAspectFit;
   [vc.view addSubview:imageView];
-  
   
   UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
   [button setTitle:@"Chose Image From Facebook" forState:UIControlStateNormal];
@@ -52,11 +46,7 @@
   [logoutButton addTarget:self action:@selector(logoutButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
   [vc.view addSubview:logoutButton];
   
-  
-  self.window.rootViewController = vc;  
-  
-  
- 
+  self.window.rootViewController = vc;
   return YES;
 }
 
@@ -70,17 +60,15 @@
 -(void) buttonPressed:(id) sender {
   BSFacebookImagePickerController *albumPicker = [[BSFacebookImagePickerController alloc] init];
   albumPicker.delegate = self;
-  UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:albumPicker];
-  nav.toolbarHidden = NO;
-  [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
+  [self.window.rootViewController presentViewController:albumPicker animated:YES completion:nil];
 }
-
+ 
 -(void) logoutButtonPressed:(id) sender {
   [[BSFacebook sharedInstance] logout];
 }
 
 #pragma mark
-#pragma mark CXFacebookImagePickerDelegate Methods
+#pragma mark BSFacebookImagePickerControllerDelegate Methods
 - (void)imagePickerController:(BSFacebookImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
   UIImage *image = info[@"UIImagePickerControllerEditedImage"];
   imageView.image = image;

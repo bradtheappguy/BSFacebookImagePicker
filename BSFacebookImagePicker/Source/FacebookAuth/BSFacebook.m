@@ -200,7 +200,8 @@ NSString * const kJSFacebookSSOAuthURL                  = @"fbauth://authorize/"
   [params setObject:self.facebookAppSecret forKey:@"client_secret"];
   
   NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://graph.facebook.com/oauth/access_token?%@",[params HTTPQueryString]]];
-   
+  NSLog(@"%@",url);
+  
 	/*[[JSFacebook sharedInstance] fetchRequest:request onSuccess:^(id responseObject) {
 		// Get the data (it is URL encoded)
 		NSString *accessToken = [responseObject getQueryValueWithKey:@"access_token"];

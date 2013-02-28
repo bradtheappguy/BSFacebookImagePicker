@@ -15,25 +15,14 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "BSFBLoadingView.h"
-#import "BSFBLoginView.h"
 
-@protocol CXFacebookImagePickerDelegate;
+@protocol BSFacebookImagePickerControllerDelegate;
 
-@interface BSFacebookImagePickerController : UIViewController {
-  BSFBLoginView *_loginView;
-  
-  UIViewController *_currentViewController;
-}
-
-@property (weak) id <CXFacebookImagePickerDelegate> delegate;
-
-@property (nonatomic) NSArray *viewControllers;
-
+@interface BSFacebookImagePickerController : UINavigationController
+@property(nonatomic, assign) id <BSFacebookImagePickerControllerDelegate, UINavigationControllerDelegate> delegate;
 @end
 
-
-@protocol CXFacebookImagePickerDelegate <UIImagePickerControllerDelegate>
+@protocol BSFacebookImagePickerControllerDelegate <UIImagePickerControllerDelegate>
 - (void)imagePickerController:(BSFacebookImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
 - (void)imagePickerControllerDidCancel:(BSFacebookImagePickerController *)picker;
 @end

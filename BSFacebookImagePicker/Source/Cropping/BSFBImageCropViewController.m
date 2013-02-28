@@ -55,7 +55,7 @@ static CGSize kCropSize = {300, 300};
 
 - (void)useButtonPressed:(id)sender {
   NSDictionary *dict = @{UIImagePickerControllerEditedImage: [self.imageCropView croppedImage]};
-  [self.delegate imagePickerController:nil didFinishPickingMediaWithInfo:dict];
+  [self.delegate imagePickerController:(BSFacebookImagePickerController *)self.navigationController didFinishPickingMediaWithInfo:dict];
 }
 
 

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E326387216DDD8F30062B100 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E326386B16DDD8F30062B100 /* Default-568h@2x.png */; };
-		E326387316DDD8F30062B100 /* FBAlbumPicker-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E326386C16DDD8F30062B100 /* FBAlbumPicker-Info.plist */; };
 		E326387416DDD8F30062B100 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E326386F16DDD8F30062B100 /* AppDelegate.m */; };
 		E326387516DDD8F30062B100 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E326387116DDD8F30062B100 /* main.m */; };
 		E32638E816DDDA6B0062B100 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E32638B116DDDA6B0062B100 /* AFHTTPRequestOperation.m */; };
@@ -22,29 +21,41 @@
 		E326395E16DDE3560062B100 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E32638B516DDDA6B0062B100 /* AFJSONRequestOperation.m */; };
 		E326395F16DDE3560062B100 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E32638B816DDDA6B0062B100 /* AFURLConnectionOperation.m */; };
 		E326396016DDE3560062B100 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E32638BA16DDDA6B0062B100 /* UIImageView+AFNetworking.m */; };
-		E326399716DDE5430062B100 /* BSFBAlbumPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E326397316DDE5430062B100 /* BSFBAlbumPicker.bundle */; };
-		E326399816DDE5430062B100 /* BSFacebookImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E326397516DDE5430062B100 /* BSFacebookImagePickerController.m */; };
-		E326399916DDE5430062B100 /* BSFBImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = E326397816DDE5430062B100 /* BSFBImageCropView.m */; };
-		E326399A16DDE5430062B100 /* BSFBImageCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E326397A16DDE5430062B100 /* BSFBImageCropViewController.m */; };
-		E326399B16DDE5430062B100 /* BSFBCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = E326397D16DDE5430062B100 /* BSFBCropOverlayView.m */; };
-		E326399C16DDE5430062B100 /* BSFBEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = E326397F16DDE5430062B100 /* BSFBEmptyView.m */; };
-		E326399D16DDE5430062B100 /* BSFBLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E326398116DDE5430062B100 /* BSFBLoadingView.m */; };
-		E326399E16DDE5430062B100 /* BSFBLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = E326398316DDE5430062B100 /* BSFBLoginView.m */; };
-		E326399F16DDE5430062B100 /* BSFBPhotoGridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E326398516DDE5430062B100 /* BSFBPhotoGridTableViewCell.m */; };
-		E32639A016DDE5430062B100 /* BSFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E326398816DDE5430062B100 /* BSFacebook.m */; };
-		E32639A116DDE5430062B100 /* NSDictionary+HTTPQueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = E326398A16DDE5430062B100 /* NSDictionary+HTTPQueryString.m */; };
-		E32639A216DDE5430062B100 /* NSString+HTTPQueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = E326398C16DDE5430062B100 /* NSString+HTTPQueryString.m */; };
-		E32639A316DDE5430062B100 /* BSFBAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E326399016DDE5430062B100 /* BSFBAlbumPickerController.m */; };
-		E32639A416DDE5430062B100 /* BSFBFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E326399216DDE5430062B100 /* BSFBFriendsViewController.m */; };
-		E32639A516DDE5430062B100 /* BSFBNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E326399416DDE5430062B100 /* BSFBNetworkViewController.m */; };
-		E32639A616DDE5430062B100 /* BSFBPhotoGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E326399616DDE5430062B100 /* BSFBPhotoGridViewController.m */; };
 		E35DD1BC16BFB1CA00D2E4C8 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = E35DD1BB16BFB1CA00D2E4C8 /* README.markdown */; };
 		E378528A16AF42C800BDEDAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E378528916AF42C800BDEDAF /* UIKit.framework */; };
 		E378528C16AF42C800BDEDAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E378528B16AF42C800BDEDAF /* Foundation.framework */; };
 		E378528E16AF42C800BDEDAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E378528D16AF42C800BDEDAF /* CoreGraphics.framework */; };
 		E39990B916D993FE0041ACAC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39990B816D993FE0041ACAC /* SystemConfiguration.framework */; };
 		E39990BB16D994020041ACAC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39990BA16D994020041ACAC /* MobileCoreServices.framework */; };
+		E3F777E116DF293B0076D363 /* BSFacebookImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777AD16DF279F0076D363 /* BSFacebookImagePickerController.m */; };
+		E3F777E216DF293F0076D363 /* BSFBImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777B016DF279F0076D363 /* BSFBImageCropView.m */; };
+		E3F777E316DF29430076D363 /* BSFBImageCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777B216DF279F0076D363 /* BSFBImageCropViewController.m */; };
+		E3F777E416DF29470076D363 /* BSFBCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777B516DF279F0076D363 /* BSFBCropOverlayView.m */; };
+		E3F777E516DF294B0076D363 /* BSFBEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777B716DF279F0076D363 /* BSFBEmptyView.m */; };
+		E3F777E716DF29520076D363 /* BSFBLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777B916DF279F0076D363 /* BSFBLoadingView.m */; };
+		E3F777E816DF29520076D363 /* BSFBLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777BB16DF279F0076D363 /* BSFBLoginView.m */; };
+		E3F777E916DF29520076D363 /* BSFBPhotoGridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777BD16DF279F0076D363 /* BSFBPhotoGridTableViewCell.m */; };
+		E3F777EA16DF29570076D363 /* BSFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777C016DF279F0076D363 /* BSFacebook.m */; };
+		E3F777EB16DF29570076D363 /* NSDictionary+HTTPQueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777C216DF279F0076D363 /* NSDictionary+HTTPQueryString.m */; };
+		E3F777EC16DF29570076D363 /* NSString+HTTPQueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777C416DF279F0076D363 /* NSString+HTTPQueryString.m */; };
+		E3F777ED16DF295D0076D363 /* BSFBAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777C816DF279F0076D363 /* BSFBAlbumPickerController.m */; };
+		E3F777EE16DF295D0076D363 /* BSFBFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777CA16DF279F0076D363 /* BSFBFriendsViewController.m */; };
+		E3F777EF16DF295D0076D363 /* BSFBNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777CC16DF279F0076D363 /* BSFBNetworkViewController.m */; };
+		E3F777F016DF295D0076D363 /* BSFBPhotoGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777CE16DF279F0076D363 /* BSFBPhotoGridViewController.m */; };
+		E3F777F116DF295D0076D363 /* BSFBRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777D016DF279F0076D363 /* BSFBRootViewController.m */; };
+		E3F777F216DF29C50076D363 /* liblibFBImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E326395016DDE2CB0062B100 /* liblibFBImagePicker.a */; };
+		E3F777F516DF2A270076D363 /* BSFBAlbumPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E3F777AA16DF27860076D363 /* BSFBAlbumPicker.bundle */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E3F777F316DF29CB0076D363 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E378527C16AF42C800BDEDAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E326394F16DDE2CB0062B100;
+			remoteInfo = libFBImagePicker;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E326394E16DDE2CB0062B100 /* CopyFiles */ = {
@@ -77,38 +88,6 @@
 		E32638B916DDDA6B0062B100 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		E32638BA16DDDA6B0062B100 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		E326395016DDE2CB0062B100 /* liblibFBImagePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibFBImagePicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E326397216DDE5430062B100 /* BSFacebookImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFacebookImagePickerController.h; sourceTree = "<group>"; };
-		E326397316DDE5430062B100 /* BSFBAlbumPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BSFBAlbumPicker.bundle; sourceTree = "<group>"; };
-		E326397516DDE5430062B100 /* BSFacebookImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFacebookImagePickerController.m; sourceTree = "<group>"; };
-		E326397716DDE5430062B100 /* BSFBImageCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBImageCropView.h; sourceTree = "<group>"; };
-		E326397816DDE5430062B100 /* BSFBImageCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBImageCropView.m; sourceTree = "<group>"; };
-		E326397916DDE5430062B100 /* BSFBImageCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBImageCropViewController.h; sourceTree = "<group>"; };
-		E326397A16DDE5430062B100 /* BSFBImageCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBImageCropViewController.m; sourceTree = "<group>"; };
-		E326397C16DDE5430062B100 /* BSFBCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBCropOverlayView.h; sourceTree = "<group>"; };
-		E326397D16DDE5430062B100 /* BSFBCropOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBCropOverlayView.m; sourceTree = "<group>"; };
-		E326397E16DDE5430062B100 /* BSFBEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBEmptyView.h; sourceTree = "<group>"; };
-		E326397F16DDE5430062B100 /* BSFBEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBEmptyView.m; sourceTree = "<group>"; };
-		E326398016DDE5430062B100 /* BSFBLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBLoadingView.h; sourceTree = "<group>"; };
-		E326398116DDE5430062B100 /* BSFBLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBLoadingView.m; sourceTree = "<group>"; };
-		E326398216DDE5430062B100 /* BSFBLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBLoginView.h; sourceTree = "<group>"; };
-		E326398316DDE5430062B100 /* BSFBLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBLoginView.m; sourceTree = "<group>"; };
-		E326398416DDE5430062B100 /* BSFBPhotoGridTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBPhotoGridTableViewCell.h; sourceTree = "<group>"; };
-		E326398516DDE5430062B100 /* BSFBPhotoGridTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBPhotoGridTableViewCell.m; sourceTree = "<group>"; };
-		E326398716DDE5430062B100 /* BSFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFacebook.h; sourceTree = "<group>"; };
-		E326398816DDE5430062B100 /* BSFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFacebook.m; sourceTree = "<group>"; };
-		E326398916DDE5430062B100 /* NSDictionary+HTTPQueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+HTTPQueryString.h"; sourceTree = "<group>"; };
-		E326398A16DDE5430062B100 /* NSDictionary+HTTPQueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+HTTPQueryString.m"; sourceTree = "<group>"; };
-		E326398B16DDE5430062B100 /* NSString+HTTPQueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTTPQueryString.h"; sourceTree = "<group>"; };
-		E326398C16DDE5430062B100 /* NSString+HTTPQueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTTPQueryString.m"; sourceTree = "<group>"; };
-		E326398D16DDE5430062B100 /* libFBImagePicker.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libFBImagePicker.pch; sourceTree = "<group>"; };
-		E326398F16DDE5430062B100 /* BSFBAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBAlbumPickerController.h; sourceTree = "<group>"; };
-		E326399016DDE5430062B100 /* BSFBAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBAlbumPickerController.m; sourceTree = "<group>"; };
-		E326399116DDE5430062B100 /* BSFBFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBFriendsViewController.h; sourceTree = "<group>"; };
-		E326399216DDE5430062B100 /* BSFBFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBFriendsViewController.m; sourceTree = "<group>"; };
-		E326399316DDE5430062B100 /* BSFBNetworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBNetworkViewController.h; sourceTree = "<group>"; };
-		E326399416DDE5430062B100 /* BSFBNetworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBNetworkViewController.m; sourceTree = "<group>"; };
-		E326399516DDE5430062B100 /* BSFBPhotoGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBPhotoGridViewController.h; sourceTree = "<group>"; };
-		E326399616DDE5430062B100 /* BSFBPhotoGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBPhotoGridViewController.m; sourceTree = "<group>"; };
 		E35DD1BB16BFB1CA00D2E4C8 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		E378528516AF42C800BDEDAF /* FBImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E378528916AF42C800BDEDAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -116,6 +95,40 @@
 		E378528D16AF42C800BDEDAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E39990B816D993FE0041ACAC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E39990BA16D994020041ACAC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E3F777A916DF27860076D363 /* BSFacebookImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFacebookImagePickerController.h; sourceTree = "<group>"; };
+		E3F777AA16DF27860076D363 /* BSFBAlbumPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BSFBAlbumPicker.bundle; sourceTree = "<group>"; };
+		E3F777AD16DF279F0076D363 /* BSFacebookImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFacebookImagePickerController.m; sourceTree = "<group>"; };
+		E3F777AF16DF279F0076D363 /* BSFBImageCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBImageCropView.h; sourceTree = "<group>"; };
+		E3F777B016DF279F0076D363 /* BSFBImageCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBImageCropView.m; sourceTree = "<group>"; };
+		E3F777B116DF279F0076D363 /* BSFBImageCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBImageCropViewController.h; sourceTree = "<group>"; };
+		E3F777B216DF279F0076D363 /* BSFBImageCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBImageCropViewController.m; sourceTree = "<group>"; };
+		E3F777B416DF279F0076D363 /* BSFBCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBCropOverlayView.h; sourceTree = "<group>"; };
+		E3F777B516DF279F0076D363 /* BSFBCropOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBCropOverlayView.m; sourceTree = "<group>"; };
+		E3F777B616DF279F0076D363 /* BSFBEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBEmptyView.h; sourceTree = "<group>"; };
+		E3F777B716DF279F0076D363 /* BSFBEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBEmptyView.m; sourceTree = "<group>"; };
+		E3F777B816DF279F0076D363 /* BSFBLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBLoadingView.h; sourceTree = "<group>"; };
+		E3F777B916DF279F0076D363 /* BSFBLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBLoadingView.m; sourceTree = "<group>"; };
+		E3F777BA16DF279F0076D363 /* BSFBLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBLoginView.h; sourceTree = "<group>"; };
+		E3F777BB16DF279F0076D363 /* BSFBLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBLoginView.m; sourceTree = "<group>"; };
+		E3F777BC16DF279F0076D363 /* BSFBPhotoGridTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBPhotoGridTableViewCell.h; sourceTree = "<group>"; };
+		E3F777BD16DF279F0076D363 /* BSFBPhotoGridTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBPhotoGridTableViewCell.m; sourceTree = "<group>"; };
+		E3F777BF16DF279F0076D363 /* BSFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFacebook.h; sourceTree = "<group>"; };
+		E3F777C016DF279F0076D363 /* BSFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFacebook.m; sourceTree = "<group>"; };
+		E3F777C116DF279F0076D363 /* NSDictionary+HTTPQueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+HTTPQueryString.h"; sourceTree = "<group>"; };
+		E3F777C216DF279F0076D363 /* NSDictionary+HTTPQueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+HTTPQueryString.m"; sourceTree = "<group>"; };
+		E3F777C316DF279F0076D363 /* NSString+HTTPQueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTTPQueryString.h"; sourceTree = "<group>"; };
+		E3F777C416DF279F0076D363 /* NSString+HTTPQueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTTPQueryString.m"; sourceTree = "<group>"; };
+		E3F777C516DF279F0076D363 /* libFBImagePicker.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libFBImagePicker.pch; sourceTree = "<group>"; };
+		E3F777C716DF279F0076D363 /* BSFBAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBAlbumPickerController.h; sourceTree = "<group>"; };
+		E3F777C816DF279F0076D363 /* BSFBAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBAlbumPickerController.m; sourceTree = "<group>"; };
+		E3F777C916DF279F0076D363 /* BSFBFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBFriendsViewController.h; sourceTree = "<group>"; };
+		E3F777CA16DF279F0076D363 /* BSFBFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBFriendsViewController.m; sourceTree = "<group>"; };
+		E3F777CB16DF279F0076D363 /* BSFBNetworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBNetworkViewController.h; sourceTree = "<group>"; };
+		E3F777CC16DF279F0076D363 /* BSFBNetworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBNetworkViewController.m; sourceTree = "<group>"; };
+		E3F777CD16DF279F0076D363 /* BSFBPhotoGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBPhotoGridViewController.h; sourceTree = "<group>"; };
+		E3F777CE16DF279F0076D363 /* BSFBPhotoGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBPhotoGridViewController.m; sourceTree = "<group>"; };
+		E3F777CF16DF279F0076D363 /* BSFBRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFBRootViewController.h; sourceTree = "<group>"; };
+		E3F777D016DF279F0076D363 /* BSFBRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFBRootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F777F216DF29C50076D363 /* liblibFBImagePicker.a in Frameworks */,
 				E39990BB16D994020041ACAC /* MobileCoreServices.framework in Frameworks */,
 				E39990B916D993FE0041ACAC /* SystemConfiguration.framework in Frameworks */,
 				E378528A16AF42C800BDEDAF /* UIKit.framework in Frameworks */,
@@ -208,88 +222,10 @@
 		E326397016DDE5430062B100 /* BSFacebookImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				E326397116DDE5430062B100 /* Public */,
-				E326397416DDE5430062B100 /* Source */,
+				E3F777AC16DF279F0076D363 /* Source */,
+				E3F777A816DF27860076D363 /* Public */,
 			);
 			path = BSFacebookImagePicker;
-			sourceTree = "<group>";
-		};
-		E326397116DDE5430062B100 /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				E326397216DDE5430062B100 /* BSFacebookImagePickerController.h */,
-				E326397316DDE5430062B100 /* BSFBAlbumPicker.bundle */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		E326397416DDE5430062B100 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				E326397516DDE5430062B100 /* BSFacebookImagePickerController.m */,
-				E326397616DDE5430062B100 /* Cropping */,
-				E326397B16DDE5430062B100 /* CustomViewsAndCells */,
-				E326398616DDE5430062B100 /* FacebookAuth */,
-				E326398D16DDE5430062B100 /* libFBImagePicker.pch */,
-				E326398E16DDE5430062B100 /* PrivateViewControllers */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		E326397616DDE5430062B100 /* Cropping */ = {
-			isa = PBXGroup;
-			children = (
-				E326397716DDE5430062B100 /* BSFBImageCropView.h */,
-				E326397816DDE5430062B100 /* BSFBImageCropView.m */,
-				E326397916DDE5430062B100 /* BSFBImageCropViewController.h */,
-				E326397A16DDE5430062B100 /* BSFBImageCropViewController.m */,
-			);
-			path = Cropping;
-			sourceTree = "<group>";
-		};
-		E326397B16DDE5430062B100 /* CustomViewsAndCells */ = {
-			isa = PBXGroup;
-			children = (
-				E326397C16DDE5430062B100 /* BSFBCropOverlayView.h */,
-				E326397D16DDE5430062B100 /* BSFBCropOverlayView.m */,
-				E326397E16DDE5430062B100 /* BSFBEmptyView.h */,
-				E326397F16DDE5430062B100 /* BSFBEmptyView.m */,
-				E326398016DDE5430062B100 /* BSFBLoadingView.h */,
-				E326398116DDE5430062B100 /* BSFBLoadingView.m */,
-				E326398216DDE5430062B100 /* BSFBLoginView.h */,
-				E326398316DDE5430062B100 /* BSFBLoginView.m */,
-				E326398416DDE5430062B100 /* BSFBPhotoGridTableViewCell.h */,
-				E326398516DDE5430062B100 /* BSFBPhotoGridTableViewCell.m */,
-			);
-			path = CustomViewsAndCells;
-			sourceTree = "<group>";
-		};
-		E326398616DDE5430062B100 /* FacebookAuth */ = {
-			isa = PBXGroup;
-			children = (
-				E326398716DDE5430062B100 /* BSFacebook.h */,
-				E326398816DDE5430062B100 /* BSFacebook.m */,
-				E326398916DDE5430062B100 /* NSDictionary+HTTPQueryString.h */,
-				E326398A16DDE5430062B100 /* NSDictionary+HTTPQueryString.m */,
-				E326398B16DDE5430062B100 /* NSString+HTTPQueryString.h */,
-				E326398C16DDE5430062B100 /* NSString+HTTPQueryString.m */,
-			);
-			path = FacebookAuth;
-			sourceTree = "<group>";
-		};
-		E326398E16DDE5430062B100 /* PrivateViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				E326398F16DDE5430062B100 /* BSFBAlbumPickerController.h */,
-				E326399016DDE5430062B100 /* BSFBAlbumPickerController.m */,
-				E326399116DDE5430062B100 /* BSFBFriendsViewController.h */,
-				E326399216DDE5430062B100 /* BSFBFriendsViewController.m */,
-				E326399316DDE5430062B100 /* BSFBNetworkViewController.h */,
-				E326399416DDE5430062B100 /* BSFBNetworkViewController.m */,
-				E326399516DDE5430062B100 /* BSFBPhotoGridViewController.h */,
-				E326399616DDE5430062B100 /* BSFBPhotoGridViewController.m */,
-			);
-			path = PrivateViewControllers;
 			sourceTree = "<group>";
 		};
 		E378527A16AF42C800BDEDAF = {
@@ -325,6 +261,86 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E3F777A816DF27860076D363 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				E3F777A916DF27860076D363 /* BSFacebookImagePickerController.h */,
+				E3F777AA16DF27860076D363 /* BSFBAlbumPicker.bundle */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		E3F777AC16DF279F0076D363 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E3F777AD16DF279F0076D363 /* BSFacebookImagePickerController.m */,
+				E3F777AE16DF279F0076D363 /* Cropping */,
+				E3F777B316DF279F0076D363 /* CustomViewsAndCells */,
+				E3F777BE16DF279F0076D363 /* FacebookAuth */,
+				E3F777C516DF279F0076D363 /* libFBImagePicker.pch */,
+				E3F777C616DF279F0076D363 /* PrivateViewControllers */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		E3F777AE16DF279F0076D363 /* Cropping */ = {
+			isa = PBXGroup;
+			children = (
+				E3F777AF16DF279F0076D363 /* BSFBImageCropView.h */,
+				E3F777B016DF279F0076D363 /* BSFBImageCropView.m */,
+				E3F777B116DF279F0076D363 /* BSFBImageCropViewController.h */,
+				E3F777B216DF279F0076D363 /* BSFBImageCropViewController.m */,
+			);
+			path = Cropping;
+			sourceTree = "<group>";
+		};
+		E3F777B316DF279F0076D363 /* CustomViewsAndCells */ = {
+			isa = PBXGroup;
+			children = (
+				E3F777B416DF279F0076D363 /* BSFBCropOverlayView.h */,
+				E3F777B516DF279F0076D363 /* BSFBCropOverlayView.m */,
+				E3F777B616DF279F0076D363 /* BSFBEmptyView.h */,
+				E3F777B716DF279F0076D363 /* BSFBEmptyView.m */,
+				E3F777B816DF279F0076D363 /* BSFBLoadingView.h */,
+				E3F777B916DF279F0076D363 /* BSFBLoadingView.m */,
+				E3F777BA16DF279F0076D363 /* BSFBLoginView.h */,
+				E3F777BB16DF279F0076D363 /* BSFBLoginView.m */,
+				E3F777BC16DF279F0076D363 /* BSFBPhotoGridTableViewCell.h */,
+				E3F777BD16DF279F0076D363 /* BSFBPhotoGridTableViewCell.m */,
+			);
+			path = CustomViewsAndCells;
+			sourceTree = "<group>";
+		};
+		E3F777BE16DF279F0076D363 /* FacebookAuth */ = {
+			isa = PBXGroup;
+			children = (
+				E3F777BF16DF279F0076D363 /* BSFacebook.h */,
+				E3F777C016DF279F0076D363 /* BSFacebook.m */,
+				E3F777C116DF279F0076D363 /* NSDictionary+HTTPQueryString.h */,
+				E3F777C216DF279F0076D363 /* NSDictionary+HTTPQueryString.m */,
+				E3F777C316DF279F0076D363 /* NSString+HTTPQueryString.h */,
+				E3F777C416DF279F0076D363 /* NSString+HTTPQueryString.m */,
+			);
+			path = FacebookAuth;
+			sourceTree = "<group>";
+		};
+		E3F777C616DF279F0076D363 /* PrivateViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E3F777C716DF279F0076D363 /* BSFBAlbumPickerController.h */,
+				E3F777C816DF279F0076D363 /* BSFBAlbumPickerController.m */,
+				E3F777C916DF279F0076D363 /* BSFBFriendsViewController.h */,
+				E3F777CA16DF279F0076D363 /* BSFBFriendsViewController.m */,
+				E3F777CB16DF279F0076D363 /* BSFBNetworkViewController.h */,
+				E3F777CC16DF279F0076D363 /* BSFBNetworkViewController.m */,
+				E3F777CD16DF279F0076D363 /* BSFBPhotoGridViewController.h */,
+				E3F777CE16DF279F0076D363 /* BSFBPhotoGridViewController.m */,
+				E3F777CF16DF279F0076D363 /* BSFBRootViewController.h */,
+				E3F777D016DF279F0076D363 /* BSFBRootViewController.m */,
+			);
+			path = PrivateViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -356,6 +372,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E3F777F416DF29CB0076D363 /* PBXTargetDependency */,
 			);
 			name = FBImagePicker;
 			productName = FBAlbumPicker;
@@ -397,8 +414,7 @@
 			files = (
 				E35DD1BC16BFB1CA00D2E4C8 /* README.markdown in Resources */,
 				E326387216DDD8F30062B100 /* Default-568h@2x.png in Resources */,
-				E326387316DDD8F30062B100 /* FBAlbumPicker-Info.plist in Resources */,
-				E326399716DDE5430062B100 /* BSFBAlbumPicker.bundle in Resources */,
+				E3F777F516DF2A270076D363 /* BSFBAlbumPicker.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +430,22 @@
 				E326395E16DDE3560062B100 /* AFJSONRequestOperation.m in Sources */,
 				E326395F16DDE3560062B100 /* AFURLConnectionOperation.m in Sources */,
 				E326396016DDE3560062B100 /* UIImageView+AFNetworking.m in Sources */,
+				E3F777E116DF293B0076D363 /* BSFacebookImagePickerController.m in Sources */,
+				E3F777E216DF293F0076D363 /* BSFBImageCropView.m in Sources */,
+				E3F777E316DF29430076D363 /* BSFBImageCropViewController.m in Sources */,
+				E3F777E416DF29470076D363 /* BSFBCropOverlayView.m in Sources */,
+				E3F777E516DF294B0076D363 /* BSFBEmptyView.m in Sources */,
+				E3F777E716DF29520076D363 /* BSFBLoadingView.m in Sources */,
+				E3F777E816DF29520076D363 /* BSFBLoginView.m in Sources */,
+				E3F777E916DF29520076D363 /* BSFBPhotoGridTableViewCell.m in Sources */,
+				E3F777EA16DF29570076D363 /* BSFacebook.m in Sources */,
+				E3F777EB16DF29570076D363 /* NSDictionary+HTTPQueryString.m in Sources */,
+				E3F777EC16DF29570076D363 /* NSString+HTTPQueryString.m in Sources */,
+				E3F777ED16DF295D0076D363 /* BSFBAlbumPickerController.m in Sources */,
+				E3F777EE16DF295D0076D363 /* BSFBFriendsViewController.m in Sources */,
+				E3F777EF16DF295D0076D363 /* BSFBNetworkViewController.m in Sources */,
+				E3F777F016DF295D0076D363 /* BSFBPhotoGridViewController.m in Sources */,
+				E3F777F116DF295D0076D363 /* BSFBRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,25 +460,18 @@
 				E32638EA16DDDA6B0062B100 /* AFJSONRequestOperation.m in Sources */,
 				E32638EB16DDDA6B0062B100 /* AFURLConnectionOperation.m in Sources */,
 				E32638EC16DDDA6B0062B100 /* UIImageView+AFNetworking.m in Sources */,
-				E326399816DDE5430062B100 /* BSFacebookImagePickerController.m in Sources */,
-				E326399916DDE5430062B100 /* BSFBImageCropView.m in Sources */,
-				E326399A16DDE5430062B100 /* BSFBImageCropViewController.m in Sources */,
-				E326399B16DDE5430062B100 /* BSFBCropOverlayView.m in Sources */,
-				E326399C16DDE5430062B100 /* BSFBEmptyView.m in Sources */,
-				E326399D16DDE5430062B100 /* BSFBLoadingView.m in Sources */,
-				E326399E16DDE5430062B100 /* BSFBLoginView.m in Sources */,
-				E326399F16DDE5430062B100 /* BSFBPhotoGridTableViewCell.m in Sources */,
-				E32639A016DDE5430062B100 /* BSFacebook.m in Sources */,
-				E32639A116DDE5430062B100 /* NSDictionary+HTTPQueryString.m in Sources */,
-				E32639A216DDE5430062B100 /* NSString+HTTPQueryString.m in Sources */,
-				E32639A316DDE5430062B100 /* BSFBAlbumPickerController.m in Sources */,
-				E32639A416DDE5430062B100 /* BSFBFriendsViewController.m in Sources */,
-				E32639A516DDE5430062B100 /* BSFBNetworkViewController.m in Sources */,
-				E32639A616DDE5430062B100 /* BSFBPhotoGridViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E3F777F416DF29CB0076D363 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E326394F16DDE2CB0062B100 /* libFBImagePicker */;
+			targetProxy = E3F777F316DF29CB0076D363 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E326395A16DDE2CB0062B100 /* Debug */ = {
