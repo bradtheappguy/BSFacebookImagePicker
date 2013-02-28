@@ -27,9 +27,9 @@
 @implementation BSFacebookImagePickerController
 
 - (id)init {
-  _albumPicker = [[BSFBRootViewController alloc] init];
-  if (self = [super initWithRootViewController:_albumPicker]) {
-    
+  BSFBRootViewController *albumPicker = [[BSFBRootViewController alloc] init];
+  if (self = [super initWithRootViewController:albumPicker]) {
+    _albumPicker = albumPicker;
   }
   return self;
 }

@@ -23,6 +23,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  
+#define kFacebookAppID @"235162033164366"
+#define kFacebookAppSecret @"46919046df740b4eec16ddeac86b9dc5"
+  [[BSFacebook sharedInstance] setFacebookAppID:kFacebookAppID];
+  [[BSFacebook sharedInstance] setFacebookAppSecret:kFacebookAppSecret];
+  
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   [self.window makeKeyAndVisible];
   

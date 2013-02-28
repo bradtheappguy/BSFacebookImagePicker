@@ -10,11 +10,6 @@
 		E326387216DDD8F30062B100 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E326386B16DDD8F30062B100 /* Default-568h@2x.png */; };
 		E326387416DDD8F30062B100 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E326386F16DDD8F30062B100 /* AppDelegate.m */; };
 		E326387516DDD8F30062B100 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E326387116DDD8F30062B100 /* main.m */; };
-		E32638E816DDDA6B0062B100 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E32638B116DDDA6B0062B100 /* AFHTTPRequestOperation.m */; };
-		E32638E916DDDA6B0062B100 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E32638B316DDDA6B0062B100 /* AFImageRequestOperation.m */; };
-		E32638EA16DDDA6B0062B100 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E32638B516DDDA6B0062B100 /* AFJSONRequestOperation.m */; };
-		E32638EB16DDDA6B0062B100 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E32638B816DDDA6B0062B100 /* AFURLConnectionOperation.m */; };
-		E32638EC16DDDA6B0062B100 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E32638BA16DDDA6B0062B100 /* UIImageView+AFNetworking.m */; };
 		E326395116DDE2CB0062B100 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E378528B16AF42C800BDEDAF /* Foundation.framework */; };
 		E326395C16DDE3560062B100 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E32638B116DDDA6B0062B100 /* AFHTTPRequestOperation.m */; };
 		E326395D16DDE3560062B100 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E32638B316DDDA6B0062B100 /* AFImageRequestOperation.m */; };
@@ -455,11 +450,6 @@
 			files = (
 				E326387416DDD8F30062B100 /* AppDelegate.m in Sources */,
 				E326387516DDD8F30062B100 /* main.m in Sources */,
-				E32638E816DDDA6B0062B100 /* AFHTTPRequestOperation.m in Sources */,
-				E32638E916DDDA6B0062B100 /* AFImageRequestOperation.m in Sources */,
-				E32638EA16DDDA6B0062B100 /* AFJSONRequestOperation.m in Sources */,
-				E32638EB16DDDA6B0062B100 /* AFURLConnectionOperation.m in Sources */,
-				E32638EC16DDDA6B0062B100 /* UIImageView+AFNetworking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +554,7 @@
 				GCC_PREFIX_HEADER = "Demo/Source/Demo-Prefix.pch";
 				INFOPLIST_FILE = "Demo/Resources/FBAlbumPicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -577,6 +568,7 @@
 				GCC_PREFIX_HEADER = "Demo/Source/Demo-Prefix.pch";
 				INFOPLIST_FILE = "Demo/Resources/FBAlbumPicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

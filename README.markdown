@@ -63,7 +63,6 @@ BSFacebookImagePicker is lightweight and can be used with or without using the F
 ## Warning
 
 This software is not yet complete.  There are a few loose ends that need to be finished before it is production ready.  I am sharing it a bit early to give s few people a heads up on what I am working on.
-* Automatic token extension is not yet implemented.  This means the user will be logged out of Facebook after the inital token expires.  I belive this is normally 60 days.
 * Proper localilizations are not yet checked in.  The files are stubbed out but they are still engilish.  I would love some help here if you want to pitch in.  Otherwise this is going to cost me a few hundred bucks.
 * The promised API to allow implementors to use existing Facebook tokens they have allready retrieved from the facebook-ios-sdk or other means has not yet been implemented
 * The library is still dependant on AFNetworking.  I would like to break that dependancy in the spirit of lightweightedness.

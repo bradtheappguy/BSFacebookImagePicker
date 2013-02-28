@@ -151,40 +151,15 @@ NSString * const kJSFacebookSSOAuthURL                  = @"fbauth://authorize/"
 	return NO;
 }
 
-- (void)validateAccessTokenWithCompletionHandler:(void (^)(BOOL))completionHandler
-{
-/*	// First check if we have the token and that it is not expired
-	if (![self isSessionValid]) {
-		if (completionHandler) completionHandler(NO);
-		return;
-	}
-	// Create a request to the Facebook servers to see if we have access with the token that we have
-	JSFacebookRequest *request = [JSFacebookRequest requestWithGraphPath:@"/me"];
-	[request addParameter:@"fields" withValue:@"id"];
-	[[JSFacebook sharedInstance] fetchRequest:request onSuccess:^(id responseObject) {
-		// Access token is valid
-		if (completionHandler) completionHandler(YES);
-	} onError:^(NSError *error) {
-		// Not valid
-		NSLog(@"Error: %@", [error localizedDescription]);
-		if (completionHandler) completionHandler(NO);
-	}];*/
-}
-
-- (void)extendAccessTokenExpirationWithCompletionHandler:(void (^)(NSError *))completionHandler
-{
+- (void)extendAccessTokenExpiration {
 	if (![self isSessionValid]) {
 		NSLog(@"ERROR: Session invalid");
-		NSError *error = [NSError errorWithDomain:@"MY_ERROR_DOMAIN" code:BSFacebookErrorCodeAuthentication userInfo:nil];
-		if (completionHandler) completionHandler(error);
 		return;
 	}
 	
 	// We need the app secret for this
 	if (![self.facebookAppSecret length]) {
 		NSLog(@"ERROR: Missing facebook app secret");
-		NSError *error = [NSError errorWithDomain:@"MY_ERROR_DOMAIN" code:BSFacebookErrorCodeOther userInfo:nil];
-		if (completionHandler) completionHandler(error);
 		return;
 	}
 	
@@ -199,29 +174,28 @@ NSString * const kJSFacebookSSOAuthURL                  = @"fbauth://authorize/"
   [params setObject:self.facebookAppID forKey:@"client_id"];
   [params setObject:self.facebookAppSecret forKey:@"client_secret"];
   
-  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://graph.facebook.com/oauth/access_token?%@",[params HTTPQueryString]]];
+  NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/oauth/access_token?%@",[params HTTPQueryString]]];
   NSLog(@"%@",url);
   
-	/*[[JSFacebook sharedInstance] fetchRequest:request onSuccess:^(id responseObject) {
-		// Get the data (it is URL encoded)
-		NSString *accessToken = [responseObject getQueryValueWithKey:@"access_token"];
-		NSString *expiry = [responseObject getQueryValueWithKey:@"expires"];
-		if (!accessToken.length || !expiry.length) {
-			DLog(@"ERROR: Access token or expiry date missing!");
-			NSError *error = [NSError errorWithDomain:kJSFacebookErrorDomain code:JSFacebookErrorCodeServer userInfo:@{NSLocalizedDescriptionKey: @"Crucial data is missing from the response"}];
-			if (completionHandler) completionHandler(error);
-		}
-		
-		// Set the new info
-		self.accessToken = accessToken;
-		self.accessTokenExpiryDate = [NSDate dateWithTimeIntervalSinceNow:[expiry doubleValue]];
-		
-		if (completionHandler) completionHandler(nil);
-		
-	} onError:^(NSError *error) {
-		DLog(@"ERROR: Could not extend the access token!");
-		if (completionHandler) completionHandler(error);
-	}];*/
+  NSURLRequest *request = [NSURLRequest requestWithURL:url];
+  AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+  [op setCompletionBlockWithSuccess:^void(AFHTTPRequestOperation *operation, id responseObject){
+    NSString *response = [operation responseString];
+    NSString *token = [response getQueryValueWithKey:@"access_token"];
+    NSString *expiration = [response getQueryValueWithKey:@"expires"];
+    if (!token.length || !expiration.length) {
+			NSLog(@"ERROR: Access token or expiry date missing!");
+    }
+    else {
+      NSDate *newExpirationDate = [NSDate dateWithTimeIntervalSinceNow:[expiration doubleValue]];
+      self.accessToken = token;
+      self.accessTokenExpiryDate = newExpirationDate;
+      NSLog(@"Facebook Token extened until %@",[newExpirationDate description]);
+    }
+  } failure:^void(AFHTTPRequestOperation *operation, NSError *error){
+    NSLog(@"Error extending Facebook token");
+  }];
+  [op start];
 }
 
 - (BOOL)isFacebookAppIDValid

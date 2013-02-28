@@ -58,8 +58,7 @@ typedef void (^BSFBLoginErrorBlock)();
 					 onError:(BSFBLoginErrorBlock)errBlock;
 - (void)logout;
 - (BOOL)isSessionValid;
-- (void)validateAccessTokenWithCompletionHandler:(void(^)(BOOL isValid))completionHandler;
-- (void)extendAccessTokenExpirationWithCompletionHandler:(void(^)(NSError *))completionHandler;
+- (void)extendAccessTokenExpiration;
 - (BOOL)isFacebookAppIDValid;
 - (void)handleCallbackURL:(NSURL *)url;
 

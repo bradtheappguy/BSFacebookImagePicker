@@ -22,8 +22,6 @@
 #import "BSFBFriendsViewController.h"
 
 
-#define kFacebookAppID @"471843082842813"
-#define kFacebookAppSecret @"eea58faf22d13ee032e674979474342a"
 
 
 @interface BSFBRootViewController (private)
@@ -137,7 +135,7 @@
     [self.navigationController setToolbarHidden:YES animated:animated];
   }
   if ([[BSFacebook sharedInstance] isSessionValid]) {
-    [[BSFacebook sharedInstance] extendAccessTokenExpirationWithCompletionHandler:nil];
+    [[BSFacebook sharedInstance] extendAccessTokenExpiration];
   }
   else {
     [self showLoginView];
@@ -155,8 +153,6 @@
 #pragma mark -
 #pragma mark Buttons
 - (void)loginButtonPressed:(id)sender {
-  [[BSFacebook sharedInstance] setFacebookAppID:kFacebookAppID];
-	[[BSFacebook sharedInstance] setFacebookAppSecret:kFacebookAppSecret];
 	NSArray *permissions = @[@"user_photos,friends_photos"];
   [[BSFacebook sharedInstance] loginWithPermissions:permissions onSuccess:^(void) {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"USER_DID_LOGIN" object:nil];
