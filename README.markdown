@@ -43,6 +43,9 @@ BSFacebookImagePicker is lightweight and can be used with or without using the F
 //Super easy
 - (void) launchPicker {
   BSFacebookImagePickerController *picker = [[BSFacebookImagePickerController alloc] init];
+  //Change to your facebook App ID and App Secret
+  picker.facebookAppID = @"00000000";
+  picker.facebookAppSecret = @"111111111";
   picker.delegate = self;
   [self.window.rootViewController presentViewController:picker animated:YES completion:nil];
 }
@@ -56,6 +59,12 @@ BSFacebookImagePicker is lightweight and can be used with or without using the F
 
 - (void)imagePickerControllerDidCancel:(BSFacebookImagePickerController *)picker {
   [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+//Inside your Application Delegate for login support:
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+  [BSFacebookImagePickerController handleCallbackURL:url];
+  return YES;
 }
 ```
 
