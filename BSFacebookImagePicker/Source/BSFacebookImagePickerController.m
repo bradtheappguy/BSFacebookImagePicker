@@ -17,6 +17,7 @@
 #import "BSFacebookImagePickerController.h"
 
 #import "BSFBRootViewController.h"
+#import "BSFacebook.h"
 
 @interface BSFacebookImagePickerController (/* private */) {
   BSFBRootViewController *_albumPicker;
@@ -26,10 +27,19 @@
 
 @implementation BSFacebookImagePickerController
 
++ (void)handleCallbackURL:(NSURL *)url {
+  [[BSFacebook sharedInstance] handleCallbackURL:url];
+}
+
++ (void) logout {
+  [[BSFacebook sharedInstance] logout];
+}
+
 - (id)init {
   BSFBRootViewController *albumPicker = [[BSFBRootViewController alloc] init];
   if (self = [super initWithRootViewController:albumPicker]) {
     _albumPicker = albumPicker;
+    _albumPicker.contentSizeForViewInPopover = CGSizeMake(320,480);
   }
   return self;
 }
@@ -38,5 +48,15 @@
   [super setDelegate:delegate];
   _albumPicker.delegate = delegate;
 }
+
+- (void) setFacebookAppID:(NSString *)facebookAppID {
+  [[BSFacebook sharedInstance] setFacebookAppID:facebookAppID];
+}
+
+- (void) setFacebookAppSecret:(NSString *)facebookAppSecret {
+    [[BSFacebook sharedInstance] setFacebookAppSecret:facebookAppSecret];
+}
+
+
 
 @end

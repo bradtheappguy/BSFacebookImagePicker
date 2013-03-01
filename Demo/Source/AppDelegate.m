@@ -16,7 +16,6 @@
 
 
 #import "AppDelegate.h"
-#import "BSFacebook.h"
 
 @implementation AppDelegate
 
@@ -26,8 +25,6 @@
   
 #define kFacebookAppID @"235162033164366"
 #define kFacebookAppSecret @"46919046df740b4eec16ddeac86b9dc5"
-  [[BSFacebook sharedInstance] setFacebookAppID:kFacebookAppID];
-  [[BSFacebook sharedInstance] setFacebookAppSecret:kFacebookAppSecret];
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   [self.window makeKeyAndVisible];
@@ -58,19 +55,21 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
   NSLog(@"Open URL: %@", url);
-  [[BSFacebook sharedInstance] handleCallbackURL:url];
+  [BSFacebookImagePickerController handleCallbackURL:url];
   return YES;
 }
 
 
 -(void) buttonPressed:(id) sender {
   BSFacebookImagePickerController *albumPicker = [[BSFacebookImagePickerController alloc] init];
+  albumPicker.facebookAppID = kFacebookAppID;
+  albumPicker.facebookAppSecret = kFacebookAppSecret;
   albumPicker.delegate = self;
   [self.window.rootViewController presentViewController:albumPicker animated:YES completion:nil];
 }
  
 -(void) logoutButtonPressed:(id) sender {
-  [[BSFacebook sharedInstance] logout];
+  [BSFacebookImagePickerController logout];
 }
 
 #pragma mark

@@ -19,7 +19,14 @@
 @protocol BSFacebookImagePickerControllerDelegate;
 
 @interface BSFacebookImagePickerController : UINavigationController
+
+@property (nonatomic) NSString *facebookAppID;
+@property (nonatomic) NSString *facebookAppSecret;
 @property(nonatomic, assign) id <BSFacebookImagePickerControllerDelegate, UINavigationControllerDelegate> delegate;
+
++ (void)handleCallbackURL:(NSURL *)url;
++ (void)logout;
+
 @end
 
 @protocol BSFacebookImagePickerControllerDelegate <UIImagePickerControllerDelegate>

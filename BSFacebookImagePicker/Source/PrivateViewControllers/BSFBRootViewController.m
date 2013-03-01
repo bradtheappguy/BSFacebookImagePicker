@@ -159,7 +159,7 @@
     NSLog(@"Sucessfully logged in!");
     [self.navigationController setToolbarHidden:NO];
     [_loginView removeFromSuperview];
-    self.title = @"XXX";
+    self.title = Localized(@"ALBUMS");
    } onError:^(NSError *error) {
      NSLog(@"Error while logging in: %@", [error localizedDescription]);
    }];
