@@ -19,6 +19,8 @@
 #import "BSFBRootViewController.h"
 #import "BSFacebook.h"
 
+static CGSize kPopoverSize = {320, 480};
+
 @interface BSFacebookImagePickerController (/* private */) {
   BSFBRootViewController *_albumPicker;
 }
@@ -35,14 +37,19 @@
   [[BSFacebook sharedInstance] logout];
 }
 
+
 - (id)init {
-  BSFBRootViewController *albumPicker = [[BSFBRootViewController alloc] init];
-  if (self = [super initWithRootViewController:albumPicker]) {
-    _albumPicker = albumPicker;
-    _albumPicker.contentSizeForViewInPopover = CGSizeMake(320,480);
+  if (!_albumPicker) {
+    _albumPicker = [[BSFBRootViewController alloc] init];
+    self = [super initWithRootViewController:_albumPicker];
+    _albumPicker.contentSizeForViewInPopover = kPopoverSize;
+  }
+  else {
+    self = [super init];
   }
   return self;
 }
+
 
 - (void) setDelegate:(id)delegate {
   [super setDelegate:delegate];

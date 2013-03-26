@@ -16,7 +16,7 @@
 
 #import "BSFBAlbumPickerController.h"
 #import "BSFBPhotoGridViewController.h"
-
+#import <CoreText/CoreText.h>
 
 @implementation BSFBAlbumPickerController
 
@@ -41,13 +41,34 @@ static NSString *albumPlaceholderImageName = @"BSFBAlbumPicker.bundle/albumPlace
   NSString *albumName = (self.items)[indexPath.row][@"name"];
   NSNumber *count = (self.items)[indexPath.row][@"count"];
   
-  NSDictionary *attributes = @{ NSFontAttributeName : [UIFont fontWithName:@"Helvetica" size:15] };
-  NSDictionary *boldAttributes = @{ NSFontAttributeName : [UIFont fontWithName:@"Helvetica-Bold" size:15] };
+  NSString *string = [NSString stringWithFormat:@"%@ (%@)",albumName,(count?count:@"0")];
+  UIFont *font = [UIFont fontWithName:@"Helvetica" size:15];
+  UIColor *textColor = [UIColor blackColor];
   
-  NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ (%@)",albumName,(count?count:@"0")] attributes:boldAttributes];
-  [text setAttributes:attributes range:NSMakeRange(albumName.length + 1, text.length-(albumName.length + 1))];
   
-  [tvc.textLabel setAttributedText:text];
+  //Set -[UILabel setAttributedText:] is only avaialble in iOS 6+]
+  //On iOS 6+ we bold the album name.
+  if ([tvc.textLabel respondsToSelector:@selector(setAttributedText:)]) {
+    //iOS 6+
+    UIFont *boldFont = [UIFont fontWithName:@"Helvetica" size:15];
+    NSDictionary *attributes = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                font, kCTFontAttributeName,
+                                textColor, kCTForegroundColorAttributeName, nil];
+    
+    NSDictionary *boldAttributes = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                    boldFont, kCTFontAttributeName,
+                                    textColor, kCTForegroundColorAttributeName, nil];
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:string attributes:boldAttributes];
+    [text setAttributes:attributes range:NSMakeRange(albumName.length + 1, text.length-(albumName.length + 1))];
+    [tvc.textLabel setAttributedText:text];
+  }
+  else {
+    //iOS 5 support
+    [tvc.textLabel setFont:font];
+    [tvc.textLabel setTextColor:textColor];
+    [tvc.textLabel setText:string];
+  }
+  
   
   NSString *picture = (self.items)[indexPath.row][@"photos"][@"data"][0][@"picture"];
   

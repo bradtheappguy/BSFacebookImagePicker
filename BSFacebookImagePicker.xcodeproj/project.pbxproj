@@ -22,6 +22,7 @@
 		E378528E16AF42C800BDEDAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E378528D16AF42C800BDEDAF /* CoreGraphics.framework */; };
 		E39990B916D993FE0041ACAC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39990B816D993FE0041ACAC /* SystemConfiguration.framework */; };
 		E39990BB16D994020041ACAC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39990BA16D994020041ACAC /* MobileCoreServices.framework */; };
+		E3F4E8F117012DB000684EF1 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3F4E8F017012DB000684EF1 /* CoreText.framework */; };
 		E3F777E116DF293B0076D363 /* BSFacebookImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777AD16DF279F0076D363 /* BSFacebookImagePickerController.m */; };
 		E3F777E216DF293F0076D363 /* BSFBImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777B016DF279F0076D363 /* BSFBImageCropView.m */; };
 		E3F777E316DF29430076D363 /* BSFBImageCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F777B216DF279F0076D363 /* BSFBImageCropViewController.m */; };
@@ -90,6 +91,7 @@
 		E378528D16AF42C800BDEDAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E39990B816D993FE0041ACAC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E39990BA16D994020041ACAC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E3F4E8F017012DB000684EF1 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		E3F777A916DF27860076D363 /* BSFacebookImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFacebookImagePickerController.h; sourceTree = "<group>"; };
 		E3F777AA16DF27860076D363 /* BSFBAlbumPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BSFBAlbumPicker.bundle; sourceTree = "<group>"; };
 		E3F777AD16DF279F0076D363 /* BSFacebookImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFacebookImagePickerController.m; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F4E8F117012DB000684EF1 /* CoreText.framework in Frameworks */,
 				E3F777F216DF29C50076D363 /* liblibFBImagePicker.a in Frameworks */,
 				E39990BB16D994020041ACAC /* MobileCoreServices.framework in Frameworks */,
 				E39990B916D993FE0041ACAC /* SystemConfiguration.framework in Frameworks */,
@@ -226,6 +229,7 @@
 		E378527A16AF42C800BDEDAF = {
 			isa = PBXGroup;
 			children = (
+				E3F4E8F017012DB000684EF1 /* CoreText.framework */,
 				E35DD1BB16BFB1CA00D2E4C8 /* README.markdown */,
 				E326397016DDE5430062B100 /* BSFacebookImagePicker */,
 				E326386916DDD8F30062B100 /* Demo */,
@@ -474,7 +478,7 @@
 				DSTROOT = /tmp/libBSFacebookImagePickerController.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BSFacebookImagePicker/Source/libFBImagePicker.pch;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -491,7 +495,7 @@
 				DSTROOT = /tmp/libBSFacebookImagePickerController.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BSFacebookImagePicker/Source/libFBImagePicker.pch;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -519,7 +523,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -539,7 +543,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

@@ -9,6 +9,7 @@ BSFacebookImagePicker is lightweight and can be used with or without using the F
 
 ## Features
 
+* Supports iOS 5 (slightly degraded experence) and iOS 6+ (best experence)
 * Authentication using iOS single signon (iOS 5+), or Fast App Switching to the Facebook App
 * Fallback Web-Based Authentication
 * Authentication can be bypassed if you allready have a Facebook Access token 
