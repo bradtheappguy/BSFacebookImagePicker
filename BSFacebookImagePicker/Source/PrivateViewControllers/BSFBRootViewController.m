@@ -83,9 +83,14 @@
 }
 
 -(void) setupToolbar {
-  UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[Localized(@"PHOTOS_OF_YOU"),
-                                                                                     Localized(@"ALBUMS"),
-                                                                                     Localized(@"FRIENDS")]];
+  NSMutableArray *segments = [@[Localized(@"PHOTOS_OF_YOU"),
+                                Localized(@"ALBUMS"),
+                                Localized(@"FRIENDS")] mutableCopy];
+  if (![BSFacebook sharedInstance].showFriendsPhotos) {
+        [segments removeObject:Localized(@"FRIENDS")];
+  }
+    
+  UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segments];
   segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
   segmentedControl.selectedSegmentIndex = 1;
   [segmentedControl addTarget:self action:@selector(segmentedControlValueDidChange:) forControlEvents:UIControlEventValueChanged];
