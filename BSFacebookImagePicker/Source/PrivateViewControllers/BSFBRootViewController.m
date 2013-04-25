@@ -54,8 +54,12 @@
     photosOfYou.url = [NSURL URLWithString:path];
     
     BSFBFriendsViewController *friendsViewController = [[BSFBFriendsViewController alloc] init];
-    
-    self.viewControllers = @[photosOfYou,albumPicker,friendsViewController];
+    NSMutableArray *controllers = [@[photosOfYou,albumPicker,friendsViewController] mutableCopy];
+    if (![BSFacebook sharedInstance].showFriendsPhotos) {
+        [controllers removeObject:friendsViewController];
+    }
+  
+    self.viewControllers = controllers;
     
     _currentViewController = albumPicker;
     
@@ -153,7 +157,11 @@
 #pragma mark -
 #pragma mark Buttons
 - (void)loginButtonPressed:(id)sender {
-	NSArray *permissions = @[@"user_photos,friends_photos"];
+    
+	NSMutableArray *permissions = [@[@"user_photos,friends_photos"] mutableCopy];
+    if (![BSFacebook sharedInstance].showFriendsPhotos) {
+        [permissions removeObject:@"friends_photos"];
+    }
   [[BSFacebook sharedInstance] loginWithPermissions:permissions onSuccess:^(void) {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"USER_DID_LOGIN" object:nil];
     NSLog(@"Sucessfully logged in!");

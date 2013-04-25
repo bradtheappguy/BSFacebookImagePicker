@@ -52,6 +52,7 @@ NSString * const kJSFacebookSSOAuthURL                  = @"fbauth://authorize/"
 @synthesize facebookAppID=_facebookAppID;
 @synthesize facebookAppSecret=_facebookAppSecret;
 @synthesize urlSchemeSuffix=_urlSchemeSuffix;
+@synthesize showFriendsPhotos=_showFriendsPhotos;
 @synthesize authErrorBlock;
 @synthesize authSuccessBlock;
 
@@ -85,6 +86,7 @@ NSString * const kJSFacebookSSOAuthURL                  = @"fbauth://authorize/"
 				self.accessTokenExpiryDate = accessTokenExpiryDate;
 			}
 		}
+        _showFriendsPhotos = YES;
 	}
 	return self;
 }

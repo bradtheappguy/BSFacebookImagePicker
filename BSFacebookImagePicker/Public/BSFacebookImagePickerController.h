@@ -42,6 +42,13 @@
 @property (nonatomic) NSString *facebookAppSecret;
 
 /*!
+ @property   showFriendsPhotos
+ @abstract   Whether to show friends' photos as well.
+ @discussion If an existing token is passed to BSFacebookImagePickerController and showFriendsPhotos is not set to NO, ensure that the token has the "friends_photos" permission. The default value is YES
+ */
+@property (nonatomic) BOOL showFriendsPhotos;
+
+/*!
  @property   delegate
  @abstract   The delegate to be assigned to notify the client when a photo has been chosen, an error has occured, or
              the user has canceled.
@@ -50,7 +57,7 @@
 /*!
  @method     setExistingFacebookAcessToken:expiryDate:
  @abstract   Sets an existing authToken for apps that have already authenticated the user with Facebook
- @discussion The token passed should include the following permissions: "user_photos,friends_photos". When using this method, set the app id and secret as well, so once the token expires, BSFacebookImagePickerController would be able to extend the token.
+ @discussion The token passed should include the following permissions: "user_photos,friends_photos". If showFriendsPhotos is set to NO, only "user_photos" is required. When using this method, set the app id and secret as well, so once the token expires, BSFacebookImagePickerController would be able to extend the token.
  @param      token   The Facebook Token to use for for querying Facebook.
  @param      expiry         The expiration date of the provided token
  

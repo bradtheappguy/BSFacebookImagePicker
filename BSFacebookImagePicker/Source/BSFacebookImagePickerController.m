@@ -69,6 +69,8 @@ static CGSize kPopoverSize = {320, 480};
     [[BSFacebook sharedInstance] setFacebookAppSecret:facebookAppSecret];
 }
 
-
+- (void)setShowFriendsPhotos:(BOOL)showFriendsPhotos{
+    [[BSFacebook sharedInstance] setShowFriendsPhotos:showFriendsPhotos];
+}
 
 @end
