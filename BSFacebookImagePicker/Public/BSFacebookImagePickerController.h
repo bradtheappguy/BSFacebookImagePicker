@@ -48,6 +48,16 @@
  */
 @property(nonatomic, assign) id <BSFacebookImagePickerControllerDelegate, UINavigationControllerDelegate> delegate;
 
+/*!
+ @method     setExistingFacebookAcessToken:expiryDate:
+ @abstract   Sets an existing authToken for apps that have already authenticated the user with Facebook
+ @discussion The token passed should include the following permissions: "user_photos,friends_photos". When using this method, set the app id and secret as well, so once the token expires, BSFacebookImagePickerController would be able to extend the token.
+ @param      token   The Facebook Token to use for for querying Facebook.
+ @param      expiry         The expiration date of the provided token
+
+ */
+
++ (void)setExistingFacebookAcessToken:(NSString *)token expiryDate:(NSDate *)expiry;
 
 /*!
  @method     handleCallbackURL:
@@ -94,4 +104,5 @@
  @param      controller   The BSFacebookImagePickerController instance which is returning the result.
  */
 - (void)imagePickerControllerDidCancel:(BSFacebookImagePickerController *)picker;
+
 @end

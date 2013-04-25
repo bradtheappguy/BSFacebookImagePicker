@@ -29,6 +29,11 @@ static CGSize kPopoverSize = {320, 480};
 
 @implementation BSFacebookImagePickerController
 
++ (void)setExistingFacebookAcessToken:(NSString *)token expiryDate:(NSDate *)expiry {
+    [[BSFacebook sharedInstance] setAccessToken:token];
+    [[BSFacebook sharedInstance] setAccessTokenExpiryDate:expiry];
+}
+
 + (void)handleCallbackURL:(NSURL *)url {
   [[BSFacebook sharedInstance] handleCallbackURL:url];
 }

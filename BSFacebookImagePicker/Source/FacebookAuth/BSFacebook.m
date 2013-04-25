@@ -29,7 +29,6 @@ NSString * const kJSFacebookSSOAuthURL                  = @"fbauth://authorize/"
 
 @property (nonatomic, copy) BSFBLoginSuccessBlock authSuccessBlock;
 @property (nonatomic, copy) BSFBLoginErrorBlock authErrorBlock;
-@property (nonatomic, strong) NSDate *accessTokenExpiryDate;
 
 @end
 

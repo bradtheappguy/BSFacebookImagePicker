@@ -48,6 +48,7 @@ typedef void (^BSFBLoginErrorBlock)();
 @property (nonatomic, strong) NSString *facebookAppSecret;
 @property (nonatomic, strong) NSString *urlSchemeSuffix;
 @property (nonatomic, strong) NSString *accessToken;
+@property (nonatomic, strong) NSDate *accessTokenExpiryDate;
 
 + (BSFacebook *)sharedInstance;
 
