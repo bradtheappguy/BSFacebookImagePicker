@@ -76,6 +76,7 @@
   self.title = Localized(@"CHOOSE_ALBUM");
   self.view.backgroundColor = [UIColor greenColor];
   [self setupCancelButton];
+  self.edgesForExtendedLayout=UIRectEdgeNone;
   [self.view addSubview:_currentViewController.view];
   _currentViewController.view.frame = self.view.bounds;
   [(BSFBAlbumPickerController *)_currentViewController setNavigationController:self.navigationController];

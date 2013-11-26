@@ -35,6 +35,20 @@ static NSString *albumPlaceholderImageName = @"BSFBAlbumPicker.bundle/albumPlace
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   UITableViewCell *tvc = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    NSString *picture = (self.items)[indexPath.row][@"photos"][@"data"][0][@"picture"];
+    
+    tvc.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    tvc.imageView.clipsToBounds = YES;
+    tvc.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    //  [tvc.imageView setImage:[UIImage imageNamed:albumPlaceholderImageName]];
+    
+    UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
+    [iv setImageWithURL:[NSURL URLWithString:picture] placeholderImage:[UIImage imageNamed:albumPlaceholderImageName]];
+    //   [iv setImageWithURL:[NSURL URLWithString:picture]];
+    iv.clipsToBounds = YES;
+    [tvc.contentView addSubview:iv];
+    
   tvc.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
   tvc.textLabel.numberOfLines = 0;
   
@@ -44,7 +58,6 @@ static NSString *albumPlaceholderImageName = @"BSFBAlbumPicker.bundle/albumPlace
   NSString *string = [NSString stringWithFormat:@"%@ (%@)",albumName,(count?count:@"0")];
   UIFont *font = [UIFont fontWithName:@"Helvetica" size:15];
   UIColor *textColor = [UIColor blackColor];
-  
   
   //Set -[UILabel setAttributedText:] is only avaialble in iOS 6+]
   //On iOS 6+ we bold the album name.
@@ -68,20 +81,7 @@ static NSString *albumPlaceholderImageName = @"BSFBAlbumPicker.bundle/albumPlace
     [tvc.textLabel setTextColor:textColor];
     [tvc.textLabel setText:string];
   }
-  
-  
-  NSString *picture = (self.items)[indexPath.row][@"photos"][@"data"][0][@"picture"];
-  
-  tvc.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-  
-  tvc.imageView.clipsToBounds = YES;
-  tvc.imageView.contentMode = UIViewContentModeScaleAspectFill;
-  [tvc.imageView setImage:[UIImage imageNamed:albumPlaceholderImageName]];
-  
-  UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
-  [iv setImageWithURL:[NSURL URLWithString:picture] placeholderImage:[UIImage imageNamed:albumPlaceholderImageName]];
-  [tvc.contentView addSubview:iv];
-  
+    tvc.textLabel.textAlignment = UITextAlignmentRight;
   return tvc;
 }
 

@@ -28,6 +28,7 @@
 -(void) viewDidLoad {
   [super viewDidLoad];
   self.tableView.rowHeight = 80;
+  self.edgesForExtendedLayout=UIRectEdgeNone;
 }
 
 
