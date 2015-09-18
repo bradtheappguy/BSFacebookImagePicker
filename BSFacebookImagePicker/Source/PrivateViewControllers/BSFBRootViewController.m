@@ -54,8 +54,12 @@
     photosOfYou.url = [NSURL URLWithString:path];
     
     BSFBFriendsViewController *friendsViewController = [[BSFBFriendsViewController alloc] init];
-    
-    self.viewControllers = @[photosOfYou,albumPicker,friendsViewController];
+    NSMutableArray *controllers = [@[photosOfYou,albumPicker,friendsViewController] mutableCopy];
+    if (![BSFacebook sharedInstance].showFriendsPhotos) {
+        [controllers removeObject:friendsViewController];
+    }
+  
+    self.viewControllers = controllers;
     
     _currentViewController = albumPicker;
     
@@ -72,6 +76,7 @@
   self.title = Localized(@"CHOOSE_ALBUM");
   self.view.backgroundColor = [UIColor greenColor];
   [self setupCancelButton];
+  self.edgesForExtendedLayout=UIRectEdgeNone;
   [self.view addSubview:_currentViewController.view];
   _currentViewController.view.frame = self.view.bounds;
   [(BSFBAlbumPickerController *)_currentViewController setNavigationController:self.navigationController];
@@ -79,9 +84,14 @@
 }
 
 -(void) setupToolbar {
-  UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[Localized(@"PHOTOS_OF_YOU"),
-                                                                                     Localized(@"ALBUMS"),
-                                                                                     Localized(@"FRIENDS")]];
+  NSMutableArray *segments = [@[Localized(@"PHOTOS_OF_YOU"),
+                                Localized(@"ALBUMS"),
+                                Localized(@"FRIENDS")] mutableCopy];
+  if (![BSFacebook sharedInstance].showFriendsPhotos) {
+        [segments removeObject:Localized(@"FRIENDS")];
+  }
+    
+  UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segments];
   segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
   segmentedControl.selectedSegmentIndex = 1;
   [segmentedControl addTarget:self action:@selector(segmentedControlValueDidChange:) forControlEvents:UIControlEventValueChanged];
@@ -153,7 +163,11 @@
 #pragma mark -
 #pragma mark Buttons
 - (void)loginButtonPressed:(id)sender {
-	NSArray *permissions = @[@"user_photos,friends_photos"];
+    
+	NSMutableArray *permissions = [@[@"user_photos,friends_photos"] mutableCopy];
+    if (![BSFacebook sharedInstance].showFriendsPhotos) {
+        [permissions removeObject:@"friends_photos"];
+    }
   [[BSFacebook sharedInstance] loginWithPermissions:permissions onSuccess:^(void) {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"USER_DID_LOGIN" object:nil];
     NSLog(@"Sucessfully logged in!");
